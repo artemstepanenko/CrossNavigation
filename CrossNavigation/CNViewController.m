@@ -37,16 +37,23 @@
 
 @implementation CNViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        [self initialize];
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.interactiveTransition = [CNInteractiveTransition new];
-        self.transitioningDelegate = self.interactiveTransition;
-        self.direction = CNDirectionNone;
-        
-        self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
+        [self initialize];
     }
     
     return self;
@@ -116,6 +123,17 @@
     }
     
     _bottomID = bottomStoryboardID;
+}
+
+#pragma mark - Private
+
+- (void)initialize
+{
+    self.interactiveTransition = [CNInteractiveTransition new];
+    self.transitioningDelegate = self.interactiveTransition;
+    self.direction = CNDirectionNone;
+    
+    self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
 }
 
 #pragma mark - CNPanGestureHandlerDelegate
