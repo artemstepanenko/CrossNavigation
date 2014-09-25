@@ -25,12 +25,10 @@
 
 @interface CNViewController : UIViewController
 
-// push next
 - (void)presentViewController:(CNViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated;
 
-// pops current view controller
 - (void)dismissViewControllerAnimated:(BOOL)animated;
 
 @end
