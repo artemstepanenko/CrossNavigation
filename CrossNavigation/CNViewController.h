@@ -31,4 +31,7 @@
 
 - (void)dismissViewControllerAnimated:(BOOL)animated;
 
+- (void)viewIsAppearing:(CGFloat)percentComplete;
+- (void)viewIsDisappearing:(CGFloat)percentComplete;
+
 @end

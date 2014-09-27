@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC6A46FA19D73C02000F3E83 /* AppearingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6A46F919D73C02000F3E83 /* AppearingViewController.m */; };
 		AC7EA50319D2D10600D9A550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50219D2D10600D9A550 /* main.m */; };
 		AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50519D2D10600D9A550 /* AppDelegate.m */; };
 		AC7EA50E19D2D10700D9A550 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7EA50D19D2D10700D9A550 /* Images.xcassets */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC6A46F819D73C02000F3E83 /* AppearingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppearingViewController.h; sourceTree = "<group>"; };
+		AC6A46F919D73C02000F3E83 /* AppearingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppearingViewController.m; sourceTree = "<group>"; };
 		AC7EA4FD19D2D10600D9A550 /* CrossNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7EA50119D2D10600D9A550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7EA50219D2D10600D9A550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 		AC7EA4FF19D2D10600D9A550 /* CrossNavigationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AC6A46F819D73C02000F3E83 /* AppearingViewController.h */,
+				AC6A46F919D73C02000F3E83 /* AppearingViewController.m */,
 				AC7EA52C19D2D71A00D9A550 /* CrossNavigation */,
 				AC7EA50419D2D10600D9A550 /* AppDelegate.h */,
 				AC7EA50519D2D10600D9A550 /* AppDelegate.m */,
@@ -350,6 +355,7 @@
 			files = (
 				AC7EA55319D2D71A00D9A550 /* CNPanGestureHandler.m in Sources */,
 				AC7EA54E19D2D71A00D9A550 /* CNBottomTransitioning.m in Sources */,
+				AC6A46FA19D73C02000F3E83 /* AppearingViewController.m in Sources */,
 				AC7EA54B19D2D71A00D9A550 /* CNViewController.m in Sources */,
 				AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */,
 				AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */,

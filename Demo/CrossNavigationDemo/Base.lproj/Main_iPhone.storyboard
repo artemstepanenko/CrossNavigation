@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="1299" y="574"/>
         </scene>
-        <!--View Controller-->
+        <!--Appearing View Controller-->
         <scene sceneID="jTl-X6-H2k">
             <objects>
-                <viewController storyboardIdentifier="alone" id="ydp-6A-16P" customClass="CNViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="alone" id="ydp-6A-16P" customClass="AppearingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GcW-pZ-GFU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -187,6 +187,13 @@
                                 <rect key="frame" x="151" y="545" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uIM-s7-rJu">
+                                <rect key="frame" x="61" y="484" width="198" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -194,6 +201,9 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="amish"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="universalist"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="progressLabel" destination="uIM-s7-rJu" id="bxh-Hk-ANY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2c-ab-gzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -379,10 +389,10 @@
             </objects>
             <point key="canvasLocation" x="1299" y="1280"/>
         </scene>
-        <!--View Controller-->
+        <!--Appearing View Controller-->
         <scene sceneID="pY9-pS-IKQ">
             <objects>
-                <viewController id="DUY-3r-rW1" customClass="CNViewController" sceneMemberID="viewController">
+                <viewController id="DUY-3r-rW1" customClass="AppearingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnw-mb-vht">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -434,6 +444,13 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fcF-Vd-qPj">
+                                <rect key="frame" x="61" y="36" width="198" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -443,6 +460,9 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="rich"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="bacon"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="progressLabel" destination="fcF-Vd-qPj" id="Bnz-gi-oZm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJv-Aj-dCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

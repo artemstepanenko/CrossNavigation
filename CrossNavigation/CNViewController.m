@@ -87,6 +87,18 @@
     [self dismissViewControllerAnimated:animated completion:nil];
 }
 
+#pragma mark - Events
+
+- (void)viewIsAppearing:(CGFloat)percentComplete
+{
+    // default implementation does nothing
+}
+
+- (void)viewIsDisappearing:(CGFloat)percentComplete
+{
+    // default implementation does nothing
+}
+
 #pragma mark - Storyboard
 
 - (void)setLeftID:(NSString *)leftStoryboardID
@@ -169,6 +181,8 @@
     }
     
     [self.nextViewController.interactiveTransition updateInteractiveTransition:ratio];
+    [self.nextViewController.interactiveTransition.toViewController viewIsAppearing:ratio];
+    [self.nextViewController.interactiveTransition.fromViewController viewIsDisappearing:(1.0f - ratio)];
 }
 
 - (void)panGestureHandlerDidFinish:(CNPanGestureHandler *)sender

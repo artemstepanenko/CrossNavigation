@@ -23,7 +23,12 @@
 
 #import "cn_direction.h"
 
+@class CNViewController;
+
 @interface CNInteractiveTransition : UIPercentDrivenInteractiveTransition <UIViewControllerTransitioningDelegate>
+
+@property (nonatomic, weak, readonly) CNViewController *fromViewController;
+@property (nonatomic, weak, readonly) CNViewController *toViewController;
 
 @property (nonatomic, strong, readonly) UIView *containerView;
 @property (nonatomic, assign) CNDirection direction;
