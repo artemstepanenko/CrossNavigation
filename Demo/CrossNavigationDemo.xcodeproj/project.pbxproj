@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC36786419D776CB00E7107A /* CNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC36786319D776CB00E7107A /* CNTimer.m */; };
 		AC7EA50319D2D10600D9A550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50219D2D10600D9A550 /* main.m */; };
 		AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50519D2D10600D9A550 /* AppDelegate.m */; };
 		AC7EA50E19D2D10700D9A550 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7EA50D19D2D10700D9A550 /* Images.xcassets */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC36786219D776CB00E7107A /* CNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTimer.h; sourceTree = "<group>"; };
+		AC36786319D776CB00E7107A /* CNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTimer.m; sourceTree = "<group>"; };
 		AC7EA4FD19D2D10600D9A550 /* CrossNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7EA50119D2D10600D9A550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7EA50219D2D10600D9A550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC36786119D776CB00E7107A /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				AC36786219D776CB00E7107A /* CNTimer.h */,
+				AC36786319D776CB00E7107A /* CNTimer.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		AC7EA4F419D2D10600D9A550 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 				AC7EA52F19D2D71A00D9A550 /* CNViewController_Storyboard.h */,
 				AC7EA53019D2D71A00D9A550 /* InteractiveTransition */,
 				AC7EA54519D2D71A00D9A550 /* PanGestureHandler */,
+				AC36786119D776CB00E7107A /* Timer */,
 				AC7EA54819D2D71A00D9A550 /* Utils */,
 			);
 			name = CrossNavigation;
@@ -350,6 +363,7 @@
 			files = (
 				AC7EA55319D2D71A00D9A550 /* CNPanGestureHandler.m in Sources */,
 				AC7EA54E19D2D71A00D9A550 /* CNBottomTransitioning.m in Sources */,
+				AC36786419D776CB00E7107A /* CNTimer.m in Sources */,
 				AC7EA54B19D2D71A00D9A550 /* CNViewController.m in Sources */,
 				AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */,
 				AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */,

@@ -25,6 +25,7 @@
 #import "CNTransitioningFactory.h"
 #import "CNInteractiveTransition.h"
 #import "CNPanGestureHandler.h"
+#import "CNTimer.h"
 
 @interface CNViewController () <CNPanGestureHandlerDelegate>
 
@@ -74,17 +75,27 @@
     }
     
     [viewController prepareForTransitionToDirection:direction interactive:NO];
+    [viewController transitionWillFinishFromViewController:self toViewController:viewController recentPercentComplete:0.0f];
     [self presentViewController:viewController animated:animated completion:nil];
 }
 
-- (void)dismissViewControllerAnimated:(BOOL)animated
+- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
     if ([self isTransitioning]) {
         return;
     }
     
     [self prepareForBackTransitionInteractive:NO];
-    [self dismissViewControllerAnimated:animated completion:nil];
+    [self transitionWillFinishFromViewController:self toViewController:(CNViewController *)self.presentingViewController recentPercentComplete:0.0f];
+    
+    [super dismissViewControllerAnimated:animated completion:completion];
+}
+
+#pragma mark - Appearance
+
+- (void)viewIsAppearing:(CGFloat)percentComplete
+{
+    // default implementation does nothing
 }
 
 #pragma mark - Storyboard
@@ -136,6 +147,31 @@
     self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
 }
 
+- (void)transitionWillFinishFromViewController:(CNViewController *)fromViewController
+                              toViewController:(CNViewController *)toViewController
+                         recentPercentComplete:(CGFloat)recentPercentComplete
+{
+    CNTimer *timer = [[CNTimer alloc] init];
+    
+    NSTimeInterval timeInterval = 0.04f;    // more than 24 frames per second
+    NSUInteger repeatsCount = [self.interactiveTransition finishingDuration] / timeInterval;
+    CGFloat portion = (1.0f - recentPercentComplete) / repeatsCount;
+    
+    [timer startWithTimeInterval:timeInterval repeatsCount:repeatsCount tickCallback:^(NSUInteger index) {
+        
+        CGFloat percentComplete = recentPercentComplete + portion * index;
+        
+        [fromViewController viewIsAppearing:(1 - percentComplete)];
+        [toViewController viewIsAppearing:percentComplete];
+        
+    } stopCallback:^(BOOL cancelled) {
+        
+        [fromViewController viewIsAppearing:0.0f];
+        [toViewController viewIsAppearing:1.0f];
+        
+    }];
+}
+
 #pragma mark - CNPanGestureHandlerDelegate
 
 - (void)panGestureHandler:(CNPanGestureHandler *)sender didStartForDirection:(CNDirection)direction
@@ -146,7 +182,7 @@
         
         [self prepareForBackTransitionInteractive:YES];
         
-        [self dismissViewControllerAnimated:YES completion:^{
+        [super dismissViewControllerAnimated:YES completion:^{
             weakSelf.nextViewController = nil;
         }];
         
@@ -169,16 +205,29 @@
     }
     
     [self.nextViewController.interactiveTransition updateInteractiveTransition:ratio];
+    
+    // send events
+    CGFloat percentComplete = self.nextViewController.interactiveTransition.recentPercentComplete;
+    [self.nextViewController.interactiveTransition.toViewController viewIsAppearing:percentComplete];
+    [self.nextViewController.interactiveTransition.fromViewController viewIsAppearing:(1.0f - percentComplete)];
 }
 
 - (void)panGestureHandlerDidFinish:(CNPanGestureHandler *)sender
 {
     [self.nextViewController.interactiveTransition finishInteractiveTransition];
+    
+    [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.fromViewController
+                                                   toViewController:self.nextViewController.interactiveTransition.toViewController
+                                              recentPercentComplete:self.nextViewController.interactiveTransition.recentPercentComplete];
 }
 
 - (void)panGestureHandlerDidCancel:(CNPanGestureHandler *)sender
 {
     [self.nextViewController.interactiveTransition cancelInteractiveTransition];
+    
+    [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.toViewController
+                                                   toViewController:self.nextViewController.interactiveTransition.fromViewController
+                                              recentPercentComplete:self.nextViewController.interactiveTransition.recentPercentComplete];
 }
 
 - (CNDirection)panGestureHandler:(CNPanGestureHandler *)sender directionForOffset:(CGPoint)offset
