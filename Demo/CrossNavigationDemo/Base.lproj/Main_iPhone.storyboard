@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="1299" y="574"/>
         </scene>
-        <!--Appearing View Controller-->
+        <!--View Controller-->
         <scene sceneID="jTl-X6-H2k">
             <objects>
-                <viewController storyboardIdentifier="alone" id="ydp-6A-16P" customClass="AppearingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="alone" id="ydp-6A-16P" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GcW-pZ-GFU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -187,23 +187,6 @@
                                 <rect key="frame" x="151" y="545" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uIM-s7-rJu">
-                                <rect key="frame" x="61" y="484" width="198" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iYP-a5-nAQ">
-                                <rect key="frame" x="143" y="446" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backDidPress:" destination="ydp-6A-16P" eventType="touchUpInside" id="7GJ-g4-Ut4"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -211,9 +194,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="amish"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="universalist"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="progressLabel" destination="uIM-s7-rJu" id="bxh-Hk-ANY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2c-ab-gzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -399,10 +379,10 @@
             </objects>
             <point key="canvasLocation" x="1299" y="1280"/>
         </scene>
-        <!--Appearing View Controller-->
+        <!--View Controller-->
         <scene sceneID="pY9-pS-IKQ">
             <objects>
-                <viewController id="DUY-3r-rW1" customClass="AppearingViewController" sceneMemberID="viewController">
+                <viewController id="DUY-3r-rW1" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnw-mb-vht">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -454,23 +434,6 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fcF-Vd-qPj">
-                                <rect key="frame" x="61" y="36" width="198" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UdM-Lj-1vo">
-                                <rect key="frame" x="144" y="104" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextDidPress:" destination="DUY-3r-rW1" eventType="touchUpInside" id="fGu-qD-rdY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -478,10 +441,8 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="reincarnation"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="rich"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="bacon"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="topID" value="alone"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="progressLabel" destination="fcF-Vd-qPj" id="Bnz-gi-oZm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJv-Aj-dCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
