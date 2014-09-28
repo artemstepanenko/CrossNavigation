@@ -19,13 +19,19 @@
 - (void)viewIsAppearing:(CGFloat)percentComplete
 {
     [super viewIsAppearing:percentComplete];
-    self.progressLabel.text = [NSString stringWithFormat:@"A: %.2f", percentComplete];
+    self.progressLabel.text = [NSString stringWithFormat:@"%.2f", percentComplete];
 }
 
-- (void)viewIsDisappearing:(CGFloat)percentComplete
+- (IBAction)nextDidPress:(id)sender
 {
-    [super viewIsDisappearing:percentComplete];
-    self.progressLabel.text = [NSString stringWithFormat:@"D: %.2f", percentComplete];
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"alone"]
+                      direction:CNDirectionTop
+                       animated:YES];
+}
+
+- (IBAction)backDidPress:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

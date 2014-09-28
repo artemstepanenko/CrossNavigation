@@ -1,5 +1,5 @@
 //
-// CNInteractiveTransition.h
+// CNTimer.h
 //
 // Copyright (c) 2014 Artem Stepanenko
 //
@@ -21,24 +21,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "cn_direction.h"
+typedef void (^CNTimerDidTick) (NSUInteger index);
+typedef void (^CNTimerDidStop) (BOOL cancelled);
 
-@class CNViewController;
+@interface CNTimer : NSObject
 
-@interface CNInteractiveTransition : UIPercentDrivenInteractiveTransition <UIViewControllerTransitioningDelegate>
+@property (nonatomic, assign, readonly) BOOL isStarted;
 
-@property (nonatomic, weak, readonly) CNViewController *fromViewController;
-@property (nonatomic, weak, readonly) CNViewController *toViewController;
-@property (nonatomic, strong, readonly) UIView *containerView;
+- (void)startWithTimeInterval:(NSTimeInterval)timeInterval
+                 repeatsCount:(NSUInteger)count
+                 tickCallback:(CNTimerDidTick)tickCallback
+                 stopCallback:(CNTimerDidStop)stopCallback; // if repeatCount <= 0 then timer will work until it's stopped
 
-@property (nonatomic, assign, readonly) CGFloat finishingDuration;  // duration (in seconds) which takes simple transition (presenting/dismissing) and finishing non interactive transition
-@property (nonatomic, assign, readonly) CGFloat recentPercentComplete;  // contains recent value for interactive animation
-
-@property (nonatomic, assign) CNDirection direction;
-@property (nonatomic, assign) BOOL interactive;
-
-- (void)updateInteractiveTransition:(CGFloat)percentComplete;
-- (void)finishInteractiveTransition;
-- (void)cancelInteractiveTransition;
+- (void)cancel;      // after this you may start timer again
 
 @end

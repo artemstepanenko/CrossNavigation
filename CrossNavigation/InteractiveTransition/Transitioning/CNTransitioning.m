@@ -28,7 +28,7 @@
 
 + (CGFloat)duration
 {
-    return 0.3f;
+    return 3.0f;
 }
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext

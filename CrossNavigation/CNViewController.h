@@ -29,9 +29,9 @@
                     direction:(CNDirection)direction
                      animated:(BOOL)animated;
 
-- (void)dismissViewControllerAnimated:(BOOL)animated;
+- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
+// NOTE: Don't call this method directly.
 - (void)viewIsAppearing:(CGFloat)percentComplete;
-- (void)viewIsDisappearing:(CGFloat)percentComplete;
 
 @end

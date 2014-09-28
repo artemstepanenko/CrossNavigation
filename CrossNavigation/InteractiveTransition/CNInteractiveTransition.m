@@ -35,6 +35,8 @@
 @property (nonatomic, strong) CNTransitioning *appearanceTransitioning;
 @property (nonatomic, strong) CNTransitioning *disappearanceTransitioning;
 
+@property (nonatomic, assign) CGFloat recentPercentComplete;
+
 @property (nonatomic, strong) id<UIViewControllerContextTransitioning> transitionContext;
 @property (nonatomic, strong) UIView *containerView;
 
@@ -61,6 +63,11 @@
     self.disappearanceTransitioning = [CNTransitioningFactory transitioningForDirection:direction present:NO];
 }
 
+- (CGFloat)finishingDuration
+{
+    return [CNTransitioning duration];
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
@@ -75,7 +82,7 @@
     return self.disappearanceTransitioning;
 }
 
-- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator
 {
     if (self.interactive) {
         return self;
@@ -121,16 +128,17 @@
     percentComplete = MAX(0.0f, percentComplete);
     percentComplete = MIN(1.0f, percentComplete);
     
+    self.recentPercentComplete = percentComplete;
+    
     // update fromViewController's frame
     self.fromViewController.view.frame = CGRectTransform([self.appearanceTransitioning fromViewStartFrameWithContainerFrame:containerFrame],
                                                          [self.appearanceTransitioning fromViewEndFrameWithContainerFrame:containerFrame],
-                                                         percentComplete);
+                                                         self.recentPercentComplete);
     
     // update toViewController's frame
     self.toViewController.view.frame = CGRectTransform([self.appearanceTransitioning toViewStartFrameWithContainerFrame:containerFrame],
                                                        [self.appearanceTransitioning toViewEndFrameWithContainerFrame:containerFrame],
-                                                       percentComplete);
-    
+                                                       self.recentPercentComplete);
 }
 
 - (void)finishInteractiveTransition
@@ -150,7 +158,7 @@
     CGRect containerFrame = self.containerView.bounds;
     CGAffineTransform transform = self.containerView.transform;
     
-    [UIView animateWithDuration:[CNTransitioning duration] animations:^{
+    [UIView animateWithDuration:[self finishingDuration] animations:^{
         
         if (didComplete) {
             self.fromViewController.view.frame = [self.appearanceTransitioning fromViewEndFrameWithContainerFrame:containerFrame];
