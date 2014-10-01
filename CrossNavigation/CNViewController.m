@@ -227,7 +227,7 @@
     
     [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.toViewController
                                                    toViewController:self.nextViewController.interactiveTransition.fromViewController
-                                              recentPercentComplete:self.nextViewController.interactiveTransition.recentPercentComplete];
+                                              recentPercentComplete:(1.0f - self.nextViewController.interactiveTransition.recentPercentComplete)];
 }
 
 - (CNDirection)panGestureHandler:(CNPanGestureHandler *)sender directionForOffset:(CGPoint)offset

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC36786419D776CB00E7107A /* CNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC36786319D776CB00E7107A /* CNTimer.m */; };
+		AC52DBA519DBDC0100FB8293 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC52DBA419DBDC0100FB8293 /* ViewController.m */; };
 		AC7EA50319D2D10600D9A550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50219D2D10600D9A550 /* main.m */; };
 		AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50519D2D10600D9A550 /* AppDelegate.m */; };
 		AC7EA50E19D2D10700D9A550 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7EA50D19D2D10700D9A550 /* Images.xcassets */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		AC36786219D776CB00E7107A /* CNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTimer.h; sourceTree = "<group>"; };
 		AC36786319D776CB00E7107A /* CNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTimer.m; sourceTree = "<group>"; };
+		AC52DBA319DBDC0100FB8293 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AC52DBA419DBDC0100FB8293 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AC7EA4FD19D2D10600D9A550 /* CrossNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7EA50119D2D10600D9A550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7EA50219D2D10600D9A550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				AC7EA52C19D2D71A00D9A550 /* CrossNavigation */,
 				AC7EA50419D2D10600D9A550 /* AppDelegate.h */,
 				AC7EA50519D2D10600D9A550 /* AppDelegate.m */,
+				AC52DBA319DBDC0100FB8293 /* ViewController.h */,
+				AC52DBA419DBDC0100FB8293 /* ViewController.m */,
 				AC7EA52619D2D51E00D9A550 /* Main_iPad.storyboard */,
 				AC7EA52819D2D51E00D9A550 /* Main_iPhone.storyboard */,
 				AC7EA50D19D2D10700D9A550 /* Images.xcassets */,
@@ -368,6 +373,7 @@
 				AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */,
 				AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */,
 				AC7EA55019D2D71A00D9A550 /* CNLeftTransitioning.m in Sources */,
+				AC52DBA519DBDC0100FB8293 /* ViewController.m in Sources */,
 				AC7EA55119D2D71A00D9A550 /* CNRightTransitioning.m in Sources */,
 				AC7EA54D19D2D71A00D9A550 /* CNTransitioningFactory.m in Sources */,
 				AC7EA50319D2D10600D9A550 /* main.m in Sources */,
