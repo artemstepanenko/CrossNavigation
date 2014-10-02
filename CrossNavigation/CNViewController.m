@@ -85,8 +85,12 @@
         return;
     }
     
-    [self prepareForBackTransitionInteractive:NO];
-    [self transitionWillFinishFromViewController:self toViewController:(CNViewController *)self.presentingViewController recentPercentComplete:0.0f];
+    UIViewController *previousViewController = self.presentingViewController;
+    
+    if ([previousViewController isKindOfClass:[CNViewController class]]) {
+        [self prepareForBackTransitionInteractive:NO];
+        [self transitionWillFinishFromViewController:self toViewController:(CNViewController *)previousViewController recentPercentComplete:0.0f];
+    }
     
     [super dismissViewControllerAnimated:animated completion:completion];
 }
