@@ -23,15 +23,44 @@
 
 #import "cn_direction.h"
 
+/**
+ if you inherit your view controllers from CNViewController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
+ 
+ @see CNViewController_Storyboard.h
+ */
+
 @interface CNViewController : UIViewController
 
+/**
+ Presents a view controller.
+ 
+ @param viewController The view controller to be presented. Should be an instance of CNViewController or any class inherited from CNViewController.
+ @param direction The direction of appearance the next view controller
+ @param animated Determines whether view controller will be presented animated or not
+ */
 - (void)presentViewController:(CNViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated;
 
+/**
+ Dismisses the view controller that was presented modally by the receiver.
+ 
+ This is UIViewController's method which was overridden in CNViewController. It dismisses the view controller in the opposite direction to the presentation.
+ 
+ You may call this method in case if CNViewController object was presented by a common UIViewController object, as well.
+ 
+ @param animated Determines whether view controller will be presented animated or not
+ @param completion The block to execute after the view controller is dismissed. This block has no return value and takes no parameters. You may specify nil for this parameter.
+ */
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
-// NOTE: Don't call this method directly.
+/**
+ Notifies that it's view is partly presented. This method fires during transitions.
+ 
+ @param percentComplete The percentage of the currently visible part of the screen
+ 
+ @warning don't call this method directly
+ */
 - (void)viewIsAppearing:(CGFloat)percentComplete;
 
 @end
