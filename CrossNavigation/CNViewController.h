@@ -37,10 +37,12 @@
  @param viewController The view controller to be presented. Should be an instance of CNViewController or any class inherited from CNViewController.
  @param direction The direction of appearance the next view controller
  @param animated Determines whether view controller will be presented animated or not
+ @param completion The block to execute after the presentation finishes. May be nil.
  */
 - (void)presentViewController:(CNViewController *)viewController
                     direction:(CNDirection)direction
-                     animated:(BOOL)animated;
+                     animated:(BOOL)animated
+                   completion:(void (^)(void))completion;
 
 /**
  Dismisses the view controller that was presented modally by the receiver.
@@ -50,7 +52,7 @@
  You may call this method in case if CNViewController object was presented by a common UIViewController object, as well.
  
  @param animated Determines whether view controller will be presented animated or not
- @param completion The block to execute after the view controller is dismissed. This block has no return value and takes no parameters. You may specify nil for this parameter.
+ @param completion The block to execute after the view controller is dismissed. May be nil.
  */
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 

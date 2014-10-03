@@ -69,6 +69,7 @@
 - (void)presentViewController:(CNViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated
+                   completion:(void (^)(void))completion
 {
     if ([self isTransitioning]) {
         return;
@@ -76,7 +77,7 @@
     
     [viewController prepareForTransitionToDirection:direction interactive:NO];
     [viewController transitionWillFinishFromViewController:self toViewController:viewController recentPercentComplete:0.0f];
-    [self presentViewController:viewController animated:animated completion:nil];
+    [self presentViewController:viewController animated:animated completion:completion];
 }
 
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
