@@ -73,10 +73,10 @@
  @warning don't call this method directly
  
  @param direction The direction of a transition under consideration.
- @param back If YES, a current view controller is about to be dismissed. If NO, a new view controller is about to be presented.
+ @param present If YES, a new view controller is about to be presented. If NO, the receiver is about to be dismissed.
  
  @return YES if the transition should occur, otherwise NO. Default value is YES.
  */
-- (BOOL)shouldAutotransitToDirection:(CNDirection)direction back:(BOOL)back;
+- (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present;
 
 @end

@@ -24,4 +24,10 @@
     }
 }
 
+- (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present
+{
+    // ...
+    return YES;
+}
+
 @end
