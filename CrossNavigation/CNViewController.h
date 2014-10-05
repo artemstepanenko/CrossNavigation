@@ -45,7 +45,7 @@
                    completion:(void (^)(void))completion;
 
 /**
- Dismisses the view controller that was presented modally by the receiver.
+ Dismisses a view controller that was presented modally by a receiver.
  
  This is UIViewController's method which was overridden in CNViewController. It dismisses the view controller in the opposite direction to the presentation.
  
@@ -57,12 +57,26 @@
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
 /**
- Notifies that it's view is partly presented. This method fires during transitions.
+ Notifies that it's view is partly presented.
+ Fires during transitions.
+
+ @warning don't call this method directly
  
  @param percentComplete The percentage of the currently visible part of the screen
- 
- @warning don't call this method directly
  */
 - (void)viewIsAppearing:(CGFloat)percentComplete;
+
+/**
+ Returns a Boolean value indicating whether a receiver is allowed to transit to a specified direction.
+ Fires when an appropriate gesture is detected and there is a known view controller to be shown for the detected direction.
+ 
+ @warning don't call this method directly
+ 
+ @param direction The direction of a transition under consideration.
+ @param back If YES, a current view controller is about to be dismissed. If NO, a new view controller is about to be presented.
+ 
+ @return YES if the transition should occur, otherwise NO. Default value is YES.
+ */
+- (BOOL)shouldTransitToDirection:(CNDirection)direction back:(BOOL)back;
 
 @end

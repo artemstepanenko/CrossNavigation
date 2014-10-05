@@ -96,11 +96,16 @@
     [super dismissViewControllerAnimated:animated completion:completion];
 }
 
-#pragma mark - Appearance
+#pragma mark - Event
 
 - (void)viewIsAppearing:(CGFloat)percentComplete
 {
     // default implementation does nothing
+}
+
+- (BOOL)shouldTransitToDirection:(CNDirection)direction back:(BOOL)back
+{
+    return YES;
 }
 
 #pragma mark - Storyboard
@@ -241,6 +246,7 @@
         return CNDirectionNone;
     }
     
+    CNDirection direction = CNDirectionNone;
     CNDirection backDirection = CNDirectionGetOpposite(self.direction);
     
     if (fabsf(offset.x) >= fabsf(offset.y)) {
@@ -248,32 +254,36 @@
         if (offset.x < 0) {
             
             if ((backDirection == CNDirectionRight) || self.rightID) {
-                return CNDirectionRight;
+                direction = CNDirectionRight;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         } else {
             if ((backDirection == CNDirectionLeft) || self.leftID) {
-                return CNDirectionLeft;
+                direction = CNDirectionLeft;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         }
     } else {
         
         if (offset.y < 0) {
             if ((backDirection == CNDirectionBottom) || self.bottomID) {
-                return CNDirectionBottom;
+                direction = CNDirectionBottom;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         } else {
             if ((backDirection == CNDirectionTop) || self.topID) {
-                return CNDirectionTop;
+                direction = CNDirectionTop;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         }
+    }
+    
+    if (direction != CNDirectionNone) {
+        return [self shouldTransitToDirection:direction back:(direction == backDirection)] ? direction : CNDirectionNone;
     }
     
     return CNDirectionNone;
