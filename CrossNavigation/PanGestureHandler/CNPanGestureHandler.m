@@ -103,7 +103,6 @@
         self.isFirstOffsetDetected = NO;
         self.shouldHandle = YES;
     }
-    
 }
 
 - (CGFloat)ratioFromLocation:(CGPoint)location direction:(CNDirection)direction
