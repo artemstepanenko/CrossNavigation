@@ -103,7 +103,7 @@
     // default implementation does nothing
 }
 
-- (BOOL)shouldTransitToDirection:(CNDirection)direction back:(BOOL)back
+- (BOOL)shouldAutotransitToDirection:(CNDirection)direction back:(BOOL)back
 {
     return YES;
 }
@@ -283,7 +283,7 @@
     }
     
     if (direction != CNDirectionNone) {
-        return [self shouldTransitToDirection:direction back:(direction == backDirection)] ? direction : CNDirectionNone;
+        return [self shouldAutotransitToDirection:direction back:(direction == backDirection)] ? direction : CNDirectionNone;
     }
     
     return CNDirectionNone;

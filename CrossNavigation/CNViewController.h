@@ -77,6 +77,6 @@
  
  @return YES if the transition should occur, otherwise NO. Default value is YES.
  */
-- (BOOL)shouldTransitToDirection:(CNDirection)direction back:(BOOL)back;
+- (BOOL)shouldAutotransitToDirection:(CNDirection)direction back:(BOOL)back;
 
 @end
