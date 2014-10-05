@@ -28,6 +28,8 @@
 @property (nonatomic, assign) BOOL shouldHandle;
 @property (nonatomic, assign) BOOL isFirstOffsetDetected;
 @property (nonatomic, assign) CGPoint startPanPoint;
+@property (nonatomic, assign) CGFloat recentRatio;
+@property (nonatomic, assign) BOOL recentFinish;
 @property (nonatomic, assign) CNDirection direction;
 
 @property (nonatomic, weak) id<CNPanGestureHandlerDelegate> delegate;
@@ -67,6 +69,8 @@
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         
         self.startPanPoint = location;
+        self.recentRatio = CGFLOAT_MIN;
+        self.recentFinish = NO;
         return;
     }
     
@@ -89,21 +93,25 @@
     CGFloat ratio = [self ratioFromLocation:offset direction:self.direction];
     
     if (recognizer.state == UIGestureRecognizerStateChanged) {
+
+        if (ratio != self.recentRatio) {
+            self.recentFinish = (ratio > self.recentRatio);
+            self.recentRatio = ratio;
+        }
         
         [self.delegate panGestureHandler:self didUpdateWithRatio:ratio];
         
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
         
-        if (ratio < 0.2f) {
-            [self.delegate panGestureHandlerDidCancel:self];
-        } else {
+        if (self.recentFinish) {
             [self.delegate panGestureHandlerDidFinish:self];
+        } else {
+            [self.delegate panGestureHandlerDidCancel:self];
         }
         
         self.isFirstOffsetDetected = NO;
         self.shouldHandle = YES;
     }
-    
 }
 
 - (CGFloat)ratioFromLocation:(CGPoint)location direction:(CNDirection)direction
