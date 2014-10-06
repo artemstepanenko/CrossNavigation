@@ -23,15 +23,60 @@
 
 #import "cn_direction.h"
 
+/**
+ if you inherit your view controllers from CNViewController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
+ 
+ @see CNViewController_Storyboard.h
+ */
+
 @interface CNViewController : UIViewController
 
+/**
+ Presents a view controller.
+ 
+ @param viewController The view controller to be presented. Should be an instance of CNViewController or any class inherited from CNViewController.
+ @param direction The direction of appearance the next view controller
+ @param animated Determines whether view controller will be presented animated or not
+ @param completion The block to execute after the presentation finishes. May be nil.
+ */
 - (void)presentViewController:(CNViewController *)viewController
                     direction:(CNDirection)direction
-                     animated:(BOOL)animated;
+                     animated:(BOOL)animated
+                   completion:(void (^)(void))completion;
 
+/**
+ Dismisses a view controller that was presented modally by a receiver.
+ 
+ This is UIViewController's method which was overridden in CNViewController. It dismisses the view controller in the opposite direction to the presentation.
+ 
+ You may call this method in case if CNViewController object was presented by a common UIViewController object, as well.
+ 
+ @param animated Determines whether view controller will be presented animated or not
+ @param completion The block to execute after the view controller is dismissed. May be nil.
+ */
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
-// NOTE: Don't call this method directly.
+/**
+ Notifies that it's view is partly presented.
+ Fires during transitions.
+
+ @warning don't call this method directly
+ 
+ @param percentComplete The percentage of the currently visible part of the screen
+ */
 - (void)viewIsAppearing:(CGFloat)percentComplete;
+
+/**
+ Returns a Boolean value indicating whether a receiver is allowed to transit to a specified direction.
+ Fires when an appropriate gesture is detected and there is a known view controller to be shown for the detected direction.
+ 
+ @warning don't call this method directly
+ 
+ @param direction The direction of a transition under consideration.
+ @param present If YES, a new view controller is about to be presented. If NO, the receiver is about to be dismissed.
+ 
+ @return YES if the transition should occur, otherwise NO. Default value is YES.
+ */
+- (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present;
 
 @end

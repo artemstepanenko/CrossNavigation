@@ -23,11 +23,34 @@
 
 #import "CNViewController.h"
 
+/**
+ Contains properties for storybord's identifiers of following view controllers. One - for each direction.
+ If appropriate view controller is set, user can make an interactive transition by dragging.
+ 
+ @warning storyboard identifiers must belong to instances of CNViewController or any other classes inherited from CNViewController
+ @warning view controllers must be in the same storyboard
+ */
+
 @interface CNViewController ()
 
+/**
+ Specifies the following left view controller's storyboard identifier.
+ */
 @property (nonatomic, strong) NSString *leftID;
+
+/**
+ Specifies the following top view controller's storyboard identifier.
+ */
 @property (nonatomic, strong) NSString *topID;
+
+/**
+ Specifies the following right view controller's storyboard identifier.
+ */
 @property (nonatomic, strong) NSString *rightID;
+
+/**
+ Specifies the following bottom view controller's storyboard identifier.
+ */
 @property (nonatomic, strong) NSString *bottomID;
 
 @end

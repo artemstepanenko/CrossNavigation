@@ -69,6 +69,7 @@
 - (void)presentViewController:(CNViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated
+                   completion:(void (^)(void))completion
 {
     if ([self isTransitioning]) {
         return;
@@ -76,7 +77,7 @@
     
     [viewController prepareForTransitionToDirection:direction interactive:NO];
     [viewController transitionWillFinishFromViewController:self toViewController:viewController recentPercentComplete:0.0f];
-    [self presentViewController:viewController animated:animated completion:nil];
+    [self presentViewController:viewController animated:animated completion:completion];
 }
 
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
@@ -85,17 +86,26 @@
         return;
     }
     
-    [self prepareForBackTransitionInteractive:NO];
-    [self transitionWillFinishFromViewController:self toViewController:(CNViewController *)self.presentingViewController recentPercentComplete:0.0f];
+    UIViewController *previousViewController = self.presentingViewController;
+    
+    if ([previousViewController isKindOfClass:[CNViewController class]]) {
+        [self prepareForBackTransitionInteractive:NO];
+        [self transitionWillFinishFromViewController:self toViewController:(CNViewController *)previousViewController recentPercentComplete:0.0f];
+    }
     
     [super dismissViewControllerAnimated:animated completion:completion];
 }
 
-#pragma mark - Appearance
+#pragma mark - Event
 
 - (void)viewIsAppearing:(CGFloat)percentComplete
 {
     // default implementation does nothing
+}
+
+- (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present
+{
+    return YES;
 }
 
 #pragma mark - Storyboard
@@ -227,7 +237,7 @@
     
     [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.toViewController
                                                    toViewController:self.nextViewController.interactiveTransition.fromViewController
-                                              recentPercentComplete:self.nextViewController.interactiveTransition.recentPercentComplete];
+                                              recentPercentComplete:(1.0f - self.nextViewController.interactiveTransition.recentPercentComplete)];
 }
 
 - (CNDirection)panGestureHandler:(CNPanGestureHandler *)sender directionForOffset:(CGPoint)offset
@@ -236,6 +246,7 @@
         return CNDirectionNone;
     }
     
+    CNDirection direction = CNDirectionNone;
     CNDirection backDirection = CNDirectionGetOpposite(self.direction);
     
     if (fabsf(offset.x) >= fabsf(offset.y)) {
@@ -243,32 +254,36 @@
         if (offset.x < 0) {
             
             if ((backDirection == CNDirectionRight) || self.rightID) {
-                return CNDirectionRight;
+                direction = CNDirectionRight;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         } else {
             if ((backDirection == CNDirectionLeft) || self.leftID) {
-                return CNDirectionLeft;
+                direction = CNDirectionLeft;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         }
     } else {
         
         if (offset.y < 0) {
             if ((backDirection == CNDirectionBottom) || self.bottomID) {
-                return CNDirectionBottom;
+                direction = CNDirectionBottom;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         } else {
             if ((backDirection == CNDirectionTop) || self.topID) {
-                return CNDirectionTop;
+                direction = CNDirectionTop;
             } else {
-                return CNDirectionNone;
+                direction = CNDirectionNone;
             }
         }
+    }
+    
+    if (direction != CNDirectionNone) {
+        return [self shouldAutotransitToDirection:direction present:!(direction == backDirection)] ? direction : CNDirectionNone;
     }
     
     return CNDirectionNone;
