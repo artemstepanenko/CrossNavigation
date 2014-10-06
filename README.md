@@ -11,7 +11,21 @@ XXViewController *nextViewController = ...;
 [self presentViewController:nextViewController direction:CNDirectionTop animated:YES];
 ```
 
-If at least two controllers are in the stack, users can drag back to return interactively to the previous screen (like UINavigationController).
+If at least two controllers are in the stack, users can drag back to return interactively to the previous screen (like UINavigationController). Or you can do the same in code (but obviously without interactivity):
+
+``` objc
+[nextViewController dismissViewControllerAnimated:YES completion:^{ ... }];
+```
+
+This is UIViewController's method which was overridden.
+
+Implement
+
+``` objc
+- (void)viewIsAppearing:(CGFloat)percentComplete { ... }
+```
+
+method in CNViewController subclass to be notified what is the current rate of a visible part of the screen. This method fires during transitions (both, interactive and noninteractive).
 
 ![](https://github.com/artemstepanenko/CrossNavigation/blob/master/demo_present.gif)
 
@@ -36,8 +50,14 @@ This approach allows users to move forward by dragging, but all the controllers 
 
 ## Integration
 
-All you need is CrossNavigation directory. Just copy it to your project.
-(CocoaPod is comming soon...)
+All you need is CrossNavigation directory. Just copy it to your project and import "CNViewController.h" or "CNViewController_Storyboard.h" (if you're going to use storyboard part of the functionality, as well), nothing else.
+
+## Podfile
+
+```
+platform :ios, '7.0'
+pod "CrossNavigation"
+```
 
 ## Requirements
 
