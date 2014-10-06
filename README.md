@@ -64,3 +64,7 @@ pod "CrossNavigation"
 - iOS 7.0+
 - UIKit framework
 - Foundation framework
+
+## P.S.
+
+I'm really interested to know, what do you think about this library. If you have complains or suggestions, please, send them on my e-mail: artem.stepanenko.1@gmail.com. Thank you.
