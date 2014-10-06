@@ -51,7 +51,13 @@ This approach allows users to move forward by dragging, but all the controllers 
 ## Integration
 
 All you need is CrossNavigation directory. Just copy it to your project and import "CNViewController.h" or "CNViewController_Storyboard.h" (if you're going to use storyboard part of the functionality, as well), nothing else.
-(CocoaPod is comming soon...)
+
+## Podfile
+
+```
+platform :ios, '7.0'
+pod "CrossNavigation"
+```
 
 ## Requirements
 
