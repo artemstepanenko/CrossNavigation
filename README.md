@@ -65,6 +65,10 @@ pod "CrossNavigation"
 - UIKit framework
 - Foundation framework
 
+## TODO
+
+- Support partial screen transitions (like a side screen)
+
 ## P.S.
 
 I'm really interested to know, what do you think about this library. If you have a complaint, a suggestion, or a question, please, send it on my e-mail: artem.stepanenko.1@gmail.com. Thank you.
