@@ -68,6 +68,7 @@ pod "CrossNavigation"
 ## TODO
 
 - Support partial screen transitions (like a side screen)
+- Segues support
 
 ## P.S.
 
