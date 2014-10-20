@@ -85,6 +85,7 @@ pod "CrossNavigation"
 
 ## TODO
 
+- Port the library to Swift
 - Support partial screen transitions (like a side screen)
 - <s>Segues support</s>
 
