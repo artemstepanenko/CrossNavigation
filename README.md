@@ -19,13 +19,22 @@ If at least two controllers are in the stack, users can drag back to return inte
 
 This is UIViewController's method which was overridden.
 
-Implement
+- Override
 
 ``` objc
 - (void)viewIsAppearing:(CGFloat)percentComplete { ... }
 ```
 
 method in CNViewController subclass to be notified what is the current rate of a visible part of the screen. This method fires during transitions (both, interactive and noninteractive).
+
+- Override
+
+``` objc
+- (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present { ... }
+```
+
+to take a control over interactive transitions. You may allow them or prohibit depends on your app's logic.
+present parameter is YES if a considered transition will lead to an appearance of a new view controller in a stack. If NO, this is a back transition.
 
 ![](https://github.com/artemstepanenko/CrossNavigation/blob/master/demo_present.gif)
 
@@ -38,6 +47,15 @@ You can specify all transitions in storyboard, as well.
 Values are storyboard IDs of view controllers. And keys are determined in CNViewController_Storyboard.h. (Also you can set them in code.)
 
 This approach allows users to move forward by dragging, but all the controllers must be created in the **same** storyboard.
+
+### Segues
+
+If you use a storyboard, you can easily create a segue between two CNViewController-s. When you drop a connection on a destination view controller, you'll see a popup with a list of available segues. bottom (CNBottomSegue), left (CNLeftSegue), right (CNRightSegue), and top (CNLeftSegue) come from CrossNavigation library, but all others are available too. You won't get a crash if you made a common modal transition from CNViewController. But you will, if you made one of those four transitions (bottom, left, right, or top) between view controllers which are not actually objects of CNViewController class (or of it's subclasses), it's required for both controllers.
+
+![](https://github.com/artemstepanenko/CrossNavigation/blob/feature/segue/README%20Graphics/demo_segue_connecting.png)
+
+![](https://github.com/artemstepanenko/CrossNavigation/blob/feature/segue/README%20Graphics/demo_segue_inspector.png)
+
 
 ### Restrictions
 
