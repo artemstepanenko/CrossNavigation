@@ -494,7 +494,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Y4B-nx-Tat" kind="custom" customClass="CNBottomSegue" id="hjs-Hj-mxi"/>
+                                    <segue destination="Y4B-nx-Tat" kind="custom" customClass="CNBottomSegue" id="TQD-yP-zsn"/>
                                 </connections>
                             </button>
                         </subviews>
