@@ -86,7 +86,7 @@ pod "CrossNavigation"
 ## TODO
 
 - Support partial screen transitions (like a side screen)
-- Segues support
+- <s>Segues support</s>
 
 ## P.S.
 
