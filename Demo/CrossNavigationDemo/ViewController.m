@@ -30,4 +30,9 @@
     return YES;
 }
 
+- (IBAction)exit:(id)sender
+{
+    int i = 3;
+}
+
 @end

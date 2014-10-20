@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -453,30 +453,50 @@
                                 <rect key="frame" x="151" y="545" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DfJ-ru-a4t">
-                                <rect key="frame" x="23" y="269" width="46" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7WN-GT-JAy">
-                                <rect key="frame" x="238" y="269" width="59" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A ton of them" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="35o-9E-uzD">
-                                <rect key="frame" x="86" y="519" width="149" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No more than one" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="81T-Qz-FcC">
-                                <rect key="frame" x="61" y="36" width="198" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4rX-tr-dLf">
+                                <rect key="frame" x="61" y="30" width="198" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="No more than one">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ydp-6A-16P" kind="custom" customClass="CNTopSegue" id="lHL-B8-66T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bw7-xa-9j0">
+                                <rect key="frame" x="23" y="263" width="46" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="One">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ObG-hk-B1u" kind="custom" customClass="CNLeftSegue" id="8kG-lh-grt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5uo-a0-37u">
+                                <rect key="frame" x="238" y="263" width="59" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="None">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="D9t-2s-tAP" kind="custom" customClass="CNRightSegue" id="AQH-Qs-Pi6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fe6-GJ-Uq1">
+                                <rect key="frame" x="86" y="513" width="149" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="A ton of them">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Y4B-nx-Tat" kind="custom" customClass="CNBottomSegue" id="hjs-Hj-mxi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -487,14 +507,14 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="alone"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outletCollection property="navigationSignViews" destination="81T-Qz-FcC" id="Vc1-kw-ru6"/>
                         <outletCollection property="navigationSignViews" destination="yjx-Bh-i6r" id="mGk-Re-Zz2"/>
                         <outletCollection property="navigationSignViews" destination="6xL-8h-C36" id="CAE-3H-MSJ"/>
-                        <outletCollection property="navigationSignViews" destination="DfJ-ru-a4t" id="73p-Al-frI"/>
-                        <outletCollection property="navigationSignViews" destination="7WN-GT-JAy" id="Sj5-eW-WDG"/>
                         <outletCollection property="navigationSignViews" destination="W4M-94-0zb" id="TtW-r8-8aG"/>
-                        <outletCollection property="navigationSignViews" destination="35o-9E-uzD" id="dig-FN-qX7"/>
                         <outletCollection property="navigationSignViews" destination="R2q-15-gPg" id="0vw-3M-mHB"/>
+                        <outletCollection property="navigationSignViews" destination="4rX-tr-dLf" id="t0J-Bm-Cqk"/>
+                        <outletCollection property="navigationSignViews" destination="bw7-xa-9j0" id="q7V-fS-Nq2"/>
+                        <outletCollection property="navigationSignViews" destination="5uo-a0-37u" id="4a4-gj-CmL"/>
+                        <outletCollection property="navigationSignViews" destination="Fe6-GJ-Uq1" id="1oi-Aq-nsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJv-Aj-dCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
