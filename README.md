@@ -2,6 +2,18 @@
 
 if you inherit your view controllers from CNViewController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
 
+- [Usage](#usage)
+ - [You can make a transition in code](#you-can-make-a-transition-in-code)
+ - [Storyboard](#storyboard)
+ - [Segues](#segues)
+ - [Restrictions](#restrictions)
+- [Demo](#demo)
+- [Integration](#integration)
+ - [Podfile](#podfile)
+- [Requirements](#requirements)
+- [TODO](#todo)
+- [P.S.](#ps)
+
 ## Usage
 
 ### You can make a transition in code
