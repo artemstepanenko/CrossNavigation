@@ -26,7 +26,7 @@
 @interface CNPanGestureHandler ()
 
 @property (nonatomic, assign) BOOL shouldHandle;
-@property (nonatomic, assign) BOOL isFirstOffsetDetected;
+@property (nonatomic, assign) BOOL isDirectionDetected;
 @property (nonatomic, assign) CGPoint startPanPoint;
 @property (nonatomic, assign) CGFloat recentRatio;
 @property (nonatomic, assign) BOOL recentFinish;
@@ -44,7 +44,7 @@
     
     if (self) {
         self.shouldHandle = YES;
-        self.isFirstOffsetDetected = NO;
+        self.isDirectionDetected = NO;
         self.delegate = delegate;
     }
     
@@ -53,19 +53,23 @@
 
 - (void)userDidPan:(UIPanGestureRecognizer *)recognizer
 {
+    // 0. if direction is not available, we don't have to handle it
     if (!self.shouldHandle) {
         
+        // wait for the end of a gesture to unavailable direction and return flags to an initial state
         if (recognizer.state == UIGestureRecognizerStateEnded) {
             
-            self.isFirstOffsetDetected = NO;
+            self.isDirectionDetected = NO;
             self.shouldHandle = YES;
         }
         
         return;
     }
     
+    // save current pan location
     CGPoint location = [self.delegate panGestureHandler:self locationOfGesture:recognizer];
     
+    // reset a start point, a ration and a 'finish' flag
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         
         self.startPanPoint = location;
@@ -74,42 +78,56 @@
         return;
     }
     
+    // save a current gesture offset
     CGPoint offset = CGPointMake(location.x - self.startPanPoint.x, location.y - self.startPanPoint.y);
     
-    if (!self.isFirstOffsetDetected) {
+    // when an offset is detected for the first time, we need to calculate direction and find out if it's available
+    if (!self.isDirectionDetected) {
         
-        self.isFirstOffsetDetected = YES;
+        self.isDirectionDetected = YES;
         self.direction = [self.delegate panGestureHandler:self directionForOffset:offset];
         
         if (self.direction == CNDirectionNone) {
+            // direction is unavailable, so we set a flag to prevent further handling
             self.shouldHandle = NO;
         } else {
+            // 1. direction is available, notify delegate that handling is started
             [self.delegate panGestureHandler:self didStartForDirection:self.direction];
         }
         
         return;
     }
     
+    // calculate ratio depends on a given direction and the gesture offset
     CGFloat ratio = [self ratioFromLocation:offset direction:self.direction];
     
     if (recognizer.state == UIGestureRecognizerStateChanged) {
 
         if (ratio != self.recentRatio) {
+            
+            // determine a sign (positive or negative) of a ratio change
+            // if it's positive and gesture will finish within the next update, a transition would finish,
+            // otherwise it would cancel
             self.recentFinish = (ratio > self.recentRatio);
+            
+            // this is a ratio of the transition
             self.recentRatio = ratio;
         }
         
+        // 2. inform the delegate that the ratio is changed
         [self.delegate panGestureHandler:self didUpdateWithRatio:ratio];
         
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
         
+        // 3. send finish or cancel event to the delegate depends on the flag
         if (self.recentFinish) {
             [self.delegate panGestureHandlerDidFinish:self];
         } else {
             [self.delegate panGestureHandlerDidCancel:self];
         }
         
-        self.isFirstOffsetDetected = NO;
+        // return flags to an initial state
+        self.isDirectionDetected = NO;
         self.shouldHandle = YES;
     }
 }
