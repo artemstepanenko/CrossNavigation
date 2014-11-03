@@ -77,6 +77,7 @@
     
     [viewController prepareForTransitionToDirection:direction interactive:NO];
     [viewController transitionWillFinishFromViewController:self toViewController:viewController recentPercentComplete:0.0f];
+    
     [self presentViewController:viewController animated:animated completion:completion];
 }
 
