@@ -26,7 +26,7 @@
 @interface CNPanGestureHandler ()
 
 @property (nonatomic, assign) BOOL shouldHandle;
-@property (nonatomic, assign) BOOL isFirstOffsetDetected;
+@property (nonatomic, assign) BOOL isDirectionDetected;
 @property (nonatomic, assign) CGPoint startPanPoint;
 @property (nonatomic, assign) CGFloat recentRatio;
 @property (nonatomic, assign) BOOL recentFinish;
@@ -43,9 +43,8 @@
     self = [super init];
     
     if (self) {
-        self.shouldHandle = YES;
-        self.isFirstOffsetDetected = NO;
         self.delegate = delegate;
+        [self resetStateFlags];
     }
     
     return self;
@@ -53,65 +52,96 @@
 
 - (void)userDidPan:(UIPanGestureRecognizer *)recognizer
 {
+    // checks if this event should be handled
     if (!self.shouldHandle) {
-        
+
+        // check if unhandled gesture ends
         if (recognizer.state == UIGestureRecognizerStateEnded) {
-            
-            self.isFirstOffsetDetected = NO;
-            self.shouldHandle = YES;
+            [self resetStateFlags];
         }
         
         return;
     }
     
+    // calculate gesture offset
     CGPoint location = [self.delegate panGestureHandler:self locationOfGesture:recognizer];
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        
         self.startPanPoint = location;
-        self.recentRatio = CGFLOAT_MIN;
-        self.recentFinish = NO;
         return;
     }
     
     CGPoint offset = CGPointMake(location.x - self.startPanPoint.x, location.y - self.startPanPoint.y);
     
-    if (!self.isFirstOffsetDetected) {
+    // gets direction by offset, finds out if this direction should be handled
+    if (!self.isDirectionDetected) {
         
-        self.isFirstOffsetDetected = YES;
+        self.isDirectionDetected = YES;
         self.direction = [self.delegate panGestureHandler:self directionForOffset:offset];
         
         if (self.direction == CNDirectionNone) {
             self.shouldHandle = NO;
         } else {
-            [self.delegate panGestureHandler:self didStartForDirection:self.direction];
+            [self notifyDelegateAboutStart];
         }
         
         return;
     }
     
+    // calculates ratio
     CGFloat ratio = [self ratioFromLocation:offset direction:self.direction];
     
     if (recognizer.state == UIGestureRecognizerStateChanged) {
 
-        if (ratio != self.recentRatio) {
-            self.recentFinish = (ratio > self.recentRatio);
-            self.recentRatio = ratio;
-        }
-        
-        [self.delegate panGestureHandler:self didUpdateWithRatio:ratio];
-        
-    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
-        
-        if (self.recentFinish) {
-            [self.delegate panGestureHandlerDidFinish:self];
-        } else {
-            [self.delegate panGestureHandlerDidCancel:self];
-        }
-        
-        self.isFirstOffsetDetected = NO;
-        self.shouldHandle = YES;
+        [self updateRatio:ratio];
+        [self notifyDelegateAboutUpdate];
+        return;
     }
+    
+    // finish handling
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        
+        [self notifyDelegateAboutFinishOrCancel];
+        [self resetStateFlags];
+    }
+}
+
+#pragma mark - Private
+
+- (void)updateRatio:(CGFloat)ratio
+{
+    if (ratio != self.recentRatio) {
+        
+        self.recentFinish = (ratio > self.recentRatio);
+        self.recentRatio = ratio;
+    }
+}
+
+- (void)notifyDelegateAboutStart
+{
+    [self.delegate panGestureHandler:self didStartForDirection:self.direction];
+}
+
+- (void)notifyDelegateAboutUpdate
+{
+    [self.delegate panGestureHandler:self didUpdateWithRatio:self.recentRatio];
+}
+
+- (void)notifyDelegateAboutFinishOrCancel
+{
+    if (self.recentFinish) {
+        [self.delegate panGestureHandlerDidFinish:self];
+    } else {
+        [self.delegate panGestureHandlerDidCancel:self];
+    }
+}
+
+- (void)resetStateFlags
+{
+    self.isDirectionDetected = NO;
+    self.shouldHandle = YES;
+    self.recentRatio = CGFLOAT_MIN;
+    self.recentFinish = NO;
 }
 
 - (CGFloat)ratioFromLocation:(CGPoint)location direction:(CNDirection)direction
