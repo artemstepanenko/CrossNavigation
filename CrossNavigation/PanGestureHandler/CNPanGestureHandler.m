@@ -43,9 +43,8 @@
     self = [super init];
     
     if (self) {
-        self.shouldHandle = YES;
-        self.isDirectionDetected = NO;
         self.delegate = delegate;
+        [self resetStateFlags];
     }
     
     return self;
@@ -53,83 +52,96 @@
 
 - (void)userDidPan:(UIPanGestureRecognizer *)recognizer
 {
-    // 0. if direction is not available, we don't have to handle it
+    // checks if this event should be handled
     if (!self.shouldHandle) {
-        
-        // wait for the end of a gesture to unavailable direction and return flags to an initial state
+
+        // check if unhandled gesture ends
         if (recognizer.state == UIGestureRecognizerStateEnded) {
-            
-            self.isDirectionDetected = NO;
-            self.shouldHandle = YES;
+            [self resetStateFlags];
         }
         
         return;
     }
     
-    // save current pan location
+    // calculate gesture offset
     CGPoint location = [self.delegate panGestureHandler:self locationOfGesture:recognizer];
     
-    // reset a start point, a ration and a 'finish' flag
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        
         self.startPanPoint = location;
-        self.recentRatio = CGFLOAT_MIN;
-        self.recentFinish = NO;
         return;
     }
     
-    // save a current gesture offset
     CGPoint offset = CGPointMake(location.x - self.startPanPoint.x, location.y - self.startPanPoint.y);
     
-    // when an offset is detected for the first time, we need to calculate direction and find out if it's available
+    // gets direction by offset, finds out if this direction should be handled
     if (!self.isDirectionDetected) {
         
         self.isDirectionDetected = YES;
         self.direction = [self.delegate panGestureHandler:self directionForOffset:offset];
         
         if (self.direction == CNDirectionNone) {
-            // direction is unavailable, so we set a flag to prevent further handling
             self.shouldHandle = NO;
         } else {
-            // 1. direction is available, notify delegate that handling is started
-            [self.delegate panGestureHandler:self didStartForDirection:self.direction];
+            [self notifyDelegateAboutStart];
         }
         
         return;
     }
     
-    // calculate ratio depends on a given direction and the gesture offset
+    // calculates ratio
     CGFloat ratio = [self ratioFromLocation:offset direction:self.direction];
     
     if (recognizer.state == UIGestureRecognizerStateChanged) {
 
-        if (ratio != self.recentRatio) {
-            
-            // determine a sign (positive or negative) of a ratio change
-            // if it's positive and gesture will finish within the next update, a transition would finish,
-            // otherwise it would cancel
-            self.recentFinish = (ratio > self.recentRatio);
-            
-            // this is a ratio of the transition
-            self.recentRatio = ratio;
-        }
-        
-        // 2. inform the delegate that the ratio is changed
-        [self.delegate panGestureHandler:self didUpdateWithRatio:ratio];
-        
-    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
-        
-        // 3. send finish or cancel event to the delegate depends on the flag
-        if (self.recentFinish) {
-            [self.delegate panGestureHandlerDidFinish:self];
-        } else {
-            [self.delegate panGestureHandlerDidCancel:self];
-        }
-        
-        // return flags to an initial state
-        self.isDirectionDetected = NO;
-        self.shouldHandle = YES;
+        [self updateRatio:ratio];
+        [self notifyDelegateAboutUpdate];
+        return;
     }
+    
+    // finish handling
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        
+        [self notifyDelegateAboutFinishOrCancel];
+        [self resetStateFlags];
+    }
+}
+
+#pragma mark - Private
+
+- (void)updateRatio:(CGFloat)ratio
+{
+    if (ratio != self.recentRatio) {
+        
+        self.recentFinish = (ratio > self.recentRatio);
+        self.recentRatio = ratio;
+    }
+}
+
+- (void)notifyDelegateAboutStart
+{
+    [self.delegate panGestureHandler:self didStartForDirection:self.direction];
+}
+
+- (void)notifyDelegateAboutUpdate
+{
+    [self.delegate panGestureHandler:self didUpdateWithRatio:self.recentRatio];
+}
+
+- (void)notifyDelegateAboutFinishOrCancel
+{
+    if (self.recentFinish) {
+        [self.delegate panGestureHandlerDidFinish:self];
+    } else {
+        [self.delegate panGestureHandlerDidCancel:self];
+    }
+}
+
+- (void)resetStateFlags
+{
+    self.isDirectionDetected = NO;
+    self.shouldHandle = YES;
+    self.recentRatio = CGFLOAT_MIN;
+    self.recentFinish = NO;
 }
 
 - (CGFloat)ratioFromLocation:(CGPoint)location direction:(CNDirection)direction
