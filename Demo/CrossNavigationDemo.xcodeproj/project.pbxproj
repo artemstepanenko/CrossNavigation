@@ -29,6 +29,7 @@
 		AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54419D2D71A00D9A550 /* CNTopTransitioning.m */; };
 		AC7EA55319D2D71A00D9A550 /* CNPanGestureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54719D2D71A00D9A550 /* CNPanGestureHandler.m */; };
 		ACCDDE8C19F592B2005693F3 /* CNSeguePerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCDDE8B19F592B2005693F3 /* CNSeguePerformer.m */; };
+		ACECFDB51A09852A006B1246 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACECFDB41A09852A006B1246 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		AC7EA55419D2D8C300D9A550 /* CrossNavigationDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrossNavigationDemo-Prefix.pch"; sourceTree = "<group>"; };
 		ACCDDE8A19F592B2005693F3 /* CNSeguePerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSeguePerformer.h; sourceTree = "<group>"; };
 		ACCDDE8B19F592B2005693F3 /* CNSeguePerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSeguePerformer.m; sourceTree = "<group>"; };
+		ACECFDB31A09852A006B1246 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		ACECFDB41A09852A006B1246 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,13 +190,11 @@
 		AC7EA4FF19D2D10600D9A550 /* CrossNavigationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ACECFDB81A0985C1006B1246 /* AppDelegate */,
+				ACECFDB71A09856D006B1246 /* TableViewController */,
+				ACECFDB61A098532006B1246 /* ViewController */,
 				AC7EA52C19D2D71A00D9A550 /* CrossNavigation */,
-				AC7EA50419D2D10600D9A550 /* AppDelegate.h */,
-				AC7EA50519D2D10600D9A550 /* AppDelegate.m */,
-				AC52DBA319DBDC0100FB8293 /* ViewController.h */,
-				AC52DBA419DBDC0100FB8293 /* ViewController.m */,
-				AC7EA52619D2D51E00D9A550 /* Main_iPad.storyboard */,
-				AC7EA52819D2D51E00D9A550 /* Main_iPhone.storyboard */,
+				ACECFDB91A0985D9006B1246 /* Storyboard */,
 				AC7EA50D19D2D10700D9A550 /* Images.xcassets */,
 				AC7EA50019D2D10600D9A550 /* Supporting Files */,
 			);
@@ -339,6 +340,42 @@
 			path = Performer;
 			sourceTree = "<group>";
 		};
+		ACECFDB61A098532006B1246 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC52DBA319DBDC0100FB8293 /* ViewController.h */,
+				AC52DBA419DBDC0100FB8293 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		ACECFDB71A09856D006B1246 /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ACECFDB31A09852A006B1246 /* TableViewController.h */,
+				ACECFDB41A09852A006B1246 /* TableViewController.m */,
+			);
+			name = TableViewController;
+			sourceTree = "<group>";
+		};
+		ACECFDB81A0985C1006B1246 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EA50419D2D10600D9A550 /* AppDelegate.h */,
+				AC7EA50519D2D10600D9A550 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		ACECFDB91A0985D9006B1246 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EA52619D2D51E00D9A550 /* Main_iPad.storyboard */,
+				AC7EA52819D2D51E00D9A550 /* Main_iPhone.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,6 +492,7 @@
 				AC7EA54D19D2D71A00D9A550 /* CNTransitioningFactory.m in Sources */,
 				AC7EA50319D2D10600D9A550 /* main.m in Sources */,
 				AC789FE719F57D8F00D1DB29 /* CNRightSegue.m in Sources */,
+				ACECFDB51A09852A006B1246 /* TableViewController.m in Sources */,
 				AC7EA54F19D2D71A00D9A550 /* CNTransitioning.m in Sources */,
 				AC7EA54C19D2D71A00D9A550 /* CNInteractiveTransition.m in Sources */,
 			);
