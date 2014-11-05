@@ -10,49 +10,49 @@ import UIKit
 
 enum CNDirection {
     
-    case CNDirectionNone
-    case CNDirectionLeft
-    case CNDirectionTop
-    case CNDirectionRight
-    case CNDirectionBottom
+    case None
+    case Left
+    case Top
+    case Right
+    case Bottom
     
-    func CNDirectionGetOpposite() -> CNDirection {
+    func getOpposite() -> CNDirection {
         
-        var opposite: CNDirection = .CNDirectionNone
+        var opposite: CNDirection = .None
         
         switch self {
-        case .CNDirectionLeft:
-            opposite = .CNDirectionRight
-        case .CNDirectionRight:
-            opposite = .CNDirectionLeft
-        case .CNDirectionTop:
-            opposite = .CNDirectionBottom
-        case .CNDirectionBottom:
-            opposite = .CNDirectionTop
+        case .Left:
+            opposite = .Right
+        case .Right:
+            opposite = .Left
+        case .Top:
+            opposite = .Bottom
+        case .Bottom:
+            opposite = .Top
         default:
-            opposite = .CNDirectionNone
+            opposite = .None
         }
         
         return opposite
     }
     
-    func CNDirectionOppositeToDirection(direction: CNDirection) -> Bool {
+    func oppositeToDirection(direction: CNDirection) -> Bool {
     
-        let oppositeDirection = direction.CNDirectionGetOpposite()
+        let oppositeDirection = direction.getOpposite()
         
-        if self == .CNDirectionNone || oppositeDirection == .CNDirectionNone {
+        if self == .None || oppositeDirection == .None {
             return false
         }
         
         return self == oppositeDirection
     }
     
-    func CNDirectionIsHorizontal() -> Bool {
-        return self == .CNDirectionLeft || self == .CNDirectionRight
+    func isHorizontal() -> Bool {
+        return self == .Left || self == .Right
     }
     
-    func CNDirectionIsVertical() -> Bool {
-        return self == .CNDirectionTop || self == .CNDirectionBottom
+    func isVertical() -> Bool {
+        return self == .Top || self == .Bottom
     }
     
 }
