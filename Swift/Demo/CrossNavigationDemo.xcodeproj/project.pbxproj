@@ -15,6 +15,7 @@
 		DFAFDAEE1A0A629A00083455 /* CrossNavigationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDAED1A0A629A00083455 /* CrossNavigationDemoTests.swift */; };
 		DFAFDAFE1A0A63E500083455 /* cn_direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDAFD1A0A63E500083455 /* cn_direction.swift */; };
 		DFAFDB001A0A686F00083455 /* cn_utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDAFF1A0A686F00083455 /* cn_utils.swift */; };
+		DFAFDB021A0A6BE800083455 /* CNTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB011A0A6BE800083455 /* CNTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		DFAFDAED1A0A629A00083455 /* CrossNavigationDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossNavigationDemoTests.swift; sourceTree = "<group>"; };
 		DFAFDAFD1A0A63E500083455 /* cn_direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cn_direction.swift; sourceTree = "<group>"; };
 		DFAFDAFF1A0A686F00083455 /* cn_utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cn_utils.swift; sourceTree = "<group>"; };
+		DFAFDB011A0A6BE800083455 /* CNTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		DFAFDAFB1A0A63C400083455 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				DFAFDB011A0A6BE800083455 /* CNTimer.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				DFAFDAFE1A0A63E500083455 /* cn_direction.swift in Sources */,
 				DFAFDADA1A0A629A00083455 /* ViewController.swift in Sources */,
 				DFAFDB001A0A686F00083455 /* cn_utils.swift in Sources */,
+				DFAFDB021A0A6BE800083455 /* CNTimer.swift in Sources */,
 				DFAFDAD81A0A629A00083455 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
