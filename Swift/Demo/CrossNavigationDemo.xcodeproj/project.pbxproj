@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF60B9041A0BAC2C00EC35E5 /* CNLeftTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9031A0BAC2C00EC35E5 /* CNLeftTransitioning.swift */; };
+		DF60B9061A0BAC9D00EC35E5 /* CNRightTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9051A0BAC9D00EC35E5 /* CNRightTransitioning.swift */; };
+		DF60B9081A0BACF900EC35E5 /* CNTopTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9071A0BACF900EC35E5 /* CNTopTransitioning.swift */; };
 		DFAFDAD81A0A629A00083455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDAD71A0A629A00083455 /* AppDelegate.swift */; };
 		DFAFDADA1A0A629A00083455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDAD91A0A629A00083455 /* ViewController.swift */; };
 		DFAFDADD1A0A629A00083455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFAFDADB1A0A629A00083455 /* Main.storyboard */; };
@@ -18,6 +21,11 @@
 		DFAFDB021A0A6BE800083455 /* CNTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB011A0A6BE800083455 /* CNTimer.swift */; };
 		DFAFDB041A0A7ABB00083455 /* CNPanGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB031A0A7ABB00083455 /* CNPanGestureHandler.swift */; };
 		DFAFDB081A0A7BAB00083455 /* CNPanGestureHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB071A0A7BAB00083455 /* CNPanGestureHandlerDelegate.swift */; };
+		DFAFDB101A0AABA100083455 /* CNInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB0F1A0AABA100083455 /* CNInteractiveTransition.swift */; };
+		DFAFDB121A0AAEDC00083455 /* CNTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB111A0AAEDC00083455 /* CNTransitioning.swift */; };
+		DFAFDB141A0AAF2600083455 /* CNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB131A0AAF2600083455 /* CNViewController.swift */; };
+		DFAFDB161A0AB18100083455 /* CNTranstioningFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB151A0AB18000083455 /* CNTranstioningFactory.swift */; };
+		DFAFDB181A0AB22800083455 /* CNBottomTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAFDB171A0AB22800083455 /* CNBottomTransitioning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF60B9031A0BAC2C00EC35E5 /* CNLeftTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLeftTransitioning.swift; sourceTree = "<group>"; };
+		DF60B9051A0BAC9D00EC35E5 /* CNRightTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNRightTransitioning.swift; sourceTree = "<group>"; };
+		DF60B9071A0BACF900EC35E5 /* CNTopTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTopTransitioning.swift; sourceTree = "<group>"; };
 		DFAFDAD21A0A629A00083455 /* CrossNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFAFDAD61A0A629A00083455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFAFDAD71A0A629A00083455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +57,12 @@
 		DFAFDB011A0A6BE800083455 /* CNTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTimer.swift; sourceTree = "<group>"; };
 		DFAFDB031A0A7ABB00083455 /* CNPanGestureHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNPanGestureHandler.swift; sourceTree = "<group>"; };
 		DFAFDB071A0A7BAB00083455 /* CNPanGestureHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNPanGestureHandlerDelegate.swift; sourceTree = "<group>"; };
+		DFAFDB0F1A0AABA100083455 /* CNInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CNInteractiveTransition.swift; path = Transioning/CNInteractiveTransition.swift; sourceTree = "<group>"; };
+		DFAFDB111A0AAEDC00083455 /* CNTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTransitioning.swift; sourceTree = "<group>"; };
+		DFAFDB131A0AAF2600083455 /* CNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNViewController.swift; sourceTree = "<group>"; };
+		DFAFDB151A0AB18000083455 /* CNTranstioningFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTranstioningFactory.swift; sourceTree = "<group>"; };
+		DFAFDB171A0AB22800083455 /* CNBottomTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNBottomTransitioning.swift; sourceTree = "<group>"; };
+		DFAFDB191A0AB95E00083455 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +111,7 @@
 				DFAFDADE1A0A629A00083455 /* Images.xcassets */,
 				DFAFDAE01A0A629A00083455 /* LaunchScreen.xib */,
 				DFAFDAD51A0A629A00083455 /* Supporting Files */,
+				DFAFDB191A0AB95E00083455 /* MyPlayground.playground */,
 			);
 			path = CrossNavigationDemo;
 			sourceTree = "<group>";
@@ -126,6 +144,7 @@
 		DFAFDAF71A0A63C400083455 /* CrossNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				DFAFDB131A0AAF2600083455 /* CNViewController.swift */,
 				DFAFDAFA1A0A63C400083455 /* Segue */,
 				DFAFDAF81A0A63C400083455 /* InteractiveTransition */,
 				DFAFDAF91A0A63C400083455 /* PanGestureHandler */,
@@ -139,6 +158,9 @@
 		DFAFDAF81A0A63C400083455 /* InteractiveTransition */ = {
 			isa = PBXGroup;
 			children = (
+				DFAFDB0F1A0AABA100083455 /* CNInteractiveTransition.swift */,
+				DFAFDB091A0AAB4800083455 /* Factory */,
+				DFAFDB0A1A0AAB4800083455 /* Transioning */,
 			);
 			path = InteractiveTransition;
 			sourceTree = "<group>";
@@ -174,6 +196,58 @@
 				DFAFDAFF1A0A686F00083455 /* cn_utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DFAFDB091A0AAB4800083455 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				DFAFDB151A0AB18000083455 /* CNTranstioningFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		DFAFDB0A1A0AAB4800083455 /* Transioning */ = {
+			isa = PBXGroup;
+			children = (
+				DFAFDB111A0AAEDC00083455 /* CNTransitioning.swift */,
+				DFAFDB0B1A0AAB7100083455 /* Bottom */,
+				DFAFDB0C1A0AAB7100083455 /* Left */,
+				DFAFDB0D1A0AAB7100083455 /* Right */,
+				DFAFDB0E1A0AAB7100083455 /* Top */,
+			);
+			path = Transioning;
+			sourceTree = "<group>";
+		};
+		DFAFDB0B1A0AAB7100083455 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				DFAFDB171A0AB22800083455 /* CNBottomTransitioning.swift */,
+			);
+			path = Bottom;
+			sourceTree = "<group>";
+		};
+		DFAFDB0C1A0AAB7100083455 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				DF60B9031A0BAC2C00EC35E5 /* CNLeftTransitioning.swift */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		DFAFDB0D1A0AAB7100083455 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				DF60B9051A0BAC9D00EC35E5 /* CNRightTransitioning.swift */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
+		DFAFDB0E1A0AAB7100083455 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				DF60B9071A0BACF900EC35E5 /* CNTopTransitioning.swift */,
+			);
+			path = Top;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,10 +350,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFAFDAFE1A0A63E500083455 /* cn_direction.swift in Sources */,
+				DFAFDB141A0AAF2600083455 /* CNViewController.swift in Sources */,
 				DFAFDADA1A0A629A00083455 /* ViewController.swift in Sources */,
+				DFAFDB101A0AABA100083455 /* CNInteractiveTransition.swift in Sources */,
+				DF60B9081A0BACF900EC35E5 /* CNTopTransitioning.swift in Sources */,
 				DFAFDB001A0A686F00083455 /* cn_utils.swift in Sources */,
+				DFAFDB181A0AB22800083455 /* CNBottomTransitioning.swift in Sources */,
+				DFAFDB121A0AAEDC00083455 /* CNTransitioning.swift in Sources */,
 				DFAFDB041A0A7ABB00083455 /* CNPanGestureHandler.swift in Sources */,
+				DFAFDB161A0AB18100083455 /* CNTranstioningFactory.swift in Sources */,
+				DF60B9041A0BAC2C00EC35E5 /* CNLeftTransitioning.swift in Sources */,
 				DFAFDB021A0A6BE800083455 /* CNTimer.swift in Sources */,
+				DF60B9061A0BAC9D00EC35E5 /* CNRightTransitioning.swift in Sources */,
 				DFAFDAD81A0A629A00083455 /* AppDelegate.swift in Sources */,
 				DFAFDB081A0A7BAB00083455 /* CNPanGestureHandlerDelegate.swift in Sources */,
 			);

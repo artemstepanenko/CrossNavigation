@@ -13,6 +13,7 @@ Demo/CrossNavigationDemo.xcodeproj/xcuserdata/artem.xcuserdatad/xcschemes/xcsche
 Breakpoints_v2.xcbkptlist
 
 Swift/Demo/Build/*
+Demo/Build/*
 
 *.moved-aside
 DerivedData
