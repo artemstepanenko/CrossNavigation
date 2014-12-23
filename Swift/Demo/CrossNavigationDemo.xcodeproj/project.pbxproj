@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1A1DD51A49BE8D007F5715 /* CNSeguePerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DD41A49BE8D007F5715 /* CNSeguePerformer.swift */; };
+		DF1A1DD71A49C0E8007F5715 /* CNBottomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DD61A49C0E8007F5715 /* CNBottomSegue.swift */; };
+		DF1A1DD91A49C116007F5715 /* CNLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DD81A49C116007F5715 /* CNLeftSegue.swift */; };
+		DF1A1DDB1A49C126007F5715 /* CNRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DDA1A49C126007F5715 /* CNRightSegue.swift */; };
+		DF1A1DDD1A49C135007F5715 /* CNTopSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DDC1A49C135007F5715 /* CNTopSegue.swift */; };
 		DF60B9041A0BAC2C00EC35E5 /* CNLeftTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9031A0BAC2C00EC35E5 /* CNLeftTransitioning.swift */; };
 		DF60B9061A0BAC9D00EC35E5 /* CNRightTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9051A0BAC9D00EC35E5 /* CNRightTransitioning.swift */; };
 		DF60B9081A0BACF900EC35E5 /* CNTopTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9071A0BACF900EC35E5 /* CNTopTransitioning.swift */; };
@@ -39,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF1A1DD41A49BE8D007F5715 /* CNSeguePerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNSeguePerformer.swift; sourceTree = "<group>"; };
+		DF1A1DD61A49C0E8007F5715 /* CNBottomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNBottomSegue.swift; sourceTree = "<group>"; };
+		DF1A1DD81A49C116007F5715 /* CNLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLeftSegue.swift; sourceTree = "<group>"; };
+		DF1A1DDA1A49C126007F5715 /* CNRightSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNRightSegue.swift; sourceTree = "<group>"; };
+		DF1A1DDC1A49C135007F5715 /* CNTopSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTopSegue.swift; sourceTree = "<group>"; };
 		DF60B9031A0BAC2C00EC35E5 /* CNLeftTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLeftTransitioning.swift; sourceTree = "<group>"; };
 		DF60B9051A0BAC9D00EC35E5 /* CNRightTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNRightTransitioning.swift; sourceTree = "<group>"; };
 		DF60B9071A0BACF900EC35E5 /* CNTopTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTopTransitioning.swift; sourceTree = "<group>"; };
@@ -83,6 +93,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF1A1DCF1A49BE75007F5715 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A1DD61A49C0E8007F5715 /* CNBottomSegue.swift */,
+			);
+			path = Bottom;
+			sourceTree = "<group>";
+		};
+		DF1A1DD01A49BE75007F5715 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A1DD81A49C116007F5715 /* CNLeftSegue.swift */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		DF1A1DD11A49BE75007F5715 /* Performer */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A1DD41A49BE8D007F5715 /* CNSeguePerformer.swift */,
+			);
+			path = Performer;
+			sourceTree = "<group>";
+		};
+		DF1A1DD21A49BE75007F5715 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A1DDA1A49C126007F5715 /* CNRightSegue.swift */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
+		DF1A1DD31A49BE75007F5715 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A1DDC1A49C135007F5715 /* CNTopSegue.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
 		DFAFDAC91A0A629A00083455 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +227,11 @@
 		DFAFDAFA1A0A63C400083455 /* Segue */ = {
 			isa = PBXGroup;
 			children = (
+				DF1A1DD11A49BE75007F5715 /* Performer */,
+				DF1A1DCF1A49BE75007F5715 /* Bottom */,
+				DF1A1DD01A49BE75007F5715 /* Left */,
+				DF1A1DD21A49BE75007F5715 /* Right */,
+				DF1A1DD31A49BE75007F5715 /* Top */,
 			);
 			path = Segue;
 			sourceTree = "<group>";
@@ -349,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1A1DDD1A49C135007F5715 /* CNTopSegue.swift in Sources */,
 				DFAFDAFE1A0A63E500083455 /* cn_direction.swift in Sources */,
 				DFAFDB141A0AAF2600083455 /* CNViewController.swift in Sources */,
 				DFAFDADA1A0A629A00083455 /* ViewController.swift in Sources */,
@@ -357,11 +413,15 @@
 				DFAFDB001A0A686F00083455 /* cn_utils.swift in Sources */,
 				DFAFDB181A0AB22800083455 /* CNBottomTransitioning.swift in Sources */,
 				DFAFDB121A0AAEDC00083455 /* CNTransitioning.swift in Sources */,
+				DF1A1DDB1A49C126007F5715 /* CNRightSegue.swift in Sources */,
+				DF1A1DD71A49C0E8007F5715 /* CNBottomSegue.swift in Sources */,
 				DFAFDB041A0A7ABB00083455 /* CNPanGestureHandler.swift in Sources */,
 				DFAFDB161A0AB18100083455 /* CNTranstioningFactory.swift in Sources */,
+				DF1A1DD91A49C116007F5715 /* CNLeftSegue.swift in Sources */,
 				DF60B9041A0BAC2C00EC35E5 /* CNLeftTransitioning.swift in Sources */,
 				DFAFDB021A0A6BE800083455 /* CNTimer.swift in Sources */,
 				DF60B9061A0BAC9D00EC35E5 /* CNRightTransitioning.swift in Sources */,
+				DF1A1DD51A49BE8D007F5715 /* CNSeguePerformer.swift in Sources */,
 				DFAFDAD81A0A629A00083455 /* AppDelegate.swift in Sources */,
 				DFAFDB081A0A7BAB00083455 /* CNPanGestureHandlerDelegate.swift in Sources */,
 			);

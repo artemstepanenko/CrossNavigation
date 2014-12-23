@@ -14,7 +14,6 @@ class CNInteractiveTransition: UIPercentDrivenInteractiveTransition, UIViewContr
     private var appearanceTransitioning: CNTransitioning?
     private var disappearanceTransitioning: CNTransitioning?
     private var transitionContext: UIViewControllerContextTransitioning?
-    private var interactive: Bool = true
 
     // read-only
     private(set) var fromViewController: CNViewController?
@@ -23,6 +22,7 @@ class CNInteractiveTransition: UIPercentDrivenInteractiveTransition, UIViewContr
     private(set) var recentPercentComplete: CGFloat = 0
 
     // public var
+    var interactive: Bool = true
     var finishingDuration: CGFloat = CGFloat(CNTransitioning().duration)
     var direction: CNDirection {
         didSet {
