@@ -12,6 +12,7 @@
 		DF1A1DD91A49C116007F5715 /* CNLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DD81A49C116007F5715 /* CNLeftSegue.swift */; };
 		DF1A1DDB1A49C126007F5715 /* CNRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DDA1A49C126007F5715 /* CNRightSegue.swift */; };
 		DF1A1DDD1A49C135007F5715 /* CNTopSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DDC1A49C135007F5715 /* CNTopSegue.swift */; };
+		DF1A1DE11A49C638007F5715 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A1DE01A49C638007F5715 /* TableViewController.swift */; };
 		DF60B9041A0BAC2C00EC35E5 /* CNLeftTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9031A0BAC2C00EC35E5 /* CNLeftTransitioning.swift */; };
 		DF60B9061A0BAC9D00EC35E5 /* CNRightTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9051A0BAC9D00EC35E5 /* CNRightTransitioning.swift */; };
 		DF60B9081A0BACF900EC35E5 /* CNTopTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60B9071A0BACF900EC35E5 /* CNTopTransitioning.swift */; };
@@ -49,6 +50,7 @@
 		DF1A1DD81A49C116007F5715 /* CNLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLeftSegue.swift; sourceTree = "<group>"; };
 		DF1A1DDA1A49C126007F5715 /* CNRightSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNRightSegue.swift; sourceTree = "<group>"; };
 		DF1A1DDC1A49C135007F5715 /* CNTopSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTopSegue.swift; sourceTree = "<group>"; };
+		DF1A1DE01A49C638007F5715 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DF60B9031A0BAC2C00EC35E5 /* CNLeftTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLeftTransitioning.swift; sourceTree = "<group>"; };
 		DF60B9051A0BAC9D00EC35E5 /* CNRightTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNRightTransitioning.swift; sourceTree = "<group>"; };
 		DF60B9071A0BACF900EC35E5 /* CNTopTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTopTransitioning.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				DFAFDAF71A0A63C400083455 /* CrossNavigation */,
 				DFAFDAD71A0A629A00083455 /* AppDelegate.swift */,
 				DFAFDAD91A0A629A00083455 /* ViewController.swift */,
+				DF1A1DE01A49C638007F5715 /* TableViewController.swift */,
 				DFAFDADB1A0A629A00083455 /* Main.storyboard */,
 				DFAFDADE1A0A629A00083455 /* Images.xcassets */,
 				DFAFDAE01A0A629A00083455 /* LaunchScreen.xib */,
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF1A1DDD1A49C135007F5715 /* CNTopSegue.swift in Sources */,
+				DF1A1DE11A49C638007F5715 /* TableViewController.swift in Sources */,
 				DFAFDAFE1A0A63E500083455 /* cn_direction.swift in Sources */,
 				DFAFDB141A0AAF2600083455 /* CNViewController.swift in Sources */,
 				DFAFDADA1A0A629A00083455 /* ViewController.swift in Sources */,

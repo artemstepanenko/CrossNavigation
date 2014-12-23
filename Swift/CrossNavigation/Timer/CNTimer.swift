@@ -28,7 +28,7 @@ class CNTimer : NSObject {
         self.currentTickCallback = tickCallback
         self.currentStopCallback = stopCallback
         
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "timerDidTick", userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: Selector("timerDidTick"), userInfo: nil, repeats: true)
         
     }
     
@@ -42,7 +42,7 @@ class CNTimer : NSObject {
     
     // Private methods
     
-    private func timerDidTick() -> () {
+    func timerDidTick() -> () {
         if self.currentTickCallback != nil {
             self.currentTickCallback!(index: self.ticksCounter)
         }

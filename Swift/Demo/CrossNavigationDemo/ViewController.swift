@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: CNViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewIsAppearing(percent: CGFloat) {
+        
+    }
 
+    override func shouldAutotransitToDirection(direction: CNDirection, present: Bool) -> Bool {
+        return true
+    }
 }
 
