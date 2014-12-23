@@ -85,35 +85,37 @@ class CNInteractiveTransition: UIPercentDrivenInteractiveTransition, UIViewContr
     
     private func finishInteractiveTransition(didComplete: Bool) -> () {
 
-        let containerFrame = self.containerView!.bounds
-        let transform = self.containerView!.transform
-        let duration: NSTimeInterval = NSTimeInterval(self.finishingDuration)
-        
-        UIView.animateWithDuration(duration, animations: { () -> Void in
+        if let containerFrame = self.containerView?.bounds {            
+            let transform = self.containerView!.transform
+            let duration: NSTimeInterval = NSTimeInterval(self.finishingDuration)
             
-            if didComplete {
-                self.fromViewController!.view.frame = self.appearanceTransitioning!.fromViewEndFrameWithContainerFrame(containerFrame)
-                self.toViewController!.view.frame = self.appearanceTransitioning!.toViewEndFrameWithContainerFrame(containerFrame)
-            } else {
-                self.fromViewController!.view.frame = self.appearanceTransitioning!.fromViewStartFrameWithContainerFrame(containerFrame)
-                self.toViewController!.view.frame = self.appearanceTransitioning!.toViewStartFrameWithContainerFrame(containerFrame)
+            UIView.animateWithDuration(duration, animations: { () -> Void in
+                
+                if didComplete {
+                    self.fromViewController!.view.frame = self.appearanceTransitioning!.fromViewEndFrameWithContainerFrame(containerFrame)
+                    self.toViewController!.view.frame = self.appearanceTransitioning!.toViewEndFrameWithContainerFrame(containerFrame)
+                } else {
+                    self.fromViewController!.view.frame = self.appearanceTransitioning!.fromViewStartFrameWithContainerFrame(containerFrame)
+                    self.toViewController!.view.frame = self.appearanceTransitioning!.toViewStartFrameWithContainerFrame(containerFrame)
+                }
+                
+                }) { (completion: Bool) -> Void in
+                    
+                    self.transitionContext!.completeTransition(didComplete)
+                    self.transitionContext = nil
+                    self.containerView = nil
+                    
+                    if didComplete {
+                        self.toViewController!.view.transform = transform
+                        self.toViewController!.view.frame = self.toViewController!.view.superview!.bounds
+                    } else {
+                        self.fromViewController!.view.transform = transform
+                        self.fromViewController!.view.frame = self.fromViewController!.view.superview!.bounds
+                    }
+                    
             }
-            
-        }) { (completion: Bool) -> Void in
-            
-            self.transitionContext!.completeTransition(didComplete)
-            self.transitionContext = nil
-            self.containerView = nil
-            
-            if didComplete {
-                self.toViewController!.view.transform = transform
-                self.toViewController!.view.frame = self.toViewController!.view.superview!.bounds
-            } else {
-                self.fromViewController!.view.transform = transform
-                self.fromViewController!.view.frame = self.fromViewController!.view.superview!.bounds
-            }
-            
         }
+        
     }
 
     // MARK: UIViewControllerTransitioningDelegate
