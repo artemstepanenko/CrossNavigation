@@ -57,6 +57,13 @@
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
 /**
+ TODO: write a description
+ */
+- (void)dismissViewControllerToDirection:(CNDirection)direction
+                                animated:(BOOL)animated
+                              completion:(void (^)(void))completion;
+
+/**
  Notifies that it's view is partly presented.
  Fires during transitions.
 

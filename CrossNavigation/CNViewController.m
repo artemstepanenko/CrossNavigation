@@ -81,17 +81,31 @@
     [self presentViewController:viewController animated:animated completion:completion];
 }
 
-- (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion
+- (void)dismissViewControllerAnimated:(BOOL)animated
+                           completion:(void (^)(void))completion
+{
+    [self dismissViewControllerToDirection:CNDirectionGetOpposite(self.direction)
+                                  animated:animated
+                                completion:completion];
+}
+
+- (void)dismissViewControllerToDirection:(CNDirection)direction
+                                animated:(BOOL)animated
+                              completion:(void (^)(void))completion
 {
     if ([self isTransitioning]) {
         return;
     }
     
-    UIViewController *previousViewController = self.presentingViewController;
+    UIViewController *toViewController = self.presentingViewController;
     
-    if ([previousViewController isKindOfClass:[CNViewController class]]) {
-        [self prepareForBackTransitionInteractive:NO];
-        [self transitionWillFinishFromViewController:self toViewController:(CNViewController *)previousViewController recentPercentComplete:0.0f];
+    if ([toViewController isKindOfClass:[CNViewController class]]) {
+        
+        [self prepareForBackTransitionInteractive:NO direction:direction];
+        
+        [self transitionWillFinishFromViewController:self
+                                    toViewController:(CNViewController *)toViewController
+                               recentPercentComplete:0.0f];
     }
     
     [super dismissViewControllerAnimated:animated completion:completion];
@@ -145,42 +159,6 @@
     }
     
     _bottomID = bottomStoryboardID;
-}
-
-#pragma mark - Private
-
-- (void)initialize
-{
-    self.interactiveTransition = [CNInteractiveTransition new];
-    self.transitioningDelegate = self.interactiveTransition;
-    self.direction = CNDirectionNone;
-    
-    self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
-}
-
-- (void)transitionWillFinishFromViewController:(CNViewController *)fromViewController
-                              toViewController:(CNViewController *)toViewController
-                         recentPercentComplete:(CGFloat)recentPercentComplete
-{
-    CNTimer *timer = [[CNTimer alloc] init];
-    
-    NSTimeInterval timeInterval = 0.04f;    // more than 24 frames per second
-    NSUInteger repeatsCount = [self.interactiveTransition finishingDuration] / timeInterval;
-    CGFloat portion = (1.0f - recentPercentComplete) / repeatsCount;
-    
-    [timer startWithTimeInterval:timeInterval repeatsCount:repeatsCount tickCallback:^(NSUInteger index) {
-        
-        CGFloat percentComplete = recentPercentComplete + portion * index;
-        
-        [fromViewController viewIsAppearing:(1 - percentComplete)];
-        [toViewController viewIsAppearing:percentComplete];
-        
-    } stopCallback:^(BOOL cancelled) {
-        
-        [fromViewController viewIsAppearing:0.0f];
-        [toViewController viewIsAppearing:1.0f];
-        
-    }];
 }
 
 #pragma mark - CNPanGestureHandlerDelegate
@@ -308,10 +286,59 @@
 
 #pragma mark - Private
 
+- (void)initialize
+{
+    self.interactiveTransition = [CNInteractiveTransition new];
+    self.transitioningDelegate = self.interactiveTransition;
+    self.direction = CNDirectionNone;
+    
+    self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
+}
+
 - (void)initializePanGestureRecognizer
 {
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self.panGestureHandler action:@selector(userDidPan:)];
     [self.view addGestureRecognizer:recognizer];
+}
+
+- (BOOL)hasPerviousViewController:(UIViewController *)viewController
+{
+    UIViewController *previousViewController = self.presentingViewController;
+    
+    while (previousViewController) {
+        if (previousViewController == viewController) {
+            return YES;
+        }
+        
+        previousViewController = previousViewController.presentingViewController;
+    }
+    
+    return NO;
+}
+
+- (void)transitionWillFinishFromViewController:(CNViewController *)fromViewController
+                              toViewController:(CNViewController *)toViewController
+                         recentPercentComplete:(CGFloat)recentPercentComplete
+{
+    CNTimer *timer = [[CNTimer alloc] init];
+    
+    NSTimeInterval timeInterval = 0.04f;    // more than 24 frames per second
+    NSUInteger repeatsCount = [self.interactiveTransition finishingDuration] / timeInterval;
+    CGFloat portion = (1.0f - recentPercentComplete) / repeatsCount;
+    
+    [timer startWithTimeInterval:timeInterval repeatsCount:repeatsCount tickCallback:^(NSUInteger index) {
+        
+        CGFloat percentComplete = recentPercentComplete + portion * index;
+        
+        [fromViewController viewIsAppearing:(1 - percentComplete)];
+        [toViewController viewIsAppearing:percentComplete];
+        
+    } stopCallback:^(BOOL cancelled) {
+        
+        [fromViewController viewIsAppearing:0.0f];
+        [toViewController viewIsAppearing:1.0f];
+        
+    }];
 }
 
 - (BOOL)isTransitioning
@@ -329,14 +356,19 @@
 
 - (void)prepareForBackTransitionInteractive:(BOOL)interactive
 {
+    [self prepareForBackTransitionInteractive:interactive direction:CNDirectionGetOpposite(self.direction)];
+}
+
+- (void)prepareForBackTransitionInteractive:(BOOL)interactive direction:(CNDirection)direction
+{
     self.nextViewController = self;
     self.interactiveTransition.interactive = interactive;
     
     // clears previous direction left from cancelled interaction transition
     if (interactive) {
-        self.interactiveTransition.direction = CNDirectionGetOpposite(self.direction);
+        self.interactiveTransition.direction = direction;
     } else {
-        self.interactiveTransition.direction = self.direction;
+        self.interactiveTransition.direction = CNDirectionGetOpposite(direction);
     }
 }
 

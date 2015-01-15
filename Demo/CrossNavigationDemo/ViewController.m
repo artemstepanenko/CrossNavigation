@@ -17,6 +17,12 @@
 
 @implementation ViewController
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"Current: %@", self);
+}
+
 - (void)viewIsAppearing:(CGFloat)percentComplete
 {
     for (UIView *signView in self.navigationSignViews) {
