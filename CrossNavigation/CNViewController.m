@@ -76,7 +76,11 @@
     }
     
     [viewController prepareForTransitionToDirection:direction interactive:NO];
-    [viewController transitionWillFinishFromViewController:self toViewController:viewController recentPercentComplete:0.0f];
+    
+    [viewController transitionWillFinishFromViewController:self
+                                          toViewController:viewController
+                                     recentPercentComplete:0.0f
+                                                  animated:animated];
     
     [self presentViewController:viewController animated:animated completion:completion];
 }
@@ -97,18 +101,11 @@
         return;
     }
     
-    UIViewController *toViewController = self.presentingViewController;
-    
-    if ([toViewController isKindOfClass:[CNViewController class]]) {
-        
-        [self prepareForBackTransitionInteractive:NO direction:direction];
-        
-        [self transitionWillFinishFromViewController:self
-                                    toViewController:(CNViewController *)toViewController
-                               recentPercentComplete:0.0f];
+    if (self.presentedViewController) {
+        [self dismissInvisibleViewControllerToDirection:direction animated:animated completion:completion];
+    } else {
+        [self dismissVisibleViewControllerToDirection:direction animated:animated completion:completion];
     }
-    
-    [super dismissViewControllerAnimated:animated completion:completion];
 }
 
 #pragma mark - Event
@@ -207,7 +204,8 @@
     
     [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.fromViewController
                                                    toViewController:self.nextViewController.interactiveTransition.toViewController
-                                              recentPercentComplete:self.nextViewController.interactiveTransition.recentPercentComplete];
+                                              recentPercentComplete:self.nextViewController.interactiveTransition.recentPercentComplete
+                                                           animated:YES];
 }
 
 - (void)panGestureHandlerDidCancel:(CNPanGestureHandler *)sender
@@ -216,7 +214,8 @@
     
     [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.toViewController
                                                    toViewController:self.nextViewController.interactiveTransition.fromViewController
-                                              recentPercentComplete:(1.0f - self.nextViewController.interactiveTransition.recentPercentComplete)];
+                                              recentPercentComplete:(1.0f - self.nextViewController.interactiveTransition.recentPercentComplete)
+                                                           animated:YES];
 }
 
 - (CNDirection)panGestureHandler:(CNPanGestureHandler *)sender directionForOffset:(CGPoint)offset
@@ -301,25 +300,83 @@
     [self.view addGestureRecognizer:recognizer];
 }
 
-- (BOOL)hasPerviousViewController:(UIViewController *)viewController
+- (void)dismissVisibleViewControllerToDirection:(CNDirection)direction
+                                       animated:(BOOL)animated
+                                     completion:(void (^)(void))completion
 {
-    UIViewController *previousViewController = self.presentingViewController;
+    UIViewController *toViewController = self.presentingViewController;
     
-    while (previousViewController) {
-        if (previousViewController == viewController) {
-            return YES;
-        }
+    // FIXME: polish a case when toViewController is not CNViewController
+    // FIXME: fix for the case when animation is NO
+    if ([toViewController isKindOfClass:[CNViewController class]]) {
         
-        previousViewController = previousViewController.presentingViewController;
+        if (animated == YES) {
+        
+            [self prepareForBackTransitionInteractive:NO direction:direction];
+            
+            [self transitionWillFinishFromViewController:self
+                                        toViewController:(CNViewController *)toViewController
+                                   recentPercentComplete:0.0f
+                                                animated:animated];
+        }
     }
     
-    return NO;
+    [super dismissViewControllerAnimated:animated completion:completion];
+}
+
+- (void)dismissInvisibleViewControllerToDirection:(CNDirection)direction
+                                          animated:(BOOL)animated
+                                        completion:(void (^)(void))completion
+{
+    // params
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    params[@"animated"] = @(animated);
+    
+    if (completion) {
+        params[@"completion"] = completion;
+    }
+    
+    // visible view controller
+    CNViewController *visibleViewController = (CNViewController *)[self visibleViewController];
+    
+    // do some magic
+    [self dismissVisibleViewControllerToDirection:CNDirectionNone animated:NO completion:^{
+        
+        [self presentViewController:visibleViewController direction:CNDirectionGetOpposite(direction) animated:NO completion:^{
+            
+            [visibleViewController performSelector:@selector(dismissWithParams:) withObject:params afterDelay:0.0f];
+        }];
+    }];
+}
+
+- (void)dismissWithParams:(NSDictionary *)params
+{
+    [self dismissViewControllerAnimated:[params[@"animated"] boolValue] completion:params[@"completion"]];
+}
+
+- (UIViewController *)visibleViewController
+{
+    UIViewController *viewController = self;
+    
+    while (viewController.presentedViewController) {
+        viewController = viewController.presentedViewController;
+    }
+    
+    return viewController;
 }
 
 - (void)transitionWillFinishFromViewController:(CNViewController *)fromViewController
                               toViewController:(CNViewController *)toViewController
                          recentPercentComplete:(CGFloat)recentPercentComplete
+                                      animated:(BOOL)animated
 {
+    if (!animated) {
+        
+        [fromViewController viewIsAppearing:0.0f];
+        [toViewController viewIsAppearing:1.0f];
+        return;
+    }
+    
     CNTimer *timer = [[CNTimer alloc] init];
     
     NSTimeInterval timeInterval = 0.04f;    // more than 24 frames per second
