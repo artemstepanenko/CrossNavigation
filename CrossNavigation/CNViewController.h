@@ -51,13 +51,17 @@
  
  You may call this method in case if CNViewController object was presented by a common UIViewController object, as well.
  
- @param animated Determines whether view controller will be presented animated or not
+ @param animated Determines whether the view controller will be dismissed animated or not
  @param completion The block to execute after the view controller is dismissed. May be nil.
  */
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
 /**
- TODO: write a description
+ Dismisses a view controller that was presented modally by a receiver in a defined direction.
+
+ @param direction Determines in what direction view controller will be dismissed
+ @param animated Determines whether the view controller will be dismissed animated or not
+ @param completion The block to execute after the view controller is dismissed. May be nil.
  */
 - (void)dismissViewControllerToDirection:(CNDirection)direction
                                 animated:(BOOL)animated

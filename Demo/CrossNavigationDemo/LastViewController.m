@@ -16,7 +16,7 @@
 
 - (IBAction)restartDidPress:(id)sender
 {
-//    CNViewController *firstViewController = (CNViewController *)self.presentingViewController;
+    CNViewController *firstViewController = (CNViewController *)self.presentingViewController;
     [self dismissViewControllerToDirection:CNDirectionTop animated:YES completion:nil];
 }
 
