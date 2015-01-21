@@ -26,6 +26,7 @@
 #import "CNInteractiveTransition.h"
 #import "CNPanGestureHandler.h"
 #import "CNTimer.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CNViewController () <CNPanGestureHandlerDelegate>
 
@@ -102,6 +103,7 @@
     }
     
     if (self.presentedViewController) {
+        // rather tricky case since default behaviour is buggy
         [self dismissInvisibleViewControllerToDirection:direction animated:animated completion:completion];
     } else {
         [self dismissVisibleViewControllerToDirection:direction animated:animated completion:completion];
@@ -324,9 +326,55 @@
     [super dismissViewControllerAnimated:animated completion:completion];
 }
 
+// this method is quite tricky
+// 
 - (void)dismissInvisibleViewControllerToDirection:(CNDirection)direction
                                           animated:(BOOL)animated
                                         completion:(void (^)(void))completion
+{
+    // - Now let's do some magic!
+    
+    // a visible view controller
+    CNViewController *visibleViewController = (CNViewController *)[self visibleViewController];
+    
+    // freeze UI (we need this to avoid a blinking during further operations)
+    UIView *frozenView = [self freezeUI];
+    
+    // dismiss all subsequent view controllers in a stack
+    [self dismissVisibleViewControllerToDirection:CNDirectionNone animated:NO completion:^{
+        
+        // present a previously visible view controller
+        [self presentViewController:visibleViewController direction:CNDirectionGetOpposite(direction) animated:NO completion:^{
+            
+            // at this point a receiver is followed by the visible view controller (all intermediate view controllers are removed, if had existed)
+            
+            // unfreeze UI
+            [frozenView removeFromSuperview];
+            
+            // dismiss params
+            NSDictionary *dismissParams = [self createParamsForDismissAnimated:animated completion:completion];
+            
+            // make a common dismiss
+            [visibleViewController performSelector:@selector(dismissWithParams:) withObject:dismissParams afterDelay:0.0f];
+        }];
+    }];
+}
+
+- (UIView *)freezeUI
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[self imageWithView:window]];
+    imageView.frame = window.bounds;
+    [window addSubview:imageView];
+    return imageView;
+}
+
+- (void)dismissWithParams:(NSDictionary *)params
+{
+    [self dismissViewControllerAnimated:[params[@"animated"] boolValue] completion:params[@"completion"]];
+}
+
+- (NSDictionary *)createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
     // params
     NSMutableDictionary *params = [NSMutableDictionary new];
@@ -336,22 +384,7 @@
         params[@"completion"] = completion;
     }
     
-    // visible view controller
-    CNViewController *visibleViewController = (CNViewController *)[self visibleViewController];
-    
-    // do some magic
-    [self dismissVisibleViewControllerToDirection:CNDirectionNone animated:NO completion:^{
-        
-        [self presentViewController:visibleViewController direction:CNDirectionGetOpposite(direction) animated:NO completion:^{
-            
-            [visibleViewController performSelector:@selector(dismissWithParams:) withObject:params afterDelay:0.0f];
-        }];
-    }];
-}
-
-- (void)dismissWithParams:(NSDictionary *)params
-{
-    [self dismissViewControllerAnimated:[params[@"animated"] boolValue] completion:params[@"completion"]];
+    return params;
 }
 
 - (UIViewController *)visibleViewController
@@ -453,6 +486,18 @@
             return nil;
         }
     }
+}
+
+- (UIImage *)imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end
