@@ -64,7 +64,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initializePanGestureRecognizer];
+    
+    if ([self supportsInteractiveTransition]) {
+        [self initializePanGestureRecognizer];
+    }
 }
 
 - (void)presentViewController:(CNViewController *)viewController
@@ -118,6 +121,11 @@
 }
 
 - (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present
+{
+    return YES;
+}
+
+- (BOOL)supportsInteractiveTransition
 {
     return YES;
 }
@@ -293,7 +301,9 @@
     self.transitioningDelegate = self.interactiveTransition;
     self.direction = CNDirectionNone;
     
-    self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
+    if ([self supportsInteractiveTransition]) {
+        self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
+    }
 }
 
 - (void)initializePanGestureRecognizer

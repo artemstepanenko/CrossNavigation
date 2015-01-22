@@ -92,4 +92,15 @@
  */
 - (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present;
 
+/**
+ Override this method to control whether you want or not to support interactive transitions from a current view controller.
+
+ A returned value must not be changed.
+ 
+ To make an interactive transition a UIPanGestureRecognizer object is used. If this method returns NO, the gesture recognizer isn't even created.
+ 
+ @return YES to allow interactive navigation from the current view controller to others. Default value is YES.
+ */
+- (BOOL)supportsInteractiveTransition;
+
 @end
