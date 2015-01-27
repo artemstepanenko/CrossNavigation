@@ -323,14 +323,13 @@
     if ([toViewController isKindOfClass:[CNViewController class]]) {
         
         if (animated == YES) {
-        
             [self prepareForBackTransitionInteractive:NO direction:direction];
-            
-            [self transitionWillFinishFromViewController:self
-                                        toViewController:(CNViewController *)toViewController
-                                   recentPercentComplete:0.0f
-                                                animated:animated];
         }
+        
+        [self transitionWillFinishFromViewController:self
+                                    toViewController:(CNViewController *)toViewController
+                               recentPercentComplete:0.0f
+                                            animated:animated];
     }
     
     [super dismissViewControllerAnimated:animated completion:completion];
