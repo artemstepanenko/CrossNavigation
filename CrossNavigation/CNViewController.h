@@ -51,10 +51,23 @@
  
  You may call this method in case if CNViewController object was presented by a common UIViewController object, as well.
  
- @param animated Determines whether view controller will be presented animated or not
+ @param animated Determines whether the view controller will be dismissed animated or not
  @param completion The block to execute after the view controller is dismissed. May be nil.
  */
 - (void)dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
+
+/**
+ Dismisses a view controller that was presented modally by a receiver in a defined direction.
+
+ If a receiver is not a last view controller in a stack, it dismisses all subsequent view controllers. So when animation is finished, the receiver becomes a visible view controller. A transition occurs from the visible view controller to the receiver.
+
+ @param direction Determines in what direction view controller will be dismissed
+ @param animated Determines whether the view controller will be dismissed animated or not
+ @param completion The block to execute after the view controller is dismissed. May be nil.
+ */
+- (void)dismissViewControllerToDirection:(CNDirection)direction
+                                animated:(BOOL)animated
+                              completion:(void (^)(void))completion;
 
 /**
  Notifies that it's view is partly presented.
@@ -78,5 +91,16 @@
  @return YES if the transition should occur, otherwise NO. Default value is YES.
  */
 - (BOOL)shouldAutotransitToDirection:(CNDirection)direction present:(BOOL)present;
+
+/**
+ Override this method to control whether you want or not to support interactive transitions from a current view controller.
+
+ A returned value must not be changed.
+ 
+ To make an interactive transition a UIPanGestureRecognizer object is used. If this method returns NO, the gesture recognizer isn't even created.
+ 
+ @return YES to allow interactive navigation from the current view controller to others. Default value is YES.
+ */
+- (BOOL)supportsInteractiveTransition;
 
 @end
