@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CrossNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGt-La-AQj">
+                                <rect key="frame" x="240" y="20" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="aMY-OX-W27"/>
+                                    <constraint firstAttribute="width" constant="120" id="yJB-GE-0dG"/>
+                                </constraints>
+                                <state key="normal" title="TOP">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z1M-DS-cz6" kind="custom" customClass="CNTopSegue" customModule="CrossNavigationDemo" customModuleProvider="target" id="XSm-ys-CqL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mz-Rs-JHP">
+                                <rect key="frame" x="240" y="478" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="3Db-Cy-cMV"/>
+                                    <constraint firstAttribute="width" constant="120" id="Fch-Bn-eJi"/>
+                                </constraints>
+                                <state key="normal" title="BOTTOM">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uEg-3f-LjP" kind="custom" customClass="CNBottomSegue" customModule="CrossNavigationDemo" customModuleProvider="target" id="DKT-KZ-KMc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-r8-Bu2">
+                                <rect key="frame" x="16" y="243" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="JUu-Kr-XgD"/>
+                                    <constraint firstAttribute="height" constant="114" id="U4B-xT-dtH"/>
+                                </constraints>
+                                <state key="normal" title="LEFT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2Ku-iw-78d" kind="custom" customClass="CNLeftSegue" customModule="CrossNavigationDemo" customModuleProvider="target" id="363-cd-jmu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPw-7k-eWe">
+                                <rect key="frame" x="464" y="243" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="BoM-yi-RJv"/>
+                                    <constraint firstAttribute="width" constant="120" id="bWJ-la-WpY"/>
+                                </constraints>
+                                <state key="normal" title="RIGHT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lsS-aG-d2L" kind="custom" customClass="CNRightSegue" customModule="CrossNavigationDemo" customModuleProvider="target" id="tVZ-LA-N8j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKf-ay-AIT">
+                                <rect key="frame" x="202" y="200" width="196" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="C6Q-Lh-JES"/>
+                                    <constraint firstAttribute="width" constant="196" id="pbO-QO-W5f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lds-r8-Bu2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="FPw-Ld-O4c"/>
+                            <constraint firstItem="OGt-La-AQj" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Jka-tU-xcb"/>
+                            <constraint firstAttribute="centerX" secondItem="OGt-La-AQj" secondAttribute="centerX" id="Lkt-U9-Xt5"/>
+                            <constraint firstAttribute="centerX" secondItem="8Mz-Rs-JHP" secondAttribute="centerX" id="NNR-kg-cMW"/>
+                            <constraint firstAttribute="centerX" secondItem="zKf-ay-AIT" secondAttribute="centerX" id="Ubr-C5-97x"/>
+                            <constraint firstAttribute="centerY" secondItem="Lds-r8-Bu2" secondAttribute="centerY" id="Xus-4f-EFk"/>
+                            <constraint firstAttribute="centerY" secondItem="zKf-ay-AIT" secondAttribute="centerY" id="h3c-Qx-jx9"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8Mz-Rs-JHP" secondAttribute="bottom" constant="8" id="q3i-X7-Q1b"/>
+                            <constraint firstItem="EPw-7k-eWe" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="u6Y-Rr-4eZ"/>
+                            <constraint firstAttribute="centerY" secondItem="EPw-7k-eWe" secondAttribute="centerY" id="vms-Nv-ZfJ"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="topID" value="top"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="bottom"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="right"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="left"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DRv-TA-mNb">
+            <objects>
+                <viewController storyboardIdentifier="bottom" id="uEg-3f-LjP" customClass="ViewController" customModule="CrossNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NNC-wA-dRL"/>
+                        <viewControllerLayoutGuide type="bottom" id="07S-gO-yLL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z5S-JN-eo3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHr-k1-nXm">
+                                <rect key="frame" x="240" y="20" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="Ps3-XY-sQW"/>
+                                    <constraint firstAttribute="width" constant="120" id="a1R-1V-2RZ"/>
+                                </constraints>
+                                <state key="normal" title="TOP">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="zHr-k1-nXm" secondAttribute="centerX" id="84v-Ws-OVv"/>
+                            <constraint firstItem="zHr-k1-nXm" firstAttribute="top" secondItem="NNC-wA-dRL" secondAttribute="bottom" id="kSB-Nn-ha7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ont-11-8QW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544" y="1168"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lsd-43-vnS">
+            <objects>
+                <viewController storyboardIdentifier="left" id="2Ku-iw-78d" customClass="ViewController" customModule="CrossNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i6h-aa-upl"/>
+                        <viewControllerLayoutGuide type="bottom" id="rMp-Cs-msR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wie-e3-gS5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fw9-oo-A91">
+                                <rect key="frame" x="464" y="243" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="H3s-fW-qtl"/>
+                                    <constraint firstAttribute="width" constant="120" id="VZG-dK-gYV"/>
+                                </constraints>
+                                <state key="normal" title="RIGHT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fw9-oo-A91" firstAttribute="trailing" secondItem="Wie-e3-gS5" secondAttribute="trailingMargin" id="67y-Jj-foU"/>
+                            <constraint firstAttribute="centerY" secondItem="Fw9-oo-A91" secondAttribute="centerY" id="dhG-rO-KDc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m49-AR-klo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-165" y="467"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QUP-oT-kF9">
+            <objects>
+                <viewController storyboardIdentifier="right" id="lsS-aG-d2L" customClass="ViewController" customModule="CrossNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wF2-ni-3EZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="QgY-X4-NXg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KE7-k1-L83">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV3-8m-L83">
+                                <rect key="frame" x="16" y="243" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="YJY-xX-LMU"/>
+                                    <constraint firstAttribute="width" constant="120" id="ngW-QR-mib"/>
+                                </constraints>
+                                <state key="normal" title="LEFT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="tV3-8m-L83" secondAttribute="centerY" id="J1A-02-iCC"/>
+                            <constraint firstItem="tV3-8m-L83" firstAttribute="leading" secondItem="KE7-k1-L83" secondAttribute="leadingMargin" id="aOF-Wv-EYN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spR-6L-W7e" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="467"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="m6s-ye-CPd">
+            <objects>
+                <viewController storyboardIdentifier="top" id="Z1M-DS-cz6" customClass="ViewController" customModule="CrossNavigationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2dG-5J-D1g"/>
+                        <viewControllerLayoutGuide type="bottom" id="6wl-PR-gll"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4TA-1n-YDr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOC-zW-FPa">
+                                <rect key="frame" x="240" y="478" width="120" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="cRf-9p-tbs"/>
+                                    <constraint firstAttribute="width" constant="120" id="ovt-5N-aXU"/>
+                                </constraints>
+                                <state key="normal" title="BOTTOM">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="uOC-zW-FPa" secondAttribute="centerX" id="WVU-DU-pb8"/>
+                            <constraint firstItem="6wl-PR-gll" firstAttribute="top" secondItem="uOC-zW-FPa" secondAttribute="bottom" constant="8" id="zI5-c9-Fme"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hP4-6U-BF9" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544" y="-237"/>
+        </scene>
+    </scenes>
+</document>

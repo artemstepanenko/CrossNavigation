@@ -20,4 +20,9 @@ Pod::Spec.new do |s|
   s.public_header_files = 'CrossNavigation/CNViewController.h', 'CrossNavigation/CNViewController_Storyboard.h', 'CrossNavigation/Utils/cn_direction.h'
 
   s.framework    = 'UIKit'
+
+  s.subspec 'Swift' do |sp| 
+    sp.source_files = "Swift/**/*.swift"
+  end
+  
 end

@@ -11,3 +11,26 @@ Demo/CrossNavigationDemo.xcodeproj/project.xcworkspace/xcuserdata/artem.xcuserda
 Demo/CrossNavigationDemo.xcodeproj/xcuserdata/artem.xcuserdatad/xcschemes/CrossNavigationDemo.xcscheme
 Demo/CrossNavigationDemo.xcodeproj/xcuserdata/artem.xcuserdatad/xcschemes/xcschememanagement.plist
 Breakpoints_v2.xcbkptlist
+
+Swift/Demo/Build/*
+Demo/Build/*
+
+*.moved-aside
+DerivedData
+.idea/
+
+# xcode noise
+build/*
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+*.mode1
+*.mode2v3
+*.mode1v3
+xcuserdata
+
+# osx noise
+.DS_Store
+Thumbs.db
+
