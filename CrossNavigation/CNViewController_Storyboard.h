@@ -36,21 +36,21 @@
 /**
  Specifies the following left view controller's storyboard identifier.
  */
-@property (nonatomic, strong) NSString *leftID;
+@property (nonatomic, strong) IBInspectable NSString *leftID;
 
 /**
  Specifies the following top view controller's storyboard identifier.
  */
-@property (nonatomic, strong) NSString *topID;
+@property (nonatomic, strong) IBInspectable NSString *topID;
 
 /**
  Specifies the following right view controller's storyboard identifier.
  */
-@property (nonatomic, strong) NSString *rightID;
+@property (nonatomic, strong) IBInspectable NSString *rightID;
 
 /**
  Specifies the following bottom view controller's storyboard identifier.
  */
-@property (nonatomic, strong) NSString *bottomID;
+@property (nonatomic, strong) IBInspectable NSString *bottomID;
 
 @end
