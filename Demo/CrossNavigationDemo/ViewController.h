@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Artem Stepanenko. All rights reserved.
 //
 
-#import "CNViewController.h"
+#import "CrossNavigation.h"
 
 @interface ViewController : CNViewController
 
