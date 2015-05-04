@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/artemstepanenko/CrossNavigation"
   s.license          = 'MIT'
   s.author           = { "Artem Stepanenko" => "artem.stepanenko.1@gmail.com" }
-  s.source           = { :git => "https://github.com/artemstepanenko/CrossNavigation.git", :tag => "release/v1.0.1" }
+  s.source           = { :git => "https://github.com/artemstepanenko/CrossNavigation.git", :tag => "release/v1.1.3" }
   s.social_media_url = 'http://stackoverflow.com/users/1090309/artem-stepanenko'
 
   s.platform     = :ios
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'CrossNavigation/**/*.{h,m}'
 
-  s.public_header_files = 'CrossNavigation/CNViewController.h', 'CrossNavigation/CNViewController_Storyboard.h', 'CrossNavigation/Utils/cn_direction.h'
+  s.public_header_files = 'CrossNavigation/CrossNavigation.h'
 
   s.framework    = 'UIKit'
 
