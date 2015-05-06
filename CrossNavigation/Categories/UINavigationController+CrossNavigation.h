@@ -1,7 +1,7 @@
 //
-// CNViewController_Storyboard.h
+// UINavigationController+CrossNavigation.h
 //
-// Copyright (c) 2014 Artem Stepanenko
+// Copyright (c) 2015 Artem Stepanenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,36 +21,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CNViewController.h"
+#import <UIKit/UIKit.h>
 
-/**
- Contains properties for storybord's identifiers of following view controllers. One - for each direction.
- If appropriate view controller is set, user can make an interactive transition by dragging.
- 
- @warning storyboard identifiers must belong to instances of CNViewController or any other classes inherited from CNViewController
- @warning view controllers must be in the same storyboard
- */
-
-@interface CNViewController ()
-
-/**
- Specifies the following left view controller's storyboard identifier.
- */
-@property (nonatomic, strong) NSString *leftID;
-
-/**
- Specifies the following top view controller's storyboard identifier.
- */
-@property (nonatomic, strong) NSString *topID;
-
-/**
- Specifies the following right view controller's storyboard identifier.
- */
-@property (nonatomic, strong) NSString *rightID;
-
-/**
- Specifies the following bottom view controller's storyboard identifier.
- */
-@property (nonatomic, strong) NSString *bottomID;
+@interface UINavigationController (CrossNavigation)
 
 @end
