@@ -16,8 +16,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'CrossNavigation/**/*.{h,m}'
-
-  s.public_header_files = 'CrossNavigation/CrossNavigation.h', 'CrossNavigation/CNViewController_Storyboard.h', 'CrossNavigation/UINavigationController+CrossNavigation.h'
+  s.public_header_files = 'CrossNavigation/*.h'
 
   s.framework    = 'UIKit'
   
