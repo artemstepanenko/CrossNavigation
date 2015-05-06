@@ -21,8 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef CrossNavigation_cn_utils_h
-#define CrossNavigation_cn_utils_h
+#import <Foundation/Foundation.h>
 
 static CGRect CGRectMoveVertically(CGRect rect, CGFloat yOffset)
 {
@@ -47,5 +46,3 @@ static CGRect CGRectTransform(CGRect originRect, CGRect finalRect, CGFloat rate)
                       CGRectGetWidth(originRect) + rate * (CGRectGetWidth(finalRect) - CGRectGetWidth(originRect)),
                       CGRectGetHeight(originRect) + rate * (CGRectGetHeight(finalRect) - CGRectGetHeight(originRect)));
 }
-
-#endif

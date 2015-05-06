@@ -21,8 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef CrossNavigation_cn_direction_h
-#define CrossNavigation_cn_direction_h
+#import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, CNDirection)
 {
@@ -73,5 +72,3 @@ static BOOL CNDirectionIsVertical(CNDirection direction)
 {
     return (direction == CNDirectionTop) || (direction == CNDirectionBottom);
 }
-
-#endif
