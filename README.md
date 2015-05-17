@@ -2,6 +2,10 @@
 
 if you inherit your view controllers from CNViewController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
 
+<em>Tip: You can implement this behaviour without any line of code.</em>
+
+![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_storyboard.gif)
+
 - [Usage](#usage)
  - [You can make a transition in code](#you-can-make-a-transition-in-code)
  - [Storyboard](#storyboard)
@@ -73,10 +77,6 @@ If you use a storyboard, you can easily create a segue between two CNViewControl
 
 - The only one class that should be used directly is CNViewController.
 - The view controllers must be initialized with a xib-file or by a storyboard object.
-
-## Demo
-
-![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_storyboard.gif)
 
 ## Integration
 
