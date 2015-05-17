@@ -28,6 +28,35 @@
 #import "CNTimer.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface UIViewController (CrossNavigation_Private)
+
+- (void)dismissWithParams:(NSDictionary *)params;
+- (NSDictionary *)createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion;
+
+@end
+
+@implementation UIViewController (CN_Private)
+
+- (NSDictionary *)createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion
+{
+    // params
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    params[@"animated"] = @(animated);
+    
+    if (completion) {
+        params[@"completion"] = completion;
+    }
+    
+    return params;
+}
+
+- (void)dismissWithParams:(NSDictionary *)params
+{
+    [self dismissViewControllerAnimated:[params[@"animated"] boolValue] completion:params[@"completion"]];
+}
+
+@end
+
 @interface CNViewController () <CNPanGestureHandlerDelegate>
 
 @property (nonatomic, weak) CNViewController *nextViewController;
@@ -79,12 +108,14 @@
         return;
     }
     
-    [viewController prepareForTransitionToDirection:direction interactive:NO];
-    
-    [viewController transitionWillFinishFromViewController:self
-                                          toViewController:viewController
-                                     recentPercentComplete:0.0f
-                                                  animated:animated];
+    if ([viewController isKindOfClass:[CNViewController class]]) {
+        [viewController prepareForTransitionToDirection:direction interactive:NO];
+        
+        [viewController transitionWillFinishFromViewController:self
+                                              toViewController:viewController
+                                         recentPercentComplete:0.0f
+                                                      animated:animated];
+    }
     
     [self presentViewController:viewController animated:animated completion:completion];
 }
@@ -105,7 +136,7 @@
         return;
     }
     
-    if (self.presentedViewController) {
+    if (self.presentedViewController.presentedViewController) {
         // rather tricky case since default behaviour is buggy
         [self dismissInvisibleViewControllerToDirection:direction animated:animated completion:completion];
     } else {
@@ -376,24 +407,6 @@
     imageView.frame = window.bounds;
     [window addSubview:imageView];
     return imageView;
-}
-
-- (void)dismissWithParams:(NSDictionary *)params
-{
-    [self dismissViewControllerAnimated:[params[@"animated"] boolValue] completion:params[@"completion"]];
-}
-
-- (NSDictionary *)createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion
-{
-    // params
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    params[@"animated"] = @(animated);
-    
-    if (completion) {
-        params[@"completion"] = completion;
-    }
-    
-    return params;
 }
 
 - (UIViewController *)visibleViewController

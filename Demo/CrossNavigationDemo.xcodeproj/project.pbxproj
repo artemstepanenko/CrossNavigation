@@ -29,6 +29,9 @@
 		AC7EA55119D2D71A00D9A550 /* CNRightTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54119D2D71A00D9A550 /* CNRightTransitioning.m */; };
 		AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54419D2D71A00D9A550 /* CNTopTransitioning.m */; };
 		AC7EA55319D2D71A00D9A550 /* CNPanGestureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54719D2D71A00D9A550 /* CNPanGestureHandler.m */; };
+		AC8D20BC1B08C65F0099FAC0 /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8D20BB1B08C65F0099FAC0 /* DefaultViewController.m */; };
+		AC8D20C01B08C8880099FAC0 /* RegularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8D20BF1B08C8880099FAC0 /* RegularViewController.m */; };
+		AC8D20C71B08DA0E0099FAC0 /* PrevDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8D20C61B08DA0E0099FAC0 /* PrevDefaultViewController.m */; };
 		ACCDDE8C19F592B2005693F3 /* CNSeguePerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCDDE8B19F592B2005693F3 /* CNSeguePerformer.m */; };
 		ACECFDB51A09852A006B1246 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACECFDB41A09852A006B1246 /* TableViewController.m */; };
 		ACF62C711A5F19F700C61CD1 /* LastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF62C701A5F19F700C61CD1 /* LastViewController.m */; };
@@ -93,6 +96,12 @@
 		AC7EA54919D2D71A00D9A550 /* cn_direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_direction.h; sourceTree = "<group>"; };
 		AC7EA54A19D2D71A00D9A550 /* cn_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_utils.h; sourceTree = "<group>"; };
 		AC7EA55419D2D8C300D9A550 /* CrossNavigationDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrossNavigationDemo-Prefix.pch"; sourceTree = "<group>"; };
+		AC8D20BA1B08C65F0099FAC0 /* DefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultViewController.h; sourceTree = "<group>"; };
+		AC8D20BB1B08C65F0099FAC0 /* DefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultViewController.m; sourceTree = "<group>"; };
+		AC8D20BE1B08C8880099FAC0 /* RegularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularViewController.h; sourceTree = "<group>"; };
+		AC8D20BF1B08C8880099FAC0 /* RegularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularViewController.m; sourceTree = "<group>"; };
+		AC8D20C51B08DA0E0099FAC0 /* PrevDefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrevDefaultViewController.h; sourceTree = "<group>"; };
+		AC8D20C61B08DA0E0099FAC0 /* PrevDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrevDefaultViewController.m; sourceTree = "<group>"; };
 		ACCDDE8A19F592B2005693F3 /* CNSeguePerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSeguePerformer.h; sourceTree = "<group>"; };
 		ACCDDE8B19F592B2005693F3 /* CNSeguePerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSeguePerformer.m; sourceTree = "<group>"; };
 		ACECFDB31A09852A006B1246 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -356,6 +365,26 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		AC8D20B91B08C6290099FAC0 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D20BA1B08C65F0099FAC0 /* DefaultViewController.h */,
+				AC8D20BB1B08C65F0099FAC0 /* DefaultViewController.m */,
+				AC8D20C51B08DA0E0099FAC0 /* PrevDefaultViewController.h */,
+				AC8D20C61B08DA0E0099FAC0 /* PrevDefaultViewController.m */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		AC8D20BD1B08C8620099FAC0 /* Regular */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D20BE1B08C8880099FAC0 /* RegularViewController.h */,
+				AC8D20BF1B08C8880099FAC0 /* RegularViewController.m */,
+			);
+			name = Regular;
+			sourceTree = "<group>";
+		};
 		ACCDDE8919F5929B005693F3 /* Performer */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +433,8 @@
 		ACF62C6D1A5F19A900C61CD1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AC8D20BD1B08C8620099FAC0 /* Regular */,
+				AC8D20B91B08C6290099FAC0 /* Default */,
 				ACF62C6E1A5F19C900C61CD1 /* Last */,
 				ACECFDB61A098532006B1246 /* Simple */,
 				ACECFDB71A09856D006B1246 /* Table */,
@@ -527,13 +558,16 @@
 				AC36786419D776CB00E7107A /* CNTimer.m in Sources */,
 				AC5551031AF8206100952AB7 /* CNViewController.m in Sources */,
 				AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */,
+				AC8D20C71B08DA0E0099FAC0 /* PrevDefaultViewController.m in Sources */,
 				AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */,
+				AC8D20C01B08C8880099FAC0 /* RegularViewController.m in Sources */,
 				AC5551071AF820BF00952AB7 /* UINavigationController+CrossNavigation.m in Sources */,
 				AC7EA55019D2D71A00D9A550 /* CNLeftTransitioning.m in Sources */,
 				AC52DBA519DBDC0100FB8293 /* ViewController.m in Sources */,
 				AC7EA55119D2D71A00D9A550 /* CNRightTransitioning.m in Sources */,
 				ACCDDE8C19F592B2005693F3 /* CNSeguePerformer.m in Sources */,
 				AC789FE119F57D6300D1DB29 /* CNBottomSegue.m in Sources */,
+				AC8D20BC1B08C65F0099FAC0 /* DefaultViewController.m in Sources */,
 				AC7EA54D19D2D71A00D9A550 /* CNTransitioningFactory.m in Sources */,
 				AC7EA50319D2D10600D9A550 /* main.m in Sources */,
 				AC789FE719F57D8F00D1DB29 /* CNRightSegue.m in Sources */,
