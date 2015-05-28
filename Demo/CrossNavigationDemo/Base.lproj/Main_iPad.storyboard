@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="hQk-do-IeM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="hQk-do-IeM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -382,7 +382,7 @@
         <!--View Controller-->
         <scene sceneID="yp7-tl-F1m">
             <objects>
-                <viewController id="Bey-tL-CJO" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="Bey-tL-CJO" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qTS-Qw-JsS">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -463,16 +463,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="rich"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="bacon"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="MCP-qm-I3W" id="7ek-VS-hbv"/>
-                        <outletCollection property="navigationSignViews" destination="XEn-oX-w4B" id="TKk-qk-deE"/>
-                        <outletCollection property="navigationSignViews" destination="9w0-Sb-yZF" id="IcS-ut-mq7"/>
-                        <outletCollection property="navigationSignViews" destination="DG5-Gq-6tp" id="mpu-ox-gif"/>
-                        <outletCollection property="navigationSignViews" destination="IZz-Tw-AXh" id="Rna-CM-Ygm"/>
-                        <outletCollection property="navigationSignViews" destination="6Y1-0T-R7a" id="aS6-AY-Qh7"/>
-                        <outletCollection property="navigationSignViews" destination="90I-dL-NXU" id="bUr-pC-Kio"/>
-                        <outletCollection property="navigationSignViews" destination="nsR-Uf-jAt" id="hJq-U7-U2x"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fu-ca-vqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
