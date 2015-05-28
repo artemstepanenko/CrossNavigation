@@ -6,107 +6,6 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="Jdy-oU-WDJ">
-            <objects>
-                <viewController storyboardIdentifier="some_screen" id="QiB-kF-sPh" customClass="CNViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="U4M-Bn-C7z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z3e-vX-3yl">
-                                <rect key="frame" x="55" y="231" width="210" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_arrow" id="rBb-nH-cKm">
-                                <rect key="frame" x="151" y="545" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k9m-Ne-yri" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1612" y="-1773"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="DVk-Ce-b4j">
-            <objects>
-                <viewController id="3Ki-e3-07B" customClass="TableViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HeT-Dx-WDK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Rj-FV-OBm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="3Ki-e3-07B" id="TZd-zr-XnS"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen with a table" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eg7-r6-rh0">
-                                <rect key="frame" x="39" y="228" width="243" height="111"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(drag down or left to make a transition)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7NY-oH-HO9">
-                                <rect key="frame" x="10" y="334" width="300" height="80"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" id="iOP-rq-z2v">
-                                <rect key="frame" x="297" y="275" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_arrow" id="K7a-cb-bcl">
-                                <rect key="frame" x="151" y="20" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="table"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GcU-Jd-7CS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1612" y="-1117"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Rl5-M6-JOY">
-            <objects>
-                <viewController storyboardIdentifier="table" id="v8a-yP-eg5" customClass="CNViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="im6-51-3J8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4Q7-1V-FJs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_arrow" id="3el-Or-Xqd">
-                                <rect key="frame" x="5" y="275" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hak-2o-UcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1168" y="-1117"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" sceneMemberID="viewController">
@@ -130,40 +29,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DUY-3r-rW1" kind="modal" modalTransitionStyle="crossDissolve" id="aXm-6j-E1g"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AMC-Zw-BOp">
-                                <rect key="frame" x="80" y="20" width="161" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="Start tables">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3Ki-e3-07B" kind="modal" modalTransitionStyle="crossDissolve" id="fhx-4a-cWu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HeI-1U-fug">
-                                <rect key="frame" x="29" y="393" width="262" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="UINavigationController">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dMo-w8-q8T" kind="modal" modalTransitionStyle="crossDissolve" id="EIU-du-E8N"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pac-L9-Fhq">
-                                <rect key="frame" x="63" y="336" width="194" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="UIViewController">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xQn-HR-Uf1" kind="modal" id="xhO-8X-3Z2"/>
+                                    <segue destination="DUY-3r-rW1" kind="modal" id="2y2-hl-9Tz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -172,226 +38,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1612" y="-445"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AeS-In-gyp">
-            <objects>
-                <navigationController id="dMo-w8-q8T" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e79-jy-vPV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="QiP-T7-ts5" kind="relationship" relationship="rootViewController" id="dIr-1b-Je2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M8b-XU-iEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2005" y="500"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="epz-6h-Lsc">
-            <objects>
-                <viewController id="xQn-HR-Uf1" customClass="CNViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4mU-yH-qII">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L71-b1-EB1">
-                                <rect key="frame" x="14" y="262" width="293" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S2I-i1-P2z">
-                                <rect key="frame" x="148" y="311" width="25" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="2"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KC4-W5-0Gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2005" y="1246"/>
-        </scene>
-        <!--Prev Default View Controller-->
-        <scene sceneID="I2S-5u-RXc">
-            <objects>
-                <viewController storyboardIdentifier="2" id="H9q-Fh-ELI" customClass="PrevDefaultViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Ty-dn-NfJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2e-XI-Yqn">
-                                <rect key="frame" x="148" y="309" width="25" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aBd-6F-0WS">
-                                <rect key="frame" x="117" y="212" width="86" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show modal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showDefaultModal:" destination="H9q-Fh-ELI" eventType="touchUpInside" id="TPA-fI-ghR"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JFg-kw-Psc">
-                                <rect key="frame" x="14" y="262" width="293" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uS2-Lh-s3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1621" y="1246"/>
-        </scene>
-        <!--Default View Controller-->
-        <scene sceneID="RAc-t3-ZRw">
-            <objects>
-                <viewController storyboardIdentifier="default" id="jpF-OI-NNf" customClass="DefaultViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9TP-WG-wdu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LFj-t4-PS5">
-                                <rect key="frame" x="22" y="262" width="277" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uvX-MF-nnz">
-                                <rect key="frame" x="140" y="209" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="closeDidPress:" destination="jpF-OI-NNf" eventType="touchUpInside" id="WGC-ly-aGr"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.98119516306675592" green="1" blue="0.72152749608596156" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tbk-Of-9Uj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1250" y="1246"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="0po-5N-m4k">
-            <objects>
-                <viewController id="JtZ-ct-XiH" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mfe-cH-uBH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" id="NMI-2r-2xc">
-                                <rect key="frame" x="297" y="275" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inside UINavigation Controller" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="odc-ku-xXv">
-                                <rect key="frame" x="35" y="226" width="250" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Ftp-t9-Jf7"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="regular_controller"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="NMI-2r-2xc" id="FeK-X3-1nc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BED-dJ-BK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1147" y="500"/>
-        </scene>
-        <!--UIViewController-->
-        <scene sceneID="0rc-b0-ONO">
-            <objects>
-                <viewController id="QiP-T7-ts5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AiC-h9-AfP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fPn-sy-197">
-                                <rect key="frame" x="114" y="251" width="97" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="JtZ-ct-XiH" kind="push" id="0d5-K0-7AK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="UIViewController" id="VeC-to-DA1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7sz-5f-1om" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1589" y="500"/>
-        </scene>
-        <!--Regular View Controller-->
-        <scene sceneID="gd7-WY-rHC">
-            <objects>
-                <viewController storyboardIdentifier="regular_controller" id="8TQ-l1-8uN" customClass="RegularViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VM7-qv-OaB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regular controller" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4oZ-7M-f75">
-                                <rect key="frame" x="10" y="231" width="300" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_arrow" id="3xQ-9M-2dz">
-                                <rect key="frame" x="5" y="275" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="3xQ-9M-2dz" id="zOX-fG-Wba"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ph9-gu-bh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-793" y="500"/>
+            <point key="canvasLocation" x="-186" y="1280"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fgD-Qw-okQ">
             <objects>
-                <viewController storyboardIdentifier="amish" id="IRT-HD-Dqx" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="amish" id="IRT-HD-Dqx" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cGL-1U-Gp0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -410,9 +62,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="66N-FP-l1Q" id="CGq-1M-EOE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yw-BX-QQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -421,7 +70,7 @@
         <!--View Controller-->
         <scene sceneID="f41-DD-aWT">
             <objects>
-                <viewController storyboardIdentifier="mormon" id="CVU-xs-ukY" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mormon" id="CVU-xs-ukY" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VtE-Vc-AHO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -440,9 +89,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="czF-Xq-Bd6" id="Fq8-8P-2cF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9RJ-GL-DUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -451,7 +97,7 @@
         <!--View Controller-->
         <scene sceneID="qfa-90-ySV">
             <objects>
-                <viewController storyboardIdentifier="christian" id="ju0-zT-ntd" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="christian" id="ju0-zT-ntd" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4U0-1k-wPg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -470,9 +116,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="Ory-RV-hwf" id="kpB-Lu-q2u"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z60-fL-2YJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -481,7 +124,7 @@
         <!--View Controller-->
         <scene sceneID="wgs-uM-j4w">
             <objects>
-                <viewController storyboardIdentifier="universalist" id="6El-Mr-stW" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="universalist" id="6El-Mr-stW" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ynF-Fs-oFG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -500,9 +143,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="GC3-hc-6gW" id="bis-xx-ZSX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgH-bU-pKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,7 +151,7 @@
         <!--View Controller-->
         <scene sceneID="jTl-X6-H2k">
             <objects>
-                <viewController storyboardIdentifier="alone" id="ydp-6A-16P" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="alone" id="ydp-6A-16P" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GcW-pZ-GFU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -554,13 +194,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="amish"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="universalist"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="IOI-5t-WWd" id="beR-fr-rmO"/>
-                        <outletCollection property="navigationSignViews" destination="sdv-mW-xVg" id="g4W-KL-ra2"/>
-                        <outletCollection property="navigationSignViews" destination="inx-1y-9CK" id="GDO-He-Vb2"/>
-                        <outletCollection property="navigationSignViews" destination="JpT-nF-8cU" id="rbL-Pp-Mlh"/>
-                        <outletCollection property="navigationSignViews" destination="0a1-o0-2IH" id="Bmt-rG-W5v"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2c-ab-gzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -569,7 +202,7 @@
         <!--View Controller-->
         <scene sceneID="G1o-Ta-SkQ">
             <objects>
-                <viewController storyboardIdentifier="scientologist" id="TEC-ZJ-Vhe" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scientologist" id="TEC-ZJ-Vhe" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="agW-R6-sPU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -588,9 +221,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="h0B-xV-Yk0" id="PDC-ru-1l9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqc-6A-kgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -599,7 +229,7 @@
         <!--View Controller-->
         <scene sceneID="hx5-em-p4P">
             <objects>
-                <viewController storyboardIdentifier="underwear" id="yFQ-Au-dmd" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="underwear" id="yFQ-Au-dmd" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L0R-aV-v5k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -642,13 +272,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="witness"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="mormon"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="oD1-wP-KRm" id="lS4-SJ-sEj"/>
-                        <outletCollection property="navigationSignViews" destination="gzK-KZ-Te3" id="pNX-J0-uSC"/>
-                        <outletCollection property="navigationSignViews" destination="M9A-qS-pe0" id="hNw-Yd-Mnn"/>
-                        <outletCollection property="navigationSignViews" destination="cJ2-pv-Pdi" id="QyI-mX-Ude"/>
-                        <outletCollection property="navigationSignViews" destination="eRc-wS-o4a" id="eXJ-rH-9A0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCA-qX-M19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -657,7 +280,7 @@
         <!--View Controller-->
         <scene sceneID="GOa-za-O4S">
             <objects>
-                <viewController storyboardIdentifier="annoying" id="uVP-bk-1qL" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="annoying" id="uVP-bk-1qL" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lCF-mU-0Kt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -700,13 +323,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="christian"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="underwear"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="bik-tu-eY0" id="5bv-EK-mUK"/>
-                        <outletCollection property="navigationSignViews" destination="8Ie-8n-klh" id="hKx-C3-f05"/>
-                        <outletCollection property="navigationSignViews" destination="zON-Gc-Vz2" id="4ta-iE-4J1"/>
-                        <outletCollection property="navigationSignViews" destination="5RU-uP-Mz3" id="ny7-Yh-rIF"/>
-                        <outletCollection property="navigationSignViews" destination="mA5-gW-f1G" id="b4z-Qw-Hmn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kK-sw-jZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -715,7 +331,7 @@
         <!--View Controller-->
         <scene sceneID="Zrw-1T-zLG">
             <objects>
-                <viewController storyboardIdentifier="bacon" id="ObG-hk-B1u" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bacon" id="ObG-hk-B1u" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m1c-EG-wHw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -758,13 +374,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="hummus"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="annoying"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="9I6-A2-Mxr" id="MPZ-t3-FID"/>
-                        <outletCollection property="navigationSignViews" destination="2Kb-IW-ci0" id="uCu-9P-VKF"/>
-                        <outletCollection property="navigationSignViews" destination="oHK-PZ-xLR" id="Fut-d0-gUv"/>
-                        <outletCollection property="navigationSignViews" destination="aNG-fn-Bbz" id="iJj-Ov-mc3"/>
-                        <outletCollection property="navigationSignViews" destination="bf5-BQ-l7Q" id="9VV-3L-QPL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqr-ti-jih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -773,7 +382,7 @@
         <!--View Controller-->
         <scene sceneID="pY9-pS-IKQ">
             <objects>
-                <viewController id="DUY-3r-rW1" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="DUY-3r-rW1" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnw-mb-vht">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -801,50 +410,30 @@
                                 <rect key="frame" x="151" y="545" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4rX-tr-dLf">
-                                <rect key="frame" x="61" y="30" width="198" height="41"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No more than one" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4LN-4r-7Lb">
+                                <rect key="frame" x="61" y="37" width="198" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="No more than one">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ydp-6A-16P" kind="custom" customClass="CNTopSegue" id="lHL-B8-66T"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bw7-xa-9j0">
-                                <rect key="frame" x="23" y="263" width="46" height="41"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Edm-4o-WZU">
+                                <rect key="frame" x="23" y="269" width="46" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="One">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ObG-hk-B1u" kind="custom" customClass="CNLeftSegue" id="8kG-lh-grt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5uo-a0-37u">
-                                <rect key="frame" x="238" y="263" width="59" height="41"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6DD-4L-UGm">
+                                <rect key="frame" x="238" y="269" width="59" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="None">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="D9t-2s-tAP" kind="custom" customClass="CNRightSegue" id="AQH-Qs-Pi6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fe6-GJ-Uq1">
-                                <rect key="frame" x="86" y="513" width="149" height="41"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A ton of them" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yK9-sX-eVS">
+                                <rect key="frame" x="86" y="519" width="149" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="A ton of them">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Y4B-nx-Tat" kind="custom" customClass="CNBottomSegue" id="TQD-yP-zsn"/>
-                                </connections>
-                            </button>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -854,16 +443,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="bacon"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="alone"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="yjx-Bh-i6r" id="mGk-Re-Zz2"/>
-                        <outletCollection property="navigationSignViews" destination="6xL-8h-C36" id="CAE-3H-MSJ"/>
-                        <outletCollection property="navigationSignViews" destination="W4M-94-0zb" id="TtW-r8-8aG"/>
-                        <outletCollection property="navigationSignViews" destination="R2q-15-gPg" id="0vw-3M-mHB"/>
-                        <outletCollection property="navigationSignViews" destination="4rX-tr-dLf" id="t0J-Bm-Cqk"/>
-                        <outletCollection property="navigationSignViews" destination="bw7-xa-9j0" id="q7V-fS-Nq2"/>
-                        <outletCollection property="navigationSignViews" destination="5uo-a0-37u" id="4a4-gj-CmL"/>
-                        <outletCollection property="navigationSignViews" destination="Fe6-GJ-Uq1" id="1oi-Aq-nsc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJv-Aj-dCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -872,7 +451,7 @@
         <!--View Controller-->
         <scene sceneID="PKg-GW-190">
             <objects>
-                <viewController storyboardIdentifier="rich" id="D9t-2s-tAP" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rich" id="D9t-2s-tAP" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n9t-Yw-Xdx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -915,22 +494,15 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="topID" value="scientologist"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="atheist"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="wzr-Gz-bwO" id="tsE-zm-13Z"/>
-                        <outletCollection property="navigationSignViews" destination="iBv-Th-g7f" id="RWk-fM-zDp"/>
-                        <outletCollection property="navigationSignViews" destination="LLS-Yd-a24" id="zoe-Wb-tsr"/>
-                        <outletCollection property="navigationSignViews" destination="wY1-qU-5Z5" id="zSV-9J-EMH"/>
-                        <outletCollection property="navigationSignViews" destination="22p-aA-RKx" id="4QV-Xx-ivH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoL-X3-Rdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2073" y="1280"/>
         </scene>
-        <!--Last View Controller-->
+        <!--View Controller-->
         <scene sceneID="2yo-h8-NUF">
             <objects>
-                <viewController storyboardIdentifier="atheist" id="mf0-43-5ni" customClass="LastViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="atheist" id="mf0-43-5ni" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kp3-Uo-EvI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -946,26 +518,12 @@
                                 <rect key="frame" x="5" y="275" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FzP-KB-HdI">
-                                <rect key="frame" x="130" y="162" width="61" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Restart">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="restartDidPress:" destination="mf0-43-5ni" eventType="touchUpInside" id="3v6-fc-1PR"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="table"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="6ol-v3-sIU" id="zzV-4O-KeK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUs-uO-fNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -974,7 +532,7 @@
         <!--View Controller-->
         <scene sceneID="wHz-Us-G0N">
             <objects>
-                <viewController storyboardIdentifier="witness" id="UMu-u9-mX2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="witness" id="UMu-u9-mX2" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fw-Mf-TXv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -993,9 +551,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="lfe-Iw-bfB" id="a8R-Wt-8Lx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5y-3s-EBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1004,7 +559,7 @@
         <!--View Controller-->
         <scene sceneID="vTI-O6-NGt">
             <objects>
-                <viewController storyboardIdentifier="muslim" id="FOb-Lh-YI6" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="muslim" id="FOb-Lh-YI6" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mvC-bq-WFy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1023,9 +578,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="0UN-wW-x0E" id="3ZA-ey-37n"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Xg-fT-AU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1034,7 +586,7 @@
         <!--View Controller-->
         <scene sceneID="6J4-CT-vYo">
             <objects>
-                <viewController storyboardIdentifier="hummus" id="6oO-Md-N2t" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hummus" id="6oO-Md-N2t" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O9F-u1-LQp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1077,13 +629,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="jewish"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftID" value="muslim"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="aNF-7U-55E" id="W3a-Sf-C8a"/>
-                        <outletCollection property="navigationSignViews" destination="LbK-97-Kff" id="bHw-Tg-93Z"/>
-                        <outletCollection property="navigationSignViews" destination="6vR-HY-Eap" id="0i7-lt-Q3M"/>
-                        <outletCollection property="navigationSignViews" destination="ptq-f0-4lR" id="sRo-Pr-mqZ"/>
-                        <outletCollection property="navigationSignViews" destination="e2g-Se-PFK" id="FTW-pu-2TV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SR3-Bk-q8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1092,7 +637,7 @@
         <!--View Controller-->
         <scene sceneID="Xwp-rI-p0J">
             <objects>
-                <viewController storyboardIdentifier="reincarnation" id="Y4B-nx-Tat" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="reincarnation" id="Y4B-nx-Tat" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MWg-dd-5vI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1135,14 +680,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="mayan"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="cat"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="zQu-Oj-fR1" id="Rln-c9-a4L"/>
-                        <outletCollection property="navigationSignViews" destination="zQu-Oj-fR1" id="d4H-qt-cG1"/>
-                        <outletCollection property="navigationSignViews" destination="REN-OO-WmT" id="60b-xd-YCW"/>
-                        <outletCollection property="navigationSignViews" destination="OtC-LV-tr6" id="T36-pB-YEb"/>
-                        <outletCollection property="navigationSignViews" destination="Zuz-Xy-Wsg" id="J0k-Vk-up9"/>
-                        <outletCollection property="navigationSignViews" destination="3Wn-f1-8Eh" id="jnu-yz-f2I"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdK-1g-9Hr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1151,7 +688,7 @@
         <!--View Controller-->
         <scene sceneID="gED-WY-ePs">
             <objects>
-                <viewController storyboardIdentifier="jewish" id="8l6-vf-Sfd" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="jewish" id="8l6-vf-Sfd" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RHL-a8-hhP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1170,9 +707,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="iuV-XC-bLj" id="Thq-K2-dfI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfr-jd-x2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1181,7 +715,7 @@
         <!--View Controller-->
         <scene sceneID="sHW-Fq-inu">
             <objects>
-                <viewController storyboardIdentifier="cat" id="M5h-Yl-RQi" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cat" id="M5h-Yl-RQi" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="87V-9j-ypz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1224,13 +758,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="takeout"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="wiccan"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="eOr-P1-Adb" id="LPF-sR-J7N"/>
-                        <outletCollection property="navigationSignViews" destination="gcH-MY-uR3" id="dWF-BT-lCH"/>
-                        <outletCollection property="navigationSignViews" destination="e6B-9P-oa9" id="hhP-oK-pmO"/>
-                        <outletCollection property="navigationSignViews" destination="8qB-EI-HVQ" id="VaK-2Y-58W"/>
-                        <outletCollection property="navigationSignViews" destination="EmV-mb-abX" id="XUy-3N-hLf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEE-QK-IwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1239,7 +766,7 @@
         <!--View Controller-->
         <scene sceneID="FAb-UV-ukG">
             <objects>
-                <viewController storyboardIdentifier="wiccan" id="8q8-Lc-vLS" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wiccan" id="8q8-Lc-vLS" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iUD-fK-QQ9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1258,9 +785,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="Xmi-mV-Dsc" id="jb0-da-tG3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpl-M7-ZoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1269,7 +793,7 @@
         <!--View Controller-->
         <scene sceneID="uNB-DM-wS8">
             <objects>
-                <viewController storyboardIdentifier="takeout" id="lu6-93-M8R" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="takeout" id="lu6-93-M8R" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g5Z-ct-VWj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1312,13 +836,6 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="bottomID" value="buddhist"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="rightID" value="hindu"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="aKN-Xn-4vT" id="oOf-jq-gB0"/>
-                        <outletCollection property="navigationSignViews" destination="JcV-Aj-beU" id="A1H-J9-4x3"/>
-                        <outletCollection property="navigationSignViews" destination="Mci-fK-InT" id="iW3-pL-zmk"/>
-                        <outletCollection property="navigationSignViews" destination="OLr-T6-Cw8" id="qHk-fI-bxG"/>
-                        <outletCollection property="navigationSignViews" destination="KY9-Om-W2j" id="L5k-m6-65d"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kjy-eO-vVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1327,7 +844,7 @@
         <!--View Controller-->
         <scene sceneID="o7L-0y-kcW">
             <objects>
-                <viewController storyboardIdentifier="buddhist" id="6tF-3S-7xM" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="buddhist" id="6tF-3S-7xM" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zC8-qg-RTo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1346,9 +863,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="6nm-j5-l56" id="Hqf-GU-cHm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNt-df-Y9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1357,7 +871,7 @@
         <!--View Controller-->
         <scene sceneID="Bzz-w2-RjC">
             <objects>
-                <viewController storyboardIdentifier="hindu" id="3HK-TV-TdS" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hindu" id="3HK-TV-TdS" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1BQ-V6-Xgm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1376,9 +890,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="SjU-Lb-U3W" id="h4L-F4-DC1"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzV-TE-X3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1387,7 +898,7 @@
         <!--View Controller-->
         <scene sceneID="885-qD-HEJ">
             <objects>
-                <viewController storyboardIdentifier="mayan" id="0zO-PE-4ud" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mayan" id="0zO-PE-4ud" customClass="CNViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yfu-Bq-ByE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1406,9 +917,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outletCollection property="navigationSignViews" destination="6TX-96-5tA" id="hos-YS-0BW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fna-1k-A7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
