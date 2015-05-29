@@ -21,7 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CNViewController_Storyboard.h"
+#import "CNViewController_Autotransition.h"
 #import "CNTransitioningFactory.h"
 #import "CNInteractiveTransition.h"
 #import "CNPanGestureHandler.h"
@@ -161,7 +161,9 @@
     return YES;
 }
 
-#pragma mark - Storyboard
+#pragma mark - Autotransition
+
+#pragma mark Storyboard
 
 - (void)setLeftID:(NSString *)leftStoryboardID
 {
@@ -169,6 +171,7 @@
         return;
     }
     
+    _leftClass = nil;
     _leftID = leftStoryboardID;
 }
 
@@ -178,6 +181,7 @@
         return;
     }
     
+    _topClass = nil;
     _topID = topStoryboardID;
 }
 
@@ -187,6 +191,7 @@
         return;
     }
     
+    _rightClass = nil;
     _rightID = rightStoryboardID;
 }
 
@@ -196,7 +201,50 @@
         return;
     }
     
+    _bottomClass = nil;
     _bottomID = bottomStoryboardID;
+}
+
+#pragma mark In Code
+
+- (void)setLeftClass:(Class)leftClass
+{
+    if (self.direction == CNDirectionRight) {
+        return;
+    }
+    
+    _leftID = nil;
+    _leftClass = leftClass;
+}
+
+- (void)setTopClass:(Class)topClass
+{
+    if (self.direction == CNDirectionBottom) {
+        return;
+    }
+    
+    _topID = nil;
+    _topClass = topClass;
+}
+
+- (void)setRightClass:(Class)rightClass
+{
+    if (self.direction == CNDirectionLeft) {
+        return;
+    }
+    
+    _rightID = nil;
+    _rightClass = rightClass;
+}
+
+- (void)setBottomClass:(Class)bottomClass
+{
+    if (self.direction == CNDirectionTop) {
+        return;
+    }
+    
+    _bottomID = nil;
+    _bottomClass = bottomClass;
 }
 
 #pragma mark - CNPanGestureHandlerDelegate
@@ -215,8 +263,7 @@
         
     } else {
 
-        NSString *storyboardID = [self storyboardIDForPanDirection:direction];
-        self.nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:storyboardID];
+        self.nextViewController = [self createNextViewControllerForDirection:direction];
         [self.nextViewController prepareForTransitionToDirection:direction interactive:YES];
         
         [self presentViewController:self.nextViewController animated:YES completion:^{
@@ -272,13 +319,13 @@
         
         if (offset.x < 0) {
             
-            if ((backDirection == CNDirectionRight) || self.rightID) {
+            if ((backDirection == CNDirectionRight) || [self supportsAutotransitionToDirection:CNDirectionRight]) {
                 direction = CNDirectionRight;
             } else {
                 direction = CNDirectionNone;
             }
         } else {
-            if ((backDirection == CNDirectionLeft) || self.leftID) {
+            if ((backDirection == CNDirectionLeft) || [self supportsAutotransitionToDirection:CNDirectionLeft]) {
                 direction = CNDirectionLeft;
             } else {
                 direction = CNDirectionNone;
@@ -287,13 +334,13 @@
     } else {
         
         if (offset.y < 0) {
-            if ((backDirection == CNDirectionBottom) || self.bottomID) {
+            if ((backDirection == CNDirectionBottom) || [self supportsAutotransitionToDirection:CNDirectionBottom]) {
                 direction = CNDirectionBottom;
             } else {
                 direction = CNDirectionNone;
             }
         } else {
-            if ((backDirection == CNDirectionTop) || self.topID) {
+            if ((backDirection == CNDirectionTop) || [self supportsAutotransitionToDirection:CNDirectionTop]) {
                 direction = CNDirectionTop;
             } else {
                 direction = CNDirectionNone;
@@ -341,6 +388,24 @@
 {
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self.panGestureHandler action:@selector(userDidPan:)];
     [self.view addGestureRecognizer:recognizer];
+}
+
+- (CNViewController *)createNextViewControllerForDirection:(CNDirection)direction
+{
+    Class viewControllerClass = [self classForDirection:direction];
+    
+    if (viewControllerClass) {
+        return [[viewControllerClass alloc] init];
+    } else {
+        
+        NSString *storyboardID = [self storyboardIDForDirection:direction];
+        
+        if (storyboardID) {
+            return [self.storyboard instantiateViewControllerWithIdentifier:storyboardID];
+        }
+    }
+    
+    return nil;
 }
 
 - (void)dismissVisibleViewControllerToDirection:(CNDirection)direction
@@ -484,7 +549,7 @@
     }
 }
 
-- (NSString *)storyboardIDForPanDirection:(CNDirection)direction
+- (NSString *)storyboardIDForDirection:(CNDirection)direction
 {
     switch (direction) {
         case CNDirectionRight: {
@@ -510,6 +575,32 @@
     }
 }
 
+- (Class)classForDirection:(CNDirection)direction
+{
+    switch (direction) {
+        case CNDirectionRight: {
+            return self.rightClass;
+        }
+            
+        case CNDirectionBottom: {
+            return self.bottomClass;
+        }
+            
+        case CNDirectionLeft: {
+            return self.leftClass;
+        }
+            
+        case CNDirectionTop: {
+            return self.topClass;
+        }
+            
+        default: {
+            NSAssert(NO, @"Wrong direction");
+            return nil;
+        }
+    }
+}
+
 - (UIImage *)imageWithView:(UIView *)view
 {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
@@ -520,6 +611,33 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+#pragma mark Autotransition
+
+- (BOOL)supportsAutotransitionToDirection:(CNDirection)direction
+{
+    switch (direction) {
+        case CNDirectionRight: {
+            return self.rightClass || self.rightID;
+        }
+            
+        case CNDirectionBottom: {
+            return self.bottomClass || self.bottomID;
+        }
+            
+        case CNDirectionLeft: {
+            return self.leftClass || self.leftID;
+        }
+            
+        case CNDirectionTop: {
+            return self.topClass || self.topID;
+        }
+            
+        default: {
+            return NO;
+        }
+    }
 }
 
 @end

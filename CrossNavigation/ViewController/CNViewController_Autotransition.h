@@ -1,5 +1,5 @@
 //
-// CNViewController_Storyboard.h
+// CNViewController_Autotransition.h
 //
 // Copyright (c) 2014 Artem Stepanenko
 //
@@ -24,14 +24,20 @@
 #import "CNViewController.h"
 
 /**
- Contains properties for storybord's identifiers of following view controllers. One - for each direction.
+ Use methods/properties from this interface to implement auto-transitions.
+ It means that following view controllers are presented automatically when a user makes a proper dragging gesture.
+ */
+@interface CNViewController ()
+
+#pragma mark Storyboard
+
+/**
+ Properties for storybord's identifiers of following view controllers. One - for each direction.
  If appropriate view controller is set, user can make an interactive transition by dragging.
  
  @warning storyboard identifiers must belong to instances of CNViewController or any other classes inherited from CNViewController
  @warning view controllers must be in the same storyboard
  */
-
-@interface CNViewController ()
 
 /**
  Specifies the following left view controller's storyboard identifier.
@@ -52,5 +58,36 @@
  Specifies the following bottom view controller's storyboard identifier.
  */
 @property (nonatomic, strong) IBInspectable NSString *bottomID;
+
+#pragma mark In Code
+
+/**
+ Properties for classes of following view controllers.
+ Actual instances are created using the most simple initializer:
+ 
+ CNViewController *cnViewController = [[cnClass new] init];
+ 
+ @warning provided classes must be CNViewController or any other classes inherited from CNViewController
+ */
+
+/**
+ Specifies the following left view controller's class.
+ */
+@property (nonatomic, strong) Class leftClass;
+
+/**
+ Specifies the following top view controller's class.
+ */
+@property (nonatomic, strong) Class topClass;
+
+/**
+ Specifies the following right view controller's class.
+ */
+@property (nonatomic, strong) Class rightClass;
+
+/**
+ Specifies the following bottom view controller's class.
+ */
+@property (nonatomic, strong) Class bottomClass;
 
 @end
