@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC73DA691B187E4C00573835 /* UINavigationController+CrossNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */; };
+		AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */; };
+		AC73DA6B1B187E4C00573835 /* CNTransitioningFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA3C1B187E4C00573835 /* CNTransitioningFactory.m */; };
+		AC73DA6C1B187E4C00573835 /* CNBottomTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA401B187E4C00573835 /* CNBottomTransitioning.m */; };
+		AC73DA6D1B187E4C00573835 /* CNTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA421B187E4C00573835 /* CNTransitioning.m */; };
+		AC73DA6E1B187E4C00573835 /* CNLeftTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA451B187E4C00573835 /* CNLeftTransitioning.m */; };
+		AC73DA6F1B187E4C00573835 /* CNRightTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA481B187E4C00573835 /* CNRightTransitioning.m */; };
+		AC73DA701B187E4C00573835 /* CNTopTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA4B1B187E4C00573835 /* CNTopTransitioning.m */; };
+		AC73DA711B187E4C00573835 /* CNPanGestureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA4E1B187E4C00573835 /* CNPanGestureHandler.m */; };
+		AC73DA721B187E4C00573835 /* CNBottomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA521B187E4C00573835 /* CNBottomSegue.m */; };
+		AC73DA731B187E4C00573835 /* CNLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA551B187E4C00573835 /* CNLeftSegue.m */; };
+		AC73DA741B187E4C00573835 /* CNSeguePerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA581B187E4C00573835 /* CNSeguePerformer.m */; };
+		AC73DA751B187E4C00573835 /* CNRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA5B1B187E4C00573835 /* CNRightSegue.m */; };
+		AC73DA761B187E4C00573835 /* CNTopSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA5E1B187E4C00573835 /* CNTopSegue.m */; };
+		AC73DA771B187E4C00573835 /* CNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA611B187E4C00573835 /* CNTimer.m */; };
+		AC73DA781B187E4C00573835 /* CNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA671B187E4C00573835 /* CNViewController.m */; };
+		AC73DA7B1B1893E000573835 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA7A1B1893E000573835 /* AppDelegate.m */; };
+		AC73DA801B1893ED00573835 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA7C1B1893ED00573835 /* Main_iPad.storyboard */; };
+		AC73DA811B1893ED00573835 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA7E1B1893ED00573835 /* Main_iPhone.storyboard */; };
+		AC73DA831B1893F800573835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA821B1893F800573835 /* Images.xcassets */; };
+		AC73DA8B1B18943A00573835 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA891B18943A00573835 /* Info.plist */; };
+		AC73DA8C1B18943A00573835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA8A1B18943A00573835 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC73DA341B187E4C00573835 /* UINavigationController+CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CrossNavigation.h"; sourceTree = "<group>"; };
+		AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CrossNavigation.m"; sourceTree = "<group>"; };
+		AC73DA361B187E4C00573835 /* CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossNavigation.h; sourceTree = "<group>"; };
+		AC73DA381B187E4C00573835 /* CNInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNInteractiveTransition.h; sourceTree = "<group>"; };
+		AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNInteractiveTransition.m; sourceTree = "<group>"; };
+		AC73DA3B1B187E4C00573835 /* CNTransitioningFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTransitioningFactory.h; sourceTree = "<group>"; };
+		AC73DA3C1B187E4C00573835 /* CNTransitioningFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTransitioningFactory.m; sourceTree = "<group>"; };
+		AC73DA3F1B187E4C00573835 /* CNBottomTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBottomTransitioning.h; sourceTree = "<group>"; };
+		AC73DA401B187E4C00573835 /* CNBottomTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBottomTransitioning.m; sourceTree = "<group>"; };
+		AC73DA411B187E4C00573835 /* CNTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTransitioning.h; sourceTree = "<group>"; };
+		AC73DA421B187E4C00573835 /* CNTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTransitioning.m; sourceTree = "<group>"; };
+		AC73DA441B187E4C00573835 /* CNLeftTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLeftTransitioning.h; sourceTree = "<group>"; };
+		AC73DA451B187E4C00573835 /* CNLeftTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLeftTransitioning.m; sourceTree = "<group>"; };
+		AC73DA471B187E4C00573835 /* CNRightTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNRightTransitioning.h; sourceTree = "<group>"; };
+		AC73DA481B187E4C00573835 /* CNRightTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNRightTransitioning.m; sourceTree = "<group>"; };
+		AC73DA4A1B187E4C00573835 /* CNTopTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTopTransitioning.h; sourceTree = "<group>"; };
+		AC73DA4B1B187E4C00573835 /* CNTopTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTopTransitioning.m; sourceTree = "<group>"; };
+		AC73DA4D1B187E4C00573835 /* CNPanGestureHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPanGestureHandler.h; sourceTree = "<group>"; };
+		AC73DA4E1B187E4C00573835 /* CNPanGestureHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPanGestureHandler.m; sourceTree = "<group>"; };
+		AC73DA511B187E4C00573835 /* CNBottomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBottomSegue.h; sourceTree = "<group>"; };
+		AC73DA521B187E4C00573835 /* CNBottomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBottomSegue.m; sourceTree = "<group>"; };
+		AC73DA541B187E4C00573835 /* CNLeftSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLeftSegue.h; sourceTree = "<group>"; };
+		AC73DA551B187E4C00573835 /* CNLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLeftSegue.m; sourceTree = "<group>"; };
+		AC73DA571B187E4C00573835 /* CNSeguePerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSeguePerformer.h; sourceTree = "<group>"; };
+		AC73DA581B187E4C00573835 /* CNSeguePerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSeguePerformer.m; sourceTree = "<group>"; };
+		AC73DA5A1B187E4C00573835 /* CNRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNRightSegue.h; sourceTree = "<group>"; };
+		AC73DA5B1B187E4C00573835 /* CNRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNRightSegue.m; sourceTree = "<group>"; };
+		AC73DA5D1B187E4C00573835 /* CNTopSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTopSegue.h; sourceTree = "<group>"; };
+		AC73DA5E1B187E4C00573835 /* CNTopSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTopSegue.m; sourceTree = "<group>"; };
+		AC73DA601B187E4C00573835 /* CNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTimer.h; sourceTree = "<group>"; };
+		AC73DA611B187E4C00573835 /* CNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTimer.m; sourceTree = "<group>"; };
+		AC73DA631B187E4C00573835 /* cn_direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_direction.h; sourceTree = "<group>"; };
+		AC73DA641B187E4C00573835 /* cn_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_utils.h; sourceTree = "<group>"; };
+		AC73DA661B187E4C00573835 /* CNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController.h; sourceTree = "<group>"; };
+		AC73DA671B187E4C00573835 /* CNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewController.m; sourceTree = "<group>"; };
+		AC73DA681B187E4C00573835 /* CNViewController_Autotransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController_Autotransition.h; sourceTree = "<group>"; };
+		AC73DA791B1893E000573835 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CNStoryboardExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		AC73DA7A1B1893E000573835 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CNStoryboardExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		AC73DA7D1B1893ED00573835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
+		AC73DA7F1B1893ED00573835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
+		AC73DA821B1893F800573835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CNStoryboardExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		AC73DA881B18943A00573835 /* CNStoryboardExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNStoryboardExample-Prefix.pch"; path = "CNStoryboardExample/CNStoryboardExample-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		AC73DA891B18943A00573835 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CNStoryboardExample/Info.plist; sourceTree = SOURCE_ROOT; };
+		AC73DA8A1B18943A00573835 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CNStoryboardExample/main.m; sourceTree = SOURCE_ROOT; };
+		AC7EA4FD19D2D10600D9A550 /* CNStoryboardExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNStoryboardExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC7EA4FA19D2D10600D9A550 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC73DA321B187E4C00573835 /* CrossNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA331B187E4C00573835 /* Categories */,
+				AC73DA361B187E4C00573835 /* CrossNavigation.h */,
+				AC73DA371B187E4C00573835 /* InteractiveTransition */,
+				AC73DA4C1B187E4C00573835 /* PanGestureHandler */,
+				AC73DA4F1B187E4C00573835 /* Segue */,
+				AC73DA5F1B187E4C00573835 /* Timer */,
+				AC73DA621B187E4C00573835 /* Utils */,
+				AC73DA651B187E4C00573835 /* ViewController */,
+			);
+			name = CrossNavigation;
+			path = ../../CrossNavigation;
+			sourceTree = "<group>";
+		};
+		AC73DA331B187E4C00573835 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA341B187E4C00573835 /* UINavigationController+CrossNavigation.h */,
+				AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		AC73DA371B187E4C00573835 /* InteractiveTransition */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA381B187E4C00573835 /* CNInteractiveTransition.h */,
+				AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */,
+				AC73DA3A1B187E4C00573835 /* Factory */,
+				AC73DA3D1B187E4C00573835 /* Transitioning */,
+			);
+			path = InteractiveTransition;
+			sourceTree = "<group>";
+		};
+		AC73DA3A1B187E4C00573835 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA3B1B187E4C00573835 /* CNTransitioningFactory.h */,
+				AC73DA3C1B187E4C00573835 /* CNTransitioningFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		AC73DA3D1B187E4C00573835 /* Transitioning */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA3E1B187E4C00573835 /* Bottom */,
+				AC73DA411B187E4C00573835 /* CNTransitioning.h */,
+				AC73DA421B187E4C00573835 /* CNTransitioning.m */,
+				AC73DA431B187E4C00573835 /* Left */,
+				AC73DA461B187E4C00573835 /* Right */,
+				AC73DA491B187E4C00573835 /* Top */,
+			);
+			path = Transitioning;
+			sourceTree = "<group>";
+		};
+		AC73DA3E1B187E4C00573835 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA3F1B187E4C00573835 /* CNBottomTransitioning.h */,
+				AC73DA401B187E4C00573835 /* CNBottomTransitioning.m */,
+			);
+			path = Bottom;
+			sourceTree = "<group>";
+		};
+		AC73DA431B187E4C00573835 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA441B187E4C00573835 /* CNLeftTransitioning.h */,
+				AC73DA451B187E4C00573835 /* CNLeftTransitioning.m */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		AC73DA461B187E4C00573835 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA471B187E4C00573835 /* CNRightTransitioning.h */,
+				AC73DA481B187E4C00573835 /* CNRightTransitioning.m */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
+		AC73DA491B187E4C00573835 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA4A1B187E4C00573835 /* CNTopTransitioning.h */,
+				AC73DA4B1B187E4C00573835 /* CNTopTransitioning.m */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		AC73DA4C1B187E4C00573835 /* PanGestureHandler */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA4D1B187E4C00573835 /* CNPanGestureHandler.h */,
+				AC73DA4E1B187E4C00573835 /* CNPanGestureHandler.m */,
+			);
+			path = PanGestureHandler;
+			sourceTree = "<group>";
+		};
+		AC73DA4F1B187E4C00573835 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA501B187E4C00573835 /* Bottom */,
+				AC73DA531B187E4C00573835 /* Left */,
+				AC73DA561B187E4C00573835 /* Performer */,
+				AC73DA591B187E4C00573835 /* Right */,
+				AC73DA5C1B187E4C00573835 /* Top */,
+			);
+			path = Segue;
+			sourceTree = "<group>";
+		};
+		AC73DA501B187E4C00573835 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA511B187E4C00573835 /* CNBottomSegue.h */,
+				AC73DA521B187E4C00573835 /* CNBottomSegue.m */,
+			);
+			path = Bottom;
+			sourceTree = "<group>";
+		};
+		AC73DA531B187E4C00573835 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA541B187E4C00573835 /* CNLeftSegue.h */,
+				AC73DA551B187E4C00573835 /* CNLeftSegue.m */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		AC73DA561B187E4C00573835 /* Performer */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA571B187E4C00573835 /* CNSeguePerformer.h */,
+				AC73DA581B187E4C00573835 /* CNSeguePerformer.m */,
+			);
+			path = Performer;
+			sourceTree = "<group>";
+		};
+		AC73DA591B187E4C00573835 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA5A1B187E4C00573835 /* CNRightSegue.h */,
+				AC73DA5B1B187E4C00573835 /* CNRightSegue.m */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
+		AC73DA5C1B187E4C00573835 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA5D1B187E4C00573835 /* CNTopSegue.h */,
+				AC73DA5E1B187E4C00573835 /* CNTopSegue.m */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		AC73DA5F1B187E4C00573835 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA601B187E4C00573835 /* CNTimer.h */,
+				AC73DA611B187E4C00573835 /* CNTimer.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		AC73DA621B187E4C00573835 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA631B187E4C00573835 /* cn_direction.h */,
+				AC73DA641B187E4C00573835 /* cn_utils.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AC73DA651B187E4C00573835 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA661B187E4C00573835 /* CNViewController.h */,
+				AC73DA671B187E4C00573835 /* CNViewController.m */,
+				AC73DA681B187E4C00573835 /* CNViewController_Autotransition.h */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AC7EA4F419D2D10600D9A550 = {
+			isa = PBXGroup;
+			children = (
+				AC73DA321B187E4C00573835 /* CrossNavigation */,
+				AC7EA4FF19D2D10600D9A550 /* CNStoryboardExample */,
+				AC7EA4FE19D2D10600D9A550 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC7EA4FE19D2D10600D9A550 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EA4FD19D2D10600D9A550 /* CNStoryboardExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC7EA4FF19D2D10600D9A550 /* CNStoryboardExample */ = {
+			isa = PBXGroup;
+			children = (
+				ACECFDB81A0985C1006B1246 /* AppDelegate */,
+				ACECFDB91A0985D9006B1246 /* Storyboard */,
+				AC7EA50019D2D10600D9A550 /* Supporting Files */,
+				AC73DA821B1893F800573835 /* Images.xcassets */,
+			);
+			name = CNStoryboardExample;
+			path = CrossNavigationDemo;
+			sourceTree = "<group>";
+		};
+		AC7EA50019D2D10600D9A550 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA881B18943A00573835 /* CNStoryboardExample-Prefix.pch */,
+				AC73DA891B18943A00573835 /* Info.plist */,
+				AC73DA8A1B18943A00573835 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACECFDB81A0985C1006B1246 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA791B1893E000573835 /* AppDelegate.h */,
+				AC73DA7A1B1893E000573835 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		ACECFDB91A0985D9006B1246 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA7C1B1893ED00573835 /* Main_iPad.storyboard */,
+				AC73DA7E1B1893ED00573835 /* Main_iPhone.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC7EA4FC19D2D10600D9A550 /* CNStoryboardExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC7EA52019D2D10700D9A550 /* Build configuration list for PBXNativeTarget "CNStoryboardExample" */;
+			buildPhases = (
+				AC7EA4F919D2D10600D9A550 /* Sources */,
+				AC7EA4FA19D2D10600D9A550 /* Frameworks */,
+				AC7EA4FB19D2D10600D9A550 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CNStoryboardExample;
+			productName = CrossNavigationDemo;
+			productReference = AC7EA4FD19D2D10600D9A550 /* CNStoryboardExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC7EA4F519D2D10600D9A550 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Artem Stepanenko";
+				TargetAttributes = {
+					AC7EA4FC19D2D10600D9A550 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
+			};
+			buildConfigurationList = AC7EA4F819D2D10600D9A550 /* Build configuration list for PBXProject "CNStoryboardExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC7EA4F419D2D10600D9A550;
+			productRefGroup = AC7EA4FE19D2D10600D9A550 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC7EA4FC19D2D10600D9A550 /* CNStoryboardExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC7EA4FB19D2D10600D9A550 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC73DA831B1893F800573835 /* Images.xcassets in Resources */,
+				AC73DA801B1893ED00573835 /* Main_iPad.storyboard in Resources */,
+				AC73DA8B1B18943A00573835 /* Info.plist in Resources */,
+				AC73DA811B1893ED00573835 /* Main_iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC7EA4F919D2D10600D9A550 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC73DA6D1B187E4C00573835 /* CNTransitioning.m in Sources */,
+				AC73DA771B187E4C00573835 /* CNTimer.m in Sources */,
+				AC73DA7B1B1893E000573835 /* AppDelegate.m in Sources */,
+				AC73DA751B187E4C00573835 /* CNRightSegue.m in Sources */,
+				AC73DA6C1B187E4C00573835 /* CNBottomTransitioning.m in Sources */,
+				AC73DA781B187E4C00573835 /* CNViewController.m in Sources */,
+				AC73DA761B187E4C00573835 /* CNTopSegue.m in Sources */,
+				AC73DA6F1B187E4C00573835 /* CNRightTransitioning.m in Sources */,
+				AC73DA6B1B187E4C00573835 /* CNTransitioningFactory.m in Sources */,
+				AC73DA8C1B18943A00573835 /* main.m in Sources */,
+				AC73DA711B187E4C00573835 /* CNPanGestureHandler.m in Sources */,
+				AC73DA741B187E4C00573835 /* CNSeguePerformer.m in Sources */,
+				AC73DA701B187E4C00573835 /* CNTopTransitioning.m in Sources */,
+				AC73DA6E1B187E4C00573835 /* CNLeftTransitioning.m in Sources */,
+				AC73DA721B187E4C00573835 /* CNBottomSegue.m in Sources */,
+				AC73DA731B187E4C00573835 /* CNLeftSegue.m in Sources */,
+				AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */,
+				AC73DA691B187E4C00573835 /* UINavigationController+CrossNavigation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC73DA7C1B1893ED00573835 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC73DA7D1B1893ED00573835 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		AC73DA7E1B1893ED00573835 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC73DA7F1B1893ED00573835 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC7EA51E19D2D10700D9A550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC7EA51F19D2D10700D9A550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC7EA52119D2D10700D9A550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CNStoryboardExample/CNStoryboardExample-Prefix.pch";
+				INFOPLIST_FILE = CNStoryboardExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = CNStoryboardExample;
+			};
+			name = Debug;
+		};
+		AC7EA52219D2D10700D9A550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CNStoryboardExample/CNStoryboardExample-Prefix.pch";
+				INFOPLIST_FILE = CNStoryboardExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = CNStoryboardExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC7EA4F819D2D10600D9A550 /* Build configuration list for PBXProject "CNStoryboardExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC7EA51E19D2D10700D9A550 /* Debug */,
+				AC7EA51F19D2D10700D9A550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC7EA52019D2D10700D9A550 /* Build configuration list for PBXNativeTarget "CNStoryboardExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC7EA52119D2D10700D9A550 /* Debug */,
+				AC7EA52219D2D10700D9A550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC7EA4F519D2D10600D9A550 /* Project object */;
+}
