@@ -2,25 +2,49 @@
 
 if you inherit your view controllers from CNViewController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
 
-<em>Tip: You can implement this behaviour without any line of code.</em>
-
-![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_storyboard.gif)
-
-- [Usage](#usage)
- - [You can make a transition in code](#you-can-make-a-transition-in-code)
- - [Storyboard](#storyboard)
- - [Segues](#segues)
- - [Restrictions](#restrictions)
-- [Demo](#demo)
+- [Auto-transitions](#auto-transitions)
+- [Simple transitions](#simple-transitions)
+- [Restrictions](#restrictions)
 - [Integration](#integration)
  - [Podfile](#podfile)
 - [Requirements](#requirements)
 - [TODO](#todo)
 - [P.S.](#ps)
 
-## Usage
+## Auto-transitions
 
-### You can make a transition in code
+This type of transitions happens when a user makes dragging gesture. If you've specified a view controller (a class or a storyboad ID) for the proper direction, it will appear interactively.
+
+<em>Tip: You can implement this behaviour without any line of code.</em>
+
+![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_storyboard.gif)
+
+### In code
+
+If you want to do this from code, assign a class of the following view controller to one of the properties:
+
+```
+@property (nonatomic, strong) Class leftClass;
+@property (nonatomic, strong) Class topClass;
+@property (nonatomic, strong) Class rightClass;
+@property (nonatomic, strong) Class bottomClass;
+```
+
+### Storyboard
+
+You can specify all transitions in storyboard, as well.
+
+![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_storyboard_inspector.png)
+
+Values are storyboard IDs of view controllers. And keys are determined in CNViewController_Storyboard.h. (Also you can set them in code.)
+
+This approach allows users to move forward by dragging, but all the controllers must be created in the **same** storyboard.
+
+## Simple Transitions
+
+![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_present.gif)
+
+### In code
 
 ``` objc
 XXViewController *nextViewController = ...;
@@ -52,26 +76,13 @@ method in CNViewController subclass to be notified what is the current rate of a
 to take a control over interactive transitions. You may allow them or prohibit depends on your app's logic.
 present parameter is YES if a considered transition will lead to an appearance of a new view controller in a stack. If NO, this is a back transition.
 
-![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_present.gif)
-
 ### Storyboard
-
-You can specify all transitions in storyboard, as well.
-
-![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_storyboard_inspector.png)
-
-Values are storyboard IDs of view controllers. And keys are determined in CNViewController_Storyboard.h. (Also you can set them in code.)
-
-This approach allows users to move forward by dragging, but all the controllers must be created in the **same** storyboard.
-
-### Segues
 
 If you use a storyboard, you can easily create a segue between two CNViewController-s. When you drop a connection on a destination view controller, you'll see a popup with a list of available segues. bottom (CNBottomSegue), left (CNLeftSegue), right (CNRightSegue), and top (CNLeftSegue) come from CrossNavigation library, but all others are available too. You won't get a crash if you made a common modal transition from CNViewController. But you will, if you made one of those four transitions (bottom, left, right, or top) between view controllers which are not actually objects of CNViewController class (or of it's subclasses), it's required for both controllers.
 
 ![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_segue_connecting.png)
 
 ![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_segue_inspector.png)
-
 
 ### Restrictions
 
