@@ -1,11 +1,12 @@
 //
 //  main.m
-//  CrossNavigationDemo
+//  CNNoStoryboardsExample
 //
-//  Created by Artem Stepanenko on 9/24/14.
-//  Copyright (c) 2014 Artem Stepanenko. All rights reserved.
+//  Created by Artem Stepanenko on 5/28/15.
+//  Copyright (c) 2015 Artem Stepanenko. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {

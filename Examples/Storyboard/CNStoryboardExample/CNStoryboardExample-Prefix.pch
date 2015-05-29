@@ -1,13 +1,13 @@
 //
-//  CrossNavigationDemo-Prefix.pch
-//  CrossNavigationDemo
+//  CNStoryboardExample-Prefix.pch
+//  CNStoryboardExample
 //
 //  Created by Artem Stepanenko on 9/24/14.
 //  Copyright (c) 2014 Artem Stepanenko. All rights reserved.
 //
 
-#ifndef CrossNavigationDemo_CrossNavigationDemo_Prefix_pch
-#define CrossNavigationDemo_CrossNavigationDemo_Prefix_pch
+#ifndef CNStoryboardExample_CNStoryboardExample_Prefix_pch
+#define CNStoryboardExample_CNStoryboardExample_Prefix_pch
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>

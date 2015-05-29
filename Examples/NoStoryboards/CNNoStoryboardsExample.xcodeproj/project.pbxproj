@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC1065FC1B17D497006FFE4C /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1065FB1B17D497006FFE4C /* RightViewController.m */; };
-		AC1066001B17D4D0006FFE4C /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1065FF1B17D4D0006FFE4C /* TopViewController.m */; };
-		AC1066041B17D4F5006FFE4C /* BottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1066031B17D4F5006FFE4C /* BottomViewController.m */; };
 		AC10663C1B17D66E006FFE4C /* UINavigationController+CrossNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1066081B17D66E006FFE4C /* UINavigationController+CrossNavigation.m */; };
 		AC10663D1B17D66E006FFE4C /* CNInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10660C1B17D66E006FFE4C /* CNInteractiveTransition.m */; };
 		AC10663E1B17D66E006FFE4C /* CNTransitioningFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10660F1B17D66E006FFE4C /* CNTransitioningFactory.m */; };
@@ -26,31 +23,18 @@
 		AC1066491B17D66E006FFE4C /* CNTopSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1066311B17D66E006FFE4C /* CNTopSegue.m */; };
 		AC10664A1B17D66E006FFE4C /* CNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1066341B17D66E006FFE4C /* CNTimer.m */; };
 		AC10664B1B17D66E006FFE4C /* CNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10663A1B17D66E006FFE4C /* CNViewController.m */; };
-		AC1354331B17BEFE005C8E4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1354321B17BEFE005C8E4F /* main.m */; };
-		AC1354361B17BEFE005C8E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1354351B17BEFE005C8E4F /* AppDelegate.m */; };
-		AC13543E1B17BEFE005C8E4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC13543D1B17BEFE005C8E4F /* Images.xcassets */; };
-		AC13544D1B17BEFE005C8E4F /* CNNoStoryboardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC13544C1B17BEFE005C8E4F /* CNNoStoryboardsTests.m */; };
-		AC1354A21B17C123005C8E4F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1354A11B17C123005C8E4F /* MainViewController.m */; };
-		AC1354A61B17C139005C8E4F /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1354A51B17C139005C8E4F /* LeftViewController.m */; };
+		AC73DA8F1B1896CD00573835 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA8E1B1896CD00573835 /* AppDelegate.m */; };
+		AC73DA9D1B18970200573835 /* BottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA911B18970200573835 /* BottomViewController.m */; };
+		AC73DA9E1B18970200573835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA921B18970200573835 /* Images.xcassets */; };
+		AC73DA9F1B18970200573835 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA931B18970200573835 /* Info.plist */; };
+		AC73DAA01B18970200573835 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA951B18970200573835 /* LeftViewController.m */; };
+		AC73DAA11B18970200573835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA961B18970200573835 /* main.m */; };
+		AC73DAA21B18970200573835 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA981B18970200573835 /* MainViewController.m */; };
+		AC73DAA31B18970200573835 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA9A1B18970200573835 /* RightViewController.m */; };
+		AC73DAA41B18970200573835 /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA9C1B18970200573835 /* TopViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AC1354471B17BEFE005C8E4F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC1354251B17BEFE005C8E4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC13542C1B17BEFE005C8E4F;
-			remoteInfo = CNNoStoryboards;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		AC1065FA1B17D497006FFE4C /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
-		AC1065FB1B17D497006FFE4C /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
-		AC1065FE1B17D4D0006FFE4C /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
-		AC1065FF1B17D4D0006FFE4C /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
-		AC1066021B17D4F5006FFE4C /* BottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomViewController.h; sourceTree = "<group>"; };
-		AC1066031B17D4F5006FFE4C /* BottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomViewController.m; sourceTree = "<group>"; };
 		AC1066071B17D66E006FFE4C /* UINavigationController+CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CrossNavigation.h"; sourceTree = "<group>"; };
 		AC1066081B17D66E006FFE4C /* UINavigationController+CrossNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CrossNavigation.m"; sourceTree = "<group>"; };
 		AC1066091B17D66E006FFE4C /* CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossNavigation.h; sourceTree = "<group>"; };
@@ -87,30 +71,26 @@
 		AC1066391B17D66E006FFE4C /* CNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController.h; sourceTree = "<group>"; };
 		AC10663A1B17D66E006FFE4C /* CNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewController.m; sourceTree = "<group>"; };
 		AC10663B1B17D66E006FFE4C /* CNViewController_Autotransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController_Autotransition.h; sourceTree = "<group>"; };
-		AC13542D1B17BEFE005C8E4F /* CNNoStoryboards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNNoStoryboards.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC1354311B17BEFE005C8E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC1354321B17BEFE005C8E4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AC1354341B17BEFE005C8E4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AC1354351B17BEFE005C8E4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AC13543D1B17BEFE005C8E4F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AC1354461B17BEFE005C8E4F /* CNNoStoryboardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNNoStoryboardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC13544B1B17BEFE005C8E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC13544C1B17BEFE005C8E4F /* CNNoStoryboardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNNoStoryboardsTests.m; sourceTree = "<group>"; };
-		AC1354A01B17C123005C8E4F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		AC1354A11B17C123005C8E4F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		AC1354A41B17C139005C8E4F /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
-		AC1354A51B17C139005C8E4F /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		AC13542D1B17BEFE005C8E4F /* CNNoStoryboardsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNNoStoryboardsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC73DA8D1B1896CD00573835 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CNNoStoryboardsExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		AC73DA8E1B1896CD00573835 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CNNoStoryboardsExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		AC73DA901B18970200573835 /* BottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BottomViewController.h; path = CNNoStoryboardsExample/BottomViewController.h; sourceTree = SOURCE_ROOT; };
+		AC73DA911B18970200573835 /* BottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BottomViewController.m; path = CNNoStoryboardsExample/BottomViewController.m; sourceTree = SOURCE_ROOT; };
+		AC73DA921B18970200573835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CNNoStoryboardsExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		AC73DA931B18970200573835 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CNNoStoryboardsExample/Info.plist; sourceTree = SOURCE_ROOT; };
+		AC73DA941B18970200573835 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftViewController.h; path = CNNoStoryboardsExample/LeftViewController.h; sourceTree = SOURCE_ROOT; };
+		AC73DA951B18970200573835 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftViewController.m; path = CNNoStoryboardsExample/LeftViewController.m; sourceTree = SOURCE_ROOT; };
+		AC73DA961B18970200573835 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CNNoStoryboardsExample/main.m; sourceTree = SOURCE_ROOT; };
+		AC73DA971B18970200573835 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = CNNoStoryboardsExample/MainViewController.h; sourceTree = SOURCE_ROOT; };
+		AC73DA981B18970200573835 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = CNNoStoryboardsExample/MainViewController.m; sourceTree = SOURCE_ROOT; };
+		AC73DA991B18970200573835 /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightViewController.h; path = CNNoStoryboardsExample/RightViewController.h; sourceTree = SOURCE_ROOT; };
+		AC73DA9A1B18970200573835 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightViewController.m; path = CNNoStoryboardsExample/RightViewController.m; sourceTree = SOURCE_ROOT; };
+		AC73DA9B1B18970200573835 /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopViewController.h; path = CNNoStoryboardsExample/TopViewController.h; sourceTree = SOURCE_ROOT; };
+		AC73DA9C1B18970200573835 /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopViewController.m; path = CNNoStoryboardsExample/TopViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AC13542A1B17BEFE005C8E4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC1354431B17BEFE005C8E4F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -123,8 +103,8 @@
 		AC1065F91B17D47F006FFE4C /* Right */ = {
 			isa = PBXGroup;
 			children = (
-				AC1065FA1B17D497006FFE4C /* RightViewController.h */,
-				AC1065FB1B17D497006FFE4C /* RightViewController.m */,
+				AC73DA991B18970200573835 /* RightViewController.h */,
+				AC73DA9A1B18970200573835 /* RightViewController.m */,
 			);
 			name = Right;
 			sourceTree = "<group>";
@@ -132,8 +112,8 @@
 		AC1065FD1B17D4C3006FFE4C /* Top */ = {
 			isa = PBXGroup;
 			children = (
-				AC1065FE1B17D4D0006FFE4C /* TopViewController.h */,
-				AC1065FF1B17D4D0006FFE4C /* TopViewController.m */,
+				AC73DA9B1B18970200573835 /* TopViewController.h */,
+				AC73DA9C1B18970200573835 /* TopViewController.m */,
 			);
 			name = Top;
 			sourceTree = "<group>";
@@ -141,8 +121,8 @@
 		AC1066011B17D4E5006FFE4C /* Bottom */ = {
 			isa = PBXGroup;
 			children = (
-				AC1066021B17D4F5006FFE4C /* BottomViewController.h */,
-				AC1066031B17D4F5006FFE4C /* BottomViewController.m */,
+				AC73DA901B18970200573835 /* BottomViewController.h */,
+				AC73DA911B18970200573835 /* BottomViewController.m */,
 			);
 			name = Bottom;
 			sourceTree = "<group>";
@@ -339,8 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				AC1066051B17D66E006FFE4C /* CrossNavigation */,
-				AC13542F1B17BEFE005C8E4F /* CNNoStoryboards */,
-				AC1354491B17BEFE005C8E4F /* CNNoStoryboardsTests */,
+				AC13542F1B17BEFE005C8E4F /* CNNoStoryboardsExample */,
 				AC13542E1B17BEFE005C8E4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -348,45 +327,28 @@
 		AC13542E1B17BEFE005C8E4F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC13542D1B17BEFE005C8E4F /* CNNoStoryboards.app */,
-				AC1354461B17BEFE005C8E4F /* CNNoStoryboardsTests.xctest */,
+				AC13542D1B17BEFE005C8E4F /* CNNoStoryboardsExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC13542F1B17BEFE005C8E4F /* CNNoStoryboards */ = {
+		AC13542F1B17BEFE005C8E4F /* CNNoStoryboardsExample */ = {
 			isa = PBXGroup;
 			children = (
+				AC73DA921B18970200573835 /* Images.xcassets */,
 				AC13549E1B17C102005C8E4F /* ViewController */,
 				AC13549D1B17C0F7005C8E4F /* AppDelegate */,
-				AC13543D1B17BEFE005C8E4F /* Images.xcassets */,
 				AC1354301B17BEFE005C8E4F /* Supporting Files */,
 			);
+			name = CNNoStoryboardsExample;
 			path = CNNoStoryboards;
 			sourceTree = "<group>";
 		};
 		AC1354301B17BEFE005C8E4F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC1354311B17BEFE005C8E4F /* Info.plist */,
-				AC1354321B17BEFE005C8E4F /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC1354491B17BEFE005C8E4F /* CNNoStoryboardsTests */ = {
-			isa = PBXGroup;
-			children = (
-				AC13544C1B17BEFE005C8E4F /* CNNoStoryboardsTests.m */,
-				AC13544A1B17BEFE005C8E4F /* Supporting Files */,
-			);
-			path = CNNoStoryboardsTests;
-			sourceTree = "<group>";
-		};
-		AC13544A1B17BEFE005C8E4F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AC13544B1B17BEFE005C8E4F /* Info.plist */,
+				AC73DA961B18970200573835 /* main.m */,
+				AC73DA931B18970200573835 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -394,8 +356,8 @@
 		AC13549D1B17C0F7005C8E4F /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				AC1354341B17BEFE005C8E4F /* AppDelegate.h */,
-				AC1354351B17BEFE005C8E4F /* AppDelegate.m */,
+				AC73DA8D1B1896CD00573835 /* AppDelegate.h */,
+				AC73DA8E1B1896CD00573835 /* AppDelegate.m */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -415,8 +377,8 @@
 		AC13549F1B17C10B005C8E4F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AC1354A01B17C123005C8E4F /* MainViewController.h */,
-				AC1354A11B17C123005C8E4F /* MainViewController.m */,
+				AC73DA971B18970200573835 /* MainViewController.h */,
+				AC73DA981B18970200573835 /* MainViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -424,8 +386,8 @@
 		AC1354A31B17C127005C8E4F /* Left */ = {
 			isa = PBXGroup;
 			children = (
-				AC1354A41B17C139005C8E4F /* LeftViewController.h */,
-				AC1354A51B17C139005C8E4F /* LeftViewController.m */,
+				AC73DA941B18970200573835 /* LeftViewController.h */,
+				AC73DA951B18970200573835 /* LeftViewController.m */,
 			);
 			name = Left;
 			sourceTree = "<group>";
@@ -433,9 +395,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC13542C1B17BEFE005C8E4F /* CNNoStoryboards */ = {
+		AC13542C1B17BEFE005C8E4F /* CNNoStoryboardsExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC1354501B17BEFE005C8E4F /* Build configuration list for PBXNativeTarget "CNNoStoryboards" */;
+			buildConfigurationList = AC1354501B17BEFE005C8E4F /* Build configuration list for PBXNativeTarget "CNNoStoryboardsExample" */;
 			buildPhases = (
 				AC1354291B17BEFE005C8E4F /* Sources */,
 				AC13542A1B17BEFE005C8E4F /* Frameworks */,
@@ -445,28 +407,10 @@
 			);
 			dependencies = (
 			);
-			name = CNNoStoryboards;
+			name = CNNoStoryboardsExample;
 			productName = CNNoStoryboards;
-			productReference = AC13542D1B17BEFE005C8E4F /* CNNoStoryboards.app */;
+			productReference = AC13542D1B17BEFE005C8E4F /* CNNoStoryboardsExample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AC1354451B17BEFE005C8E4F /* CNNoStoryboardsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC1354531B17BEFE005C8E4F /* Build configuration list for PBXNativeTarget "CNNoStoryboardsTests" */;
-			buildPhases = (
-				AC1354421B17BEFE005C8E4F /* Sources */,
-				AC1354431B17BEFE005C8E4F /* Frameworks */,
-				AC1354441B17BEFE005C8E4F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC1354481B17BEFE005C8E4F /* PBXTargetDependency */,
-			);
-			name = CNNoStoryboardsTests;
-			productName = CNNoStoryboardsTests;
-			productReference = AC1354461B17BEFE005C8E4F /* CNNoStoryboardsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -480,13 +424,9 @@
 					AC13542C1B17BEFE005C8E4F = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
-					AC1354451B17BEFE005C8E4F = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = AC13542C1B17BEFE005C8E4F;
-					};
 				};
 			};
-			buildConfigurationList = AC1354281B17BEFE005C8E4F /* Build configuration list for PBXProject "CNNoStoryboards" */;
+			buildConfigurationList = AC1354281B17BEFE005C8E4F /* Build configuration list for PBXProject "CNNoStoryboardsExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -499,8 +439,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC13542C1B17BEFE005C8E4F /* CNNoStoryboards */,
-				AC1354451B17BEFE005C8E4F /* CNNoStoryboardsTests */,
+				AC13542C1B17BEFE005C8E4F /* CNNoStoryboardsExample */,
 			);
 		};
 /* End PBXProject section */
@@ -510,14 +449,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC13543E1B17BEFE005C8E4F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC1354441B17BEFE005C8E4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AC73DA9E1B18970200573835 /* Images.xcassets in Resources */,
+				AC73DA9F1B18970200573835 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,49 +461,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC1066041B17D4F5006FFE4C /* BottomViewController.m in Sources */,
+				AC73DAA11B18970200573835 /* main.m in Sources */,
+				AC73DA8F1B1896CD00573835 /* AppDelegate.m in Sources */,
 				AC1066481B17D66E006FFE4C /* CNRightSegue.m in Sources */,
 				AC10663E1B17D66E006FFE4C /* CNTransitioningFactory.m in Sources */,
 				AC10663F1B17D66E006FFE4C /* CNBottomTransitioning.m in Sources */,
 				AC1066491B17D66E006FFE4C /* CNTopSegue.m in Sources */,
-				AC1354A61B17C139005C8E4F /* LeftViewController.m in Sources */,
 				AC10663C1B17D66E006FFE4C /* UINavigationController+CrossNavigation.m in Sources */,
-				AC1354361B17BEFE005C8E4F /* AppDelegate.m in Sources */,
 				AC1066431B17D66E006FFE4C /* CNTopTransitioning.m in Sources */,
 				AC1066401B17D66E006FFE4C /* CNTransitioning.m in Sources */,
 				AC1066421B17D66E006FFE4C /* CNRightTransitioning.m in Sources */,
-				AC1354A21B17C123005C8E4F /* MainViewController.m in Sources */,
+				AC73DAA21B18970200573835 /* MainViewController.m in Sources */,
 				AC1066411B17D66E006FFE4C /* CNLeftTransitioning.m in Sources */,
+				AC73DA9D1B18970200573835 /* BottomViewController.m in Sources */,
 				AC10664B1B17D66E006FFE4C /* CNViewController.m in Sources */,
-				AC1065FC1B17D497006FFE4C /* RightViewController.m in Sources */,
+				AC73DAA01B18970200573835 /* LeftViewController.m in Sources */,
 				AC1066471B17D66E006FFE4C /* CNSeguePerformer.m in Sources */,
+				AC73DAA41B18970200573835 /* TopViewController.m in Sources */,
 				AC1066451B17D66E006FFE4C /* CNBottomSegue.m in Sources */,
-				AC1354331B17BEFE005C8E4F /* main.m in Sources */,
+				AC73DAA31B18970200573835 /* RightViewController.m in Sources */,
 				AC1066441B17D66E006FFE4C /* CNPanGestureHandler.m in Sources */,
 				AC1066461B17D66E006FFE4C /* CNLeftSegue.m in Sources */,
-				AC1066001B17D4D0006FFE4C /* TopViewController.m in Sources */,
 				AC10664A1B17D66E006FFE4C /* CNTimer.m in Sources */,
 				AC10663D1B17D66E006FFE4C /* CNInteractiveTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC1354421B17BEFE005C8E4F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC13544D1B17BEFE005C8E4F /* CNNoStoryboardsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AC1354481B17BEFE005C8E4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC13542C1B17BEFE005C8E4F /* CNNoStoryboards */;
-			targetProxy = AC1354471B17BEFE005C8E4F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AC13544E1B17BEFE005C8E4F /* Debug */ = {
@@ -657,10 +574,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CNNoStoryboards/Info.plist;
+				INFOPLIST_FILE = CNNoStoryboardsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CNNoStoryboardsExample;
 			};
 			name = Debug;
 		};
@@ -668,51 +585,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CNNoStoryboards/Info.plist;
+				INFOPLIST_FILE = CNNoStoryboardsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		AC1354541B17BEFE005C8E4F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CNNoStoryboardsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNNoStoryboards.app/CNNoStoryboards";
-			};
-			name = Debug;
-		};
-		AC1354551B17BEFE005C8E4F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CNNoStoryboardsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNNoStoryboards.app/CNNoStoryboards";
+				PRODUCT_NAME = CNNoStoryboardsExample;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC1354281B17BEFE005C8E4F /* Build configuration list for PBXProject "CNNoStoryboards" */ = {
+		AC1354281B17BEFE005C8E4F /* Build configuration list for PBXProject "CNNoStoryboardsExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC13544E1B17BEFE005C8E4F /* Debug */,
@@ -721,20 +604,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC1354501B17BEFE005C8E4F /* Build configuration list for PBXNativeTarget "CNNoStoryboards" */ = {
+		AC1354501B17BEFE005C8E4F /* Build configuration list for PBXNativeTarget "CNNoStoryboardsExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC1354511B17BEFE005C8E4F /* Debug */,
 				AC1354521B17BEFE005C8E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AC1354531B17BEFE005C8E4F /* Build configuration list for PBXNativeTarget "CNNoStoryboardsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC1354541B17BEFE005C8E4F /* Debug */,
-				AC1354551B17BEFE005C8E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
