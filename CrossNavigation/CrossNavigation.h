@@ -21,5 +21,5 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CNViewController_Storyboard.h"
+#import "CNViewController_Autotransition.h"
 #import "UINavigationController+CrossNavigation.h"

@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC36786419D776CB00E7107A /* CNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC36786319D776CB00E7107A /* CNTimer.m */; };
-		AC5551031AF8206100952AB7 /* CNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5551011AF8206100952AB7 /* CNViewController.m */; };
-		AC5551071AF820BF00952AB7 /* UINavigationController+CrossNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5551061AF820BF00952AB7 /* UINavigationController+CrossNavigation.m */; };
-		AC789FE119F57D6300D1DB29 /* CNBottomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC789FE019F57D6300D1DB29 /* CNBottomSegue.m */; };
-		AC789FE419F57D7800D1DB29 /* CNLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC789FE319F57D7800D1DB29 /* CNLeftSegue.m */; };
-		AC789FE719F57D8F00D1DB29 /* CNRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC789FE619F57D8F00D1DB29 /* CNRightSegue.m */; };
-		AC789FEA19F57DA200D1DB29 /* CNTopSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC789FE919F57DA200D1DB29 /* CNTopSegue.m */; };
+		AC73DA691B187E4C00573835 /* UINavigationController+CrossNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */; };
+		AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */; };
+		AC73DA6B1B187E4C00573835 /* CNTransitioningFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA3C1B187E4C00573835 /* CNTransitioningFactory.m */; };
+		AC73DA6C1B187E4C00573835 /* CNBottomTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA401B187E4C00573835 /* CNBottomTransitioning.m */; };
+		AC73DA6D1B187E4C00573835 /* CNTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA421B187E4C00573835 /* CNTransitioning.m */; };
+		AC73DA6E1B187E4C00573835 /* CNLeftTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA451B187E4C00573835 /* CNLeftTransitioning.m */; };
+		AC73DA6F1B187E4C00573835 /* CNRightTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA481B187E4C00573835 /* CNRightTransitioning.m */; };
+		AC73DA701B187E4C00573835 /* CNTopTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA4B1B187E4C00573835 /* CNTopTransitioning.m */; };
+		AC73DA711B187E4C00573835 /* CNPanGestureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA4E1B187E4C00573835 /* CNPanGestureHandler.m */; };
+		AC73DA721B187E4C00573835 /* CNBottomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA521B187E4C00573835 /* CNBottomSegue.m */; };
+		AC73DA731B187E4C00573835 /* CNLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA551B187E4C00573835 /* CNLeftSegue.m */; };
+		AC73DA741B187E4C00573835 /* CNSeguePerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA581B187E4C00573835 /* CNSeguePerformer.m */; };
+		AC73DA751B187E4C00573835 /* CNRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA5B1B187E4C00573835 /* CNRightSegue.m */; };
+		AC73DA761B187E4C00573835 /* CNTopSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA5E1B187E4C00573835 /* CNTopSegue.m */; };
+		AC73DA771B187E4C00573835 /* CNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA611B187E4C00573835 /* CNTimer.m */; };
+		AC73DA781B187E4C00573835 /* CNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA671B187E4C00573835 /* CNViewController.m */; };
 		AC7EA50319D2D10600D9A550 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50219D2D10600D9A550 /* main.m */; };
 		AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA50519D2D10600D9A550 /* AppDelegate.m */; };
 		AC7EA50E19D2D10700D9A550 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7EA50D19D2D10700D9A550 /* Images.xcassets */; };
 		AC7EA51D19D2D10700D9A550 /* CrossNavigationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA51C19D2D10700D9A550 /* CrossNavigationDemoTests.m */; };
 		AC7EA52A19D2D51E00D9A550 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7EA52619D2D51E00D9A550 /* Main_iPad.storyboard */; };
 		AC7EA52B19D2D51E00D9A550 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7EA52819D2D51E00D9A550 /* Main_iPhone.storyboard */; };
-		AC7EA54C19D2D71A00D9A550 /* CNInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA53219D2D71A00D9A550 /* CNInteractiveTransition.m */; };
-		AC7EA54D19D2D71A00D9A550 /* CNTransitioningFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA53519D2D71A00D9A550 /* CNTransitioningFactory.m */; };
-		AC7EA54E19D2D71A00D9A550 /* CNBottomTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA53919D2D71A00D9A550 /* CNBottomTransitioning.m */; };
-		AC7EA54F19D2D71A00D9A550 /* CNTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA53B19D2D71A00D9A550 /* CNTransitioning.m */; };
-		AC7EA55019D2D71A00D9A550 /* CNLeftTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA53E19D2D71A00D9A550 /* CNLeftTransitioning.m */; };
-		AC7EA55119D2D71A00D9A550 /* CNRightTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54119D2D71A00D9A550 /* CNRightTransitioning.m */; };
-		AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54419D2D71A00D9A550 /* CNTopTransitioning.m */; };
-		AC7EA55319D2D71A00D9A550 /* CNPanGestureHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7EA54719D2D71A00D9A550 /* CNPanGestureHandler.m */; };
-		ACCDDE8C19F592B2005693F3 /* CNSeguePerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCDDE8B19F592B2005693F3 /* CNSeguePerformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,22 +42,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AC36786219D776CB00E7107A /* CNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTimer.h; sourceTree = "<group>"; };
-		AC36786319D776CB00E7107A /* CNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTimer.m; sourceTree = "<group>"; };
-		AC5550FD1AF81FAE00952AB7 /* CrossNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrossNavigation.h; sourceTree = "<group>"; };
-		AC5551001AF8206100952AB7 /* CNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController.h; sourceTree = "<group>"; };
-		AC5551011AF8206100952AB7 /* CNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewController.m; sourceTree = "<group>"; };
-		AC5551021AF8206100952AB7 /* CNViewController_Storyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController_Storyboard.h; sourceTree = "<group>"; };
-		AC5551051AF820BF00952AB7 /* UINavigationController+CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CrossNavigation.h"; sourceTree = "<group>"; };
-		AC5551061AF820BF00952AB7 /* UINavigationController+CrossNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CrossNavigation.m"; sourceTree = "<group>"; };
-		AC789FDF19F57D6300D1DB29 /* CNBottomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBottomSegue.h; sourceTree = "<group>"; };
-		AC789FE019F57D6300D1DB29 /* CNBottomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBottomSegue.m; sourceTree = "<group>"; };
-		AC789FE219F57D7800D1DB29 /* CNLeftSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLeftSegue.h; sourceTree = "<group>"; };
-		AC789FE319F57D7800D1DB29 /* CNLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLeftSegue.m; sourceTree = "<group>"; };
-		AC789FE519F57D8F00D1DB29 /* CNRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNRightSegue.h; sourceTree = "<group>"; };
-		AC789FE619F57D8F00D1DB29 /* CNRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNRightSegue.m; sourceTree = "<group>"; };
-		AC789FE819F57DA200D1DB29 /* CNTopSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTopSegue.h; sourceTree = "<group>"; };
-		AC789FE919F57DA200D1DB29 /* CNTopSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTopSegue.m; sourceTree = "<group>"; };
+		AC73DA341B187E4C00573835 /* UINavigationController+CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CrossNavigation.h"; sourceTree = "<group>"; };
+		AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CrossNavigation.m"; sourceTree = "<group>"; };
+		AC73DA361B187E4C00573835 /* CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossNavigation.h; sourceTree = "<group>"; };
+		AC73DA381B187E4C00573835 /* CNInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNInteractiveTransition.h; sourceTree = "<group>"; };
+		AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNInteractiveTransition.m; sourceTree = "<group>"; };
+		AC73DA3B1B187E4C00573835 /* CNTransitioningFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTransitioningFactory.h; sourceTree = "<group>"; };
+		AC73DA3C1B187E4C00573835 /* CNTransitioningFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTransitioningFactory.m; sourceTree = "<group>"; };
+		AC73DA3F1B187E4C00573835 /* CNBottomTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBottomTransitioning.h; sourceTree = "<group>"; };
+		AC73DA401B187E4C00573835 /* CNBottomTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBottomTransitioning.m; sourceTree = "<group>"; };
+		AC73DA411B187E4C00573835 /* CNTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTransitioning.h; sourceTree = "<group>"; };
+		AC73DA421B187E4C00573835 /* CNTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTransitioning.m; sourceTree = "<group>"; };
+		AC73DA441B187E4C00573835 /* CNLeftTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLeftTransitioning.h; sourceTree = "<group>"; };
+		AC73DA451B187E4C00573835 /* CNLeftTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLeftTransitioning.m; sourceTree = "<group>"; };
+		AC73DA471B187E4C00573835 /* CNRightTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNRightTransitioning.h; sourceTree = "<group>"; };
+		AC73DA481B187E4C00573835 /* CNRightTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNRightTransitioning.m; sourceTree = "<group>"; };
+		AC73DA4A1B187E4C00573835 /* CNTopTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTopTransitioning.h; sourceTree = "<group>"; };
+		AC73DA4B1B187E4C00573835 /* CNTopTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTopTransitioning.m; sourceTree = "<group>"; };
+		AC73DA4D1B187E4C00573835 /* CNPanGestureHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPanGestureHandler.h; sourceTree = "<group>"; };
+		AC73DA4E1B187E4C00573835 /* CNPanGestureHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPanGestureHandler.m; sourceTree = "<group>"; };
+		AC73DA511B187E4C00573835 /* CNBottomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBottomSegue.h; sourceTree = "<group>"; };
+		AC73DA521B187E4C00573835 /* CNBottomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBottomSegue.m; sourceTree = "<group>"; };
+		AC73DA541B187E4C00573835 /* CNLeftSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLeftSegue.h; sourceTree = "<group>"; };
+		AC73DA551B187E4C00573835 /* CNLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLeftSegue.m; sourceTree = "<group>"; };
+		AC73DA571B187E4C00573835 /* CNSeguePerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSeguePerformer.h; sourceTree = "<group>"; };
+		AC73DA581B187E4C00573835 /* CNSeguePerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSeguePerformer.m; sourceTree = "<group>"; };
+		AC73DA5A1B187E4C00573835 /* CNRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNRightSegue.h; sourceTree = "<group>"; };
+		AC73DA5B1B187E4C00573835 /* CNRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNRightSegue.m; sourceTree = "<group>"; };
+		AC73DA5D1B187E4C00573835 /* CNTopSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTopSegue.h; sourceTree = "<group>"; };
+		AC73DA5E1B187E4C00573835 /* CNTopSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTopSegue.m; sourceTree = "<group>"; };
+		AC73DA601B187E4C00573835 /* CNTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTimer.h; sourceTree = "<group>"; };
+		AC73DA611B187E4C00573835 /* CNTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTimer.m; sourceTree = "<group>"; };
+		AC73DA631B187E4C00573835 /* cn_direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_direction.h; sourceTree = "<group>"; };
+		AC73DA641B187E4C00573835 /* cn_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_utils.h; sourceTree = "<group>"; };
+		AC73DA661B187E4C00573835 /* CNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController.h; sourceTree = "<group>"; };
+		AC73DA671B187E4C00573835 /* CNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewController.m; sourceTree = "<group>"; };
+		AC73DA681B187E4C00573835 /* CNViewController_Autotransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewController_Autotransition.h; sourceTree = "<group>"; };
 		AC7EA4FD19D2D10600D9A550 /* CrossNavigationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossNavigationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7EA50119D2D10600D9A550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7EA50219D2D10600D9A550 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,27 +89,7 @@
 		AC7EA51C19D2D10700D9A550 /* CrossNavigationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrossNavigationDemoTests.m; sourceTree = "<group>"; };
 		AC7EA52719D2D51E00D9A550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		AC7EA52919D2D51E00D9A550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		AC7EA53119D2D71A00D9A550 /* CNInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNInteractiveTransition.h; sourceTree = "<group>"; };
-		AC7EA53219D2D71A00D9A550 /* CNInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNInteractiveTransition.m; sourceTree = "<group>"; };
-		AC7EA53419D2D71A00D9A550 /* CNTransitioningFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTransitioningFactory.h; sourceTree = "<group>"; };
-		AC7EA53519D2D71A00D9A550 /* CNTransitioningFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTransitioningFactory.m; sourceTree = "<group>"; };
-		AC7EA53819D2D71A00D9A550 /* CNBottomTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBottomTransitioning.h; sourceTree = "<group>"; };
-		AC7EA53919D2D71A00D9A550 /* CNBottomTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBottomTransitioning.m; sourceTree = "<group>"; };
-		AC7EA53A19D2D71A00D9A550 /* CNTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTransitioning.h; sourceTree = "<group>"; };
-		AC7EA53B19D2D71A00D9A550 /* CNTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTransitioning.m; sourceTree = "<group>"; };
-		AC7EA53D19D2D71A00D9A550 /* CNLeftTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNLeftTransitioning.h; sourceTree = "<group>"; };
-		AC7EA53E19D2D71A00D9A550 /* CNLeftTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNLeftTransitioning.m; sourceTree = "<group>"; };
-		AC7EA54019D2D71A00D9A550 /* CNRightTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNRightTransitioning.h; sourceTree = "<group>"; };
-		AC7EA54119D2D71A00D9A550 /* CNRightTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNRightTransitioning.m; sourceTree = "<group>"; };
-		AC7EA54319D2D71A00D9A550 /* CNTopTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTopTransitioning.h; sourceTree = "<group>"; };
-		AC7EA54419D2D71A00D9A550 /* CNTopTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTopTransitioning.m; sourceTree = "<group>"; };
-		AC7EA54619D2D71A00D9A550 /* CNPanGestureHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPanGestureHandler.h; sourceTree = "<group>"; };
-		AC7EA54719D2D71A00D9A550 /* CNPanGestureHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNPanGestureHandler.m; sourceTree = "<group>"; };
-		AC7EA54919D2D71A00D9A550 /* cn_direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_direction.h; sourceTree = "<group>"; };
-		AC7EA54A19D2D71A00D9A550 /* cn_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cn_utils.h; sourceTree = "<group>"; };
 		AC7EA55419D2D8C300D9A550 /* CrossNavigationDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrossNavigationDemo-Prefix.pch"; sourceTree = "<group>"; };
-		ACCDDE8A19F592B2005693F3 /* CNSeguePerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNSeguePerformer.h; sourceTree = "<group>"; };
-		ACCDDE8B19F592B2005693F3 /* CNSeguePerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNSeguePerformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,80 +110,192 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC36786119D776CB00E7107A /* Timer */ = {
+		AC73DA321B187E4C00573835 /* CrossNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				AC36786219D776CB00E7107A /* CNTimer.h */,
-				AC36786319D776CB00E7107A /* CNTimer.m */,
+				AC73DA331B187E4C00573835 /* Categories */,
+				AC73DA361B187E4C00573835 /* CrossNavigation.h */,
+				AC73DA371B187E4C00573835 /* InteractiveTransition */,
+				AC73DA4C1B187E4C00573835 /* PanGestureHandler */,
+				AC73DA4F1B187E4C00573835 /* Segue */,
+				AC73DA5F1B187E4C00573835 /* Timer */,
+				AC73DA621B187E4C00573835 /* Utils */,
+				AC73DA651B187E4C00573835 /* ViewController */,
 			);
-			path = Timer;
+			name = CrossNavigation;
+			path = ../../../CrossNavigation;
 			sourceTree = "<group>";
 		};
-		AC5550FF1AF8206100952AB7 /* ViewController */ = {
+		AC73DA331B187E4C00573835 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				AC5551001AF8206100952AB7 /* CNViewController.h */,
-				AC5551011AF8206100952AB7 /* CNViewController.m */,
-				AC5551021AF8206100952AB7 /* CNViewController_Storyboard.h */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AC5551041AF8208600952AB7 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				AC5551051AF820BF00952AB7 /* UINavigationController+CrossNavigation.h */,
-				AC5551061AF820BF00952AB7 /* UINavigationController+CrossNavigation.m */,
+				AC73DA341B187E4C00573835 /* UINavigationController+CrossNavigation.h */,
+				AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		AC789FD719F57CF000D1DB29 /* Segue */ = {
+		AC73DA371B187E4C00573835 /* InteractiveTransition */ = {
 			isa = PBXGroup;
 			children = (
-				ACCDDE8919F5929B005693F3 /* Performer */,
-				AC789FD819F57CF000D1DB29 /* Bottom */,
-				AC789FD919F57CF000D1DB29 /* Left */,
-				AC789FDA19F57CF000D1DB29 /* Right */,
-				AC789FDB19F57CF000D1DB29 /* Top */,
+				AC73DA381B187E4C00573835 /* CNInteractiveTransition.h */,
+				AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */,
+				AC73DA3A1B187E4C00573835 /* Factory */,
+				AC73DA3D1B187E4C00573835 /* Transitioning */,
 			);
-			path = Segue;
+			path = InteractiveTransition;
 			sourceTree = "<group>";
 		};
-		AC789FD819F57CF000D1DB29 /* Bottom */ = {
+		AC73DA3A1B187E4C00573835 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				AC789FDF19F57D6300D1DB29 /* CNBottomSegue.h */,
-				AC789FE019F57D6300D1DB29 /* CNBottomSegue.m */,
+				AC73DA3B1B187E4C00573835 /* CNTransitioningFactory.h */,
+				AC73DA3C1B187E4C00573835 /* CNTransitioningFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		AC73DA3D1B187E4C00573835 /* Transitioning */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA3E1B187E4C00573835 /* Bottom */,
+				AC73DA411B187E4C00573835 /* CNTransitioning.h */,
+				AC73DA421B187E4C00573835 /* CNTransitioning.m */,
+				AC73DA431B187E4C00573835 /* Left */,
+				AC73DA461B187E4C00573835 /* Right */,
+				AC73DA491B187E4C00573835 /* Top */,
+			);
+			path = Transitioning;
+			sourceTree = "<group>";
+		};
+		AC73DA3E1B187E4C00573835 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA3F1B187E4C00573835 /* CNBottomTransitioning.h */,
+				AC73DA401B187E4C00573835 /* CNBottomTransitioning.m */,
 			);
 			path = Bottom;
 			sourceTree = "<group>";
 		};
-		AC789FD919F57CF000D1DB29 /* Left */ = {
+		AC73DA431B187E4C00573835 /* Left */ = {
 			isa = PBXGroup;
 			children = (
-				AC789FE219F57D7800D1DB29 /* CNLeftSegue.h */,
-				AC789FE319F57D7800D1DB29 /* CNLeftSegue.m */,
+				AC73DA441B187E4C00573835 /* CNLeftTransitioning.h */,
+				AC73DA451B187E4C00573835 /* CNLeftTransitioning.m */,
 			);
 			path = Left;
 			sourceTree = "<group>";
 		};
-		AC789FDA19F57CF000D1DB29 /* Right */ = {
+		AC73DA461B187E4C00573835 /* Right */ = {
 			isa = PBXGroup;
 			children = (
-				AC789FE519F57D8F00D1DB29 /* CNRightSegue.h */,
-				AC789FE619F57D8F00D1DB29 /* CNRightSegue.m */,
+				AC73DA471B187E4C00573835 /* CNRightTransitioning.h */,
+				AC73DA481B187E4C00573835 /* CNRightTransitioning.m */,
 			);
 			path = Right;
 			sourceTree = "<group>";
 		};
-		AC789FDB19F57CF000D1DB29 /* Top */ = {
+		AC73DA491B187E4C00573835 /* Top */ = {
 			isa = PBXGroup;
 			children = (
-				AC789FE819F57DA200D1DB29 /* CNTopSegue.h */,
-				AC789FE919F57DA200D1DB29 /* CNTopSegue.m */,
+				AC73DA4A1B187E4C00573835 /* CNTopTransitioning.h */,
+				AC73DA4B1B187E4C00573835 /* CNTopTransitioning.m */,
 			);
 			path = Top;
+			sourceTree = "<group>";
+		};
+		AC73DA4C1B187E4C00573835 /* PanGestureHandler */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA4D1B187E4C00573835 /* CNPanGestureHandler.h */,
+				AC73DA4E1B187E4C00573835 /* CNPanGestureHandler.m */,
+			);
+			path = PanGestureHandler;
+			sourceTree = "<group>";
+		};
+		AC73DA4F1B187E4C00573835 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA501B187E4C00573835 /* Bottom */,
+				AC73DA531B187E4C00573835 /* Left */,
+				AC73DA561B187E4C00573835 /* Performer */,
+				AC73DA591B187E4C00573835 /* Right */,
+				AC73DA5C1B187E4C00573835 /* Top */,
+			);
+			path = Segue;
+			sourceTree = "<group>";
+		};
+		AC73DA501B187E4C00573835 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA511B187E4C00573835 /* CNBottomSegue.h */,
+				AC73DA521B187E4C00573835 /* CNBottomSegue.m */,
+			);
+			path = Bottom;
+			sourceTree = "<group>";
+		};
+		AC73DA531B187E4C00573835 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA541B187E4C00573835 /* CNLeftSegue.h */,
+				AC73DA551B187E4C00573835 /* CNLeftSegue.m */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		AC73DA561B187E4C00573835 /* Performer */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA571B187E4C00573835 /* CNSeguePerformer.h */,
+				AC73DA581B187E4C00573835 /* CNSeguePerformer.m */,
+			);
+			path = Performer;
+			sourceTree = "<group>";
+		};
+		AC73DA591B187E4C00573835 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA5A1B187E4C00573835 /* CNRightSegue.h */,
+				AC73DA5B1B187E4C00573835 /* CNRightSegue.m */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
+		AC73DA5C1B187E4C00573835 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA5D1B187E4C00573835 /* CNTopSegue.h */,
+				AC73DA5E1B187E4C00573835 /* CNTopSegue.m */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		AC73DA5F1B187E4C00573835 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA601B187E4C00573835 /* CNTimer.h */,
+				AC73DA611B187E4C00573835 /* CNTimer.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		AC73DA621B187E4C00573835 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA631B187E4C00573835 /* cn_direction.h */,
+				AC73DA641B187E4C00573835 /* cn_utils.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AC73DA651B187E4C00573835 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC73DA661B187E4C00573835 /* CNViewController.h */,
+				AC73DA671B187E4C00573835 /* CNViewController.m */,
+				AC73DA681B187E4C00573835 /* CNViewController_Autotransition.h */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AC7EA4F419D2D10600D9A550 = {
@@ -207,8 +319,8 @@
 		AC7EA4FF19D2D10600D9A550 /* CrossNavigationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AC73DA321B187E4C00573835 /* CrossNavigation */,
 				ACECFDB81A0985C1006B1246 /* AppDelegate */,
-				AC7EA52C19D2D71A00D9A550 /* CrossNavigation */,
 				ACECFDB91A0985D9006B1246 /* Storyboard */,
 				AC7EA50D19D2D10700D9A550 /* Images.xcassets */,
 				AC7EA50019D2D10600D9A550 /* Supporting Files */,
@@ -241,118 +353,6 @@
 				AC7EA51B19D2D10700D9A550 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC7EA52C19D2D71A00D9A550 /* CrossNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				AC5551041AF8208600952AB7 /* Categories */,
-				AC5550FF1AF8206100952AB7 /* ViewController */,
-				AC789FD719F57CF000D1DB29 /* Segue */,
-				AC7EA53019D2D71A00D9A550 /* InteractiveTransition */,
-				AC7EA54519D2D71A00D9A550 /* PanGestureHandler */,
-				AC36786119D776CB00E7107A /* Timer */,
-				AC7EA54819D2D71A00D9A550 /* Utils */,
-				AC5550FD1AF81FAE00952AB7 /* CrossNavigation.h */,
-			);
-			name = CrossNavigation;
-			path = ../../CrossNavigation;
-			sourceTree = "<group>";
-		};
-		AC7EA53019D2D71A00D9A550 /* InteractiveTransition */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA53119D2D71A00D9A550 /* CNInteractiveTransition.h */,
-				AC7EA53219D2D71A00D9A550 /* CNInteractiveTransition.m */,
-				AC7EA53319D2D71A00D9A550 /* Factory */,
-				AC7EA53619D2D71A00D9A550 /* Transitioning */,
-			);
-			path = InteractiveTransition;
-			sourceTree = "<group>";
-		};
-		AC7EA53319D2D71A00D9A550 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA53419D2D71A00D9A550 /* CNTransitioningFactory.h */,
-				AC7EA53519D2D71A00D9A550 /* CNTransitioningFactory.m */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		AC7EA53619D2D71A00D9A550 /* Transitioning */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA53719D2D71A00D9A550 /* Bottom */,
-				AC7EA53A19D2D71A00D9A550 /* CNTransitioning.h */,
-				AC7EA53B19D2D71A00D9A550 /* CNTransitioning.m */,
-				AC7EA53C19D2D71A00D9A550 /* Left */,
-				AC7EA53F19D2D71A00D9A550 /* Right */,
-				AC7EA54219D2D71A00D9A550 /* Top */,
-			);
-			path = Transitioning;
-			sourceTree = "<group>";
-		};
-		AC7EA53719D2D71A00D9A550 /* Bottom */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA53819D2D71A00D9A550 /* CNBottomTransitioning.h */,
-				AC7EA53919D2D71A00D9A550 /* CNBottomTransitioning.m */,
-			);
-			path = Bottom;
-			sourceTree = "<group>";
-		};
-		AC7EA53C19D2D71A00D9A550 /* Left */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA53D19D2D71A00D9A550 /* CNLeftTransitioning.h */,
-				AC7EA53E19D2D71A00D9A550 /* CNLeftTransitioning.m */,
-			);
-			path = Left;
-			sourceTree = "<group>";
-		};
-		AC7EA53F19D2D71A00D9A550 /* Right */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA54019D2D71A00D9A550 /* CNRightTransitioning.h */,
-				AC7EA54119D2D71A00D9A550 /* CNRightTransitioning.m */,
-			);
-			path = Right;
-			sourceTree = "<group>";
-		};
-		AC7EA54219D2D71A00D9A550 /* Top */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA54319D2D71A00D9A550 /* CNTopTransitioning.h */,
-				AC7EA54419D2D71A00D9A550 /* CNTopTransitioning.m */,
-			);
-			path = Top;
-			sourceTree = "<group>";
-		};
-		AC7EA54519D2D71A00D9A550 /* PanGestureHandler */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA54619D2D71A00D9A550 /* CNPanGestureHandler.h */,
-				AC7EA54719D2D71A00D9A550 /* CNPanGestureHandler.m */,
-			);
-			path = PanGestureHandler;
-			sourceTree = "<group>";
-		};
-		AC7EA54819D2D71A00D9A550 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				AC7EA54919D2D71A00D9A550 /* cn_direction.h */,
-				AC7EA54A19D2D71A00D9A550 /* cn_utils.h */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		ACCDDE8919F5929B005693F3 /* Performer */ = {
-			isa = PBXGroup;
-			children = (
-				ACCDDE8A19F592B2005693F3 /* CNSeguePerformer.h */,
-				ACCDDE8B19F592B2005693F3 /* CNSeguePerformer.m */,
-			);
-			path = Performer;
 			sourceTree = "<group>";
 		};
 		ACECFDB81A0985C1006B1246 /* AppDelegate */ = {
@@ -473,24 +473,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC789FE419F57D7800D1DB29 /* CNLeftSegue.m in Sources */,
-				AC789FEA19F57DA200D1DB29 /* CNTopSegue.m in Sources */,
-				AC7EA55319D2D71A00D9A550 /* CNPanGestureHandler.m in Sources */,
-				AC7EA54E19D2D71A00D9A550 /* CNBottomTransitioning.m in Sources */,
-				AC36786419D776CB00E7107A /* CNTimer.m in Sources */,
-				AC5551031AF8206100952AB7 /* CNViewController.m in Sources */,
-				AC7EA55219D2D71A00D9A550 /* CNTopTransitioning.m in Sources */,
+				AC73DA6D1B187E4C00573835 /* CNTransitioning.m in Sources */,
+				AC73DA771B187E4C00573835 /* CNTimer.m in Sources */,
+				AC73DA751B187E4C00573835 /* CNRightSegue.m in Sources */,
 				AC7EA50619D2D10600D9A550 /* AppDelegate.m in Sources */,
-				AC5551071AF820BF00952AB7 /* UINavigationController+CrossNavigation.m in Sources */,
-				AC7EA55019D2D71A00D9A550 /* CNLeftTransitioning.m in Sources */,
-				AC7EA55119D2D71A00D9A550 /* CNRightTransitioning.m in Sources */,
-				ACCDDE8C19F592B2005693F3 /* CNSeguePerformer.m in Sources */,
-				AC789FE119F57D6300D1DB29 /* CNBottomSegue.m in Sources */,
-				AC7EA54D19D2D71A00D9A550 /* CNTransitioningFactory.m in Sources */,
+				AC73DA6C1B187E4C00573835 /* CNBottomTransitioning.m in Sources */,
+				AC73DA781B187E4C00573835 /* CNViewController.m in Sources */,
+				AC73DA761B187E4C00573835 /* CNTopSegue.m in Sources */,
+				AC73DA6F1B187E4C00573835 /* CNRightTransitioning.m in Sources */,
+				AC73DA6B1B187E4C00573835 /* CNTransitioningFactory.m in Sources */,
 				AC7EA50319D2D10600D9A550 /* main.m in Sources */,
-				AC789FE719F57D8F00D1DB29 /* CNRightSegue.m in Sources */,
-				AC7EA54F19D2D71A00D9A550 /* CNTransitioning.m in Sources */,
-				AC7EA54C19D2D71A00D9A550 /* CNInteractiveTransition.m in Sources */,
+				AC73DA711B187E4C00573835 /* CNPanGestureHandler.m in Sources */,
+				AC73DA741B187E4C00573835 /* CNSeguePerformer.m in Sources */,
+				AC73DA701B187E4C00573835 /* CNTopTransitioning.m in Sources */,
+				AC73DA6E1B187E4C00573835 /* CNLeftTransitioning.m in Sources */,
+				AC73DA721B187E4C00573835 /* CNBottomSegue.m in Sources */,
+				AC73DA731B187E4C00573835 /* CNLeftSegue.m in Sources */,
+				AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */,
+				AC73DA691B187E4C00573835 /* UINavigationController+CrossNavigation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
