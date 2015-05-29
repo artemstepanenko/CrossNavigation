@@ -4,7 +4,6 @@ if you inherit your view controllers from CNViewController, you'll be able to pu
 
 - [Auto-transitions](#auto-transitions)
 - [Simple transitions](#simple-transitions)
-- [Restrictions](#restrictions)
 - [Integration](#integration)
  - [Podfile](#podfile)
 - [Requirements](#requirements)
@@ -83,11 +82,6 @@ If you use a storyboard, you can easily create a segue between two CNViewControl
 ![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_segue_connecting.png)
 
 ![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_segue_inspector.png)
-
-### Restrictions
-
-- The only one class that should be used directly is CNViewController.
-- The view controllers must be initialized with a xib-file or by a storyboard object.
 
 ## Integration
 
