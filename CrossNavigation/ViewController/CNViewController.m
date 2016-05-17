@@ -21,7 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CNViewController_Autotransition.h"
+#import "CNViewController.h"
 #import "CNTransitioningFactory.h"
 #import "CNInteractiveTransition.h"
 #import "CNPanGestureHandler.h"
