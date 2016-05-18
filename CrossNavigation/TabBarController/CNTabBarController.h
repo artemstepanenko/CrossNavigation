@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CNViewControllerProtocol.h"
 
-@interface CNTabBarController : UITabBarController
+@interface CNTabBarController : UITabBarController <CNViewControllerProtocol>
 
 @end

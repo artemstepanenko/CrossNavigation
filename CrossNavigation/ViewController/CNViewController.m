@@ -68,6 +68,15 @@
 
 @implementation CNViewController
 
+@synthesize leftClass = _leftClass;
+@synthesize rightClass = _rightClass;
+@synthesize topClass = _topClass;
+@synthesize bottomClass = _bottomClass;
+@synthesize leftID = _leftID;
+@synthesize rightID = _rightID;
+@synthesize topID = _topID;
+@synthesize bottomID = _bottomID;
+
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
