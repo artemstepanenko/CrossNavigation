@@ -23,46 +23,14 @@
 
 #import "CNViewController.h"
 #import "CNTransitioningFactory.h"
-#import "CNInteractiveTransition.h"
-#import "CNPanGestureHandler.h"
 #import "CNTimer.h"
+#import "CNViewControllerCore.h"
+#import "UIViewController+CNPrivate.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface UIViewController (CrossNavigation_Private)
+@interface CNViewController ()
 
-- (void)dismissWithParams:(NSDictionary *)params;
-- (NSDictionary *)createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion;
-
-@end
-
-@implementation UIViewController (CN_Private)
-
-- (NSDictionary *)createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion
-{
-    // params
-    NSMutableDictionary *params = [NSMutableDictionary new];
-    params[@"animated"] = @(animated);
-    
-    if (completion) {
-        params[@"completion"] = completion;
-    }
-    
-    return params;
-}
-
-- (void)dismissWithParams:(NSDictionary *)params
-{
-    [self dismissViewControllerAnimated:[params[@"animated"] boolValue] completion:params[@"completion"]];
-}
-
-@end
-
-@interface CNViewController () <CNPanGestureHandlerDelegate>
-
-@property (nonatomic, weak) CNViewController *nextViewController;
-@property (nonatomic, strong) CNInteractiveTransition *interactiveTransition;
-@property (nonatomic, assign) CNDirection direction;
-@property (nonatomic, strong) CNPanGestureHandler *panGestureHandler;
+@property (nonatomic, strong) CNViewControllerCore *core;
 
 @end
 
@@ -132,25 +100,14 @@
 - (void)dismissViewControllerAnimated:(BOOL)animated
                            completion:(void (^)(void))completion
 {
-    [self dismissViewControllerToDirection:CNDirectionGetOpposite(self.direction)
-                                  animated:animated
-                                completion:completion];
+    [self.core dismissViewControllerAnimated:animated completion:completion];
 }
 
 - (void)dismissViewControllerToDirection:(CNDirection)direction
                                 animated:(BOOL)animated
                               completion:(void (^)(void))completion
 {
-    if ([self isTransitioning]) {
-        return;
-    }
-    
-    if (self.presentedViewController.presentedViewController) {
-        // rather tricky case since default behaviour is buggy
-        [self dismissInvisibleViewControllerToDirection:direction animated:animated completion:completion];
-    } else {
-        [self dismissVisibleViewControllerToDirection:direction animated:animated completion:completion];
-    }
+    [self.core dismissViewControllerToDirection:direction animated:animated completion:completion];
 }
 
 #pragma mark - Event
@@ -258,220 +215,19 @@
 
 #pragma mark - CNPanGestureHandlerDelegate
 
-- (void)panGestureHandler:(CNPanGestureHandler *)sender didStartForDirection:(CNDirection)direction
-{
-    __weak typeof(self) weakSelf = self;
-    
-    if (CNDirectionOppositeToDirection(self.direction, direction)) {
-        
-        [self prepareForBackTransitionInteractive:YES];
-        
-        [super dismissViewControllerAnimated:YES completion:^{
-            weakSelf.nextViewController = nil;
-        }];
-        
-    } else {
 
-        self.nextViewController = [self createNextViewControllerForDirection:direction];
-        [self.nextViewController prepareForTransitionToDirection:direction interactive:YES];
-        
-        [self presentViewController:self.nextViewController animated:YES completion:^{
-            weakSelf.nextViewController = nil;
-        }];
-    }
-}
-
-- (void)panGestureHandler:(CNPanGestureHandler *)sender didUpdateWithRatio:(CGFloat)ratio
-{
-    if (!self.nextViewController.interactiveTransition.containerView) {
-        return;
-    }
-    
-    [self.nextViewController.interactiveTransition updateInteractiveTransition:ratio];
-    
-    // send events
-    CGFloat percentComplete = self.nextViewController.interactiveTransition.recentPercentComplete;
-    [self.nextViewController.interactiveTransition.toViewController viewIsAppearing:percentComplete];
-    [self.nextViewController.interactiveTransition.fromViewController viewIsAppearing:(1.0f - percentComplete)];
-}
-
-- (void)panGestureHandlerDidFinish:(CNPanGestureHandler *)sender
-{
-    [self.nextViewController.interactiveTransition finishInteractiveTransition];
-    
-    [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.fromViewController
-                                                   toViewController:self.nextViewController.interactiveTransition.toViewController
-                                              recentPercentComplete:self.nextViewController.interactiveTransition.recentPercentComplete
-                                                           animated:YES];
-}
-
-- (void)panGestureHandlerDidCancel:(CNPanGestureHandler *)sender
-{
-    [self.nextViewController.interactiveTransition cancelInteractiveTransition];
-    
-    [self.nextViewController transitionWillFinishFromViewController:self.nextViewController.interactiveTransition.toViewController
-                                                   toViewController:self.nextViewController.interactiveTransition.fromViewController
-                                              recentPercentComplete:(1.0f - self.nextViewController.interactiveTransition.recentPercentComplete)
-                                                           animated:YES];
-}
-
-- (CNDirection)panGestureHandler:(CNPanGestureHandler *)sender directionForOffset:(CGPoint)offset
-{
-    if ([self isTransitioning]) {
-        return CNDirectionNone;
-    }
-    
-    CNDirection direction = CNDirectionNone;
-    CNDirection backDirection = CNDirectionGetOpposite(self.direction);
-    
-    if (fabsf(offset.x) >= fabsf(offset.y)) {
-        
-        if (offset.x < 0) {
-            
-            if ((backDirection == CNDirectionRight) || [self supportsAutotransitionToDirection:CNDirectionRight]) {
-                direction = CNDirectionRight;
-            } else {
-                direction = CNDirectionNone;
-            }
-        } else {
-            if ((backDirection == CNDirectionLeft) || [self supportsAutotransitionToDirection:CNDirectionLeft]) {
-                direction = CNDirectionLeft;
-            } else {
-                direction = CNDirectionNone;
-            }
-        }
-    } else {
-        
-        if (offset.y < 0) {
-            if ((backDirection == CNDirectionBottom) || [self supportsAutotransitionToDirection:CNDirectionBottom]) {
-                direction = CNDirectionBottom;
-            } else {
-                direction = CNDirectionNone;
-            }
-        } else {
-            if ((backDirection == CNDirectionTop) || [self supportsAutotransitionToDirection:CNDirectionTop]) {
-                direction = CNDirectionTop;
-            } else {
-                direction = CNDirectionNone;
-            }
-        }
-    }
-    
-    if (direction != CNDirectionNone) {
-        return [self shouldAutotransitToDirection:direction present:!(direction == backDirection)] ? direction : CNDirectionNone;
-    }
-    
-    return CNDirectionNone;
-}
-
-- (CGPoint)panGestureHandler:(CNPanGestureHandler *)sender locationOfGesture:(UIPanGestureRecognizer *)gestureRecognizer
-{
-    UIView *view = self.nextViewController.interactiveTransition.containerView;
-    view = (view ? view : self.view);
-
-    return [gestureRecognizer locationInView:view];
-}
-
-- (CGSize)viewSizeForPanGestureHandler:(CNPanGestureHandler *)sender
-{
-    UIView *view = self.nextViewController.interactiveTransition.containerView;
-    view = (view ? view : self.view);
-    
-    return view.bounds.size;
-}
 
 #pragma mark - Private
 
 - (void)initialize
 {
-    self.interactiveTransition = [CNInteractiveTransition new];
-    self.transitioningDelegate = self.interactiveTransition;
-    self.direction = CNDirectionNone;
-    
-    if ([self supportsInteractiveTransition]) {
-        self.panGestureHandler = [[CNPanGestureHandler alloc] initWithDelegate:self];
-    }
+    _core = [[CNViewControllerCore alloc] initWithViewController:self];
 }
 
 - (void)initializePanGestureRecognizer
 {
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self.panGestureHandler action:@selector(userDidPan:)];
     [self.view addGestureRecognizer:recognizer];
-}
-
-- (CNViewController *)createNextViewControllerForDirection:(CNDirection)direction
-{
-    Class viewControllerClass = [self classForDirection:direction];
-    
-    if (viewControllerClass) {
-        return [[viewControllerClass alloc] init];
-    } else {
-        
-        NSString *storyboardID = [self storyboardIDForDirection:direction];
-        
-        if (storyboardID) {
-            return [self.storyboard instantiateViewControllerWithIdentifier:storyboardID];
-        }
-    }
-    
-    return nil;
-}
-
-- (void)dismissVisibleViewControllerToDirection:(CNDirection)direction
-                                       animated:(BOOL)animated
-                                     completion:(void (^)(void))completion
-{
-    UIViewController *toViewController = self.presentingViewController;
-    
-    // FIXME: polish a case when toViewController is not CNViewController
-    // FIXME: fix for the case when animation is NO
-    if ([toViewController isKindOfClass:[CNViewController class]]) {
-        
-        if (animated == YES) {
-            [self prepareForBackTransitionInteractive:NO direction:direction];
-        }
-        
-        [self transitionWillFinishFromViewController:self
-                                    toViewController:(CNViewController *)toViewController
-                               recentPercentComplete:0.0f
-                                            animated:animated];
-    }
-    
-    [super dismissViewControllerAnimated:animated completion:completion];
-}
-
-// this method is quite tricky
-// 
-- (void)dismissInvisibleViewControllerToDirection:(CNDirection)direction
-                                          animated:(BOOL)animated
-                                        completion:(void (^)(void))completion
-{
-    // - Now let's do some magic!
-    
-    // a visible view controller
-    CNViewController *visibleViewController = (CNViewController *)[self visibleViewController];
-    
-    // freeze UI (we need this to avoid a blinking during further operations)
-    UIView *frozenView = [self freezeUI];
-    
-    // dismiss all subsequent view controllers in a stack
-    [self dismissVisibleViewControllerToDirection:CNDirectionNone animated:NO completion:^{
-        
-        // present a previously visible view controller
-        [self presentViewController:visibleViewController direction:CNDirectionGetOpposite(direction) animated:NO completion:^{
-            
-            // at this point a receiver is followed by the visible view controller (all intermediate view controllers are removed, if had existed)
-            
-            // unfreeze UI
-            [frozenView removeFromSuperview];
-            
-            // dismiss params
-            NSDictionary *dismissParams = [self createParamsForDismissAnimated:animated completion:completion];
-            
-            // make a common dismiss
-            [visibleViewController performSelector:@selector(dismissWithParams:) withObject:dismissParams afterDelay:0.0f];
-        }];
-    }];
 }
 
 - (UIView *)freezeUI
@@ -527,22 +283,12 @@
     }];
 }
 
-- (BOOL)isTransitioning
-{
-    return [self isBeingPresented] || [self isBeingDismissed];
-}
-
 - (void)prepareForTransitionToDirection:(CNDirection)direction interactive:(BOOL)interactive
 {
     self.modalPresentationStyle = UIModalPresentationFullScreen;
     self.direction = direction;
     self.interactiveTransition.direction = direction;
     self.interactiveTransition.interactive = interactive;
-}
-
-- (void)prepareForBackTransitionInteractive:(BOOL)interactive
-{
-    [self prepareForBackTransitionInteractive:interactive direction:CNDirectionGetOpposite(self.direction)];
 }
 
 - (void)prepareForBackTransitionInteractive:(BOOL)interactive direction:(CNDirection)direction
