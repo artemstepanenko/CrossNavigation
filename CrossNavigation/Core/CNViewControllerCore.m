@@ -10,6 +10,7 @@
 #import "CNViewControllerProtocol.h"
 #import "CNInteractiveTransition.h"
 #import "CNPanGestureHandler.h"
+#import "UIViewController+CNPrivate.h"
 #import <UIKit/UIKit.h>
 
 @interface CNViewControllerCore () <CNPanGestureHandlerDelegate>
@@ -44,6 +45,25 @@
     return self;
 }
 
+- (void)presentViewController:(UIViewController<CNViewControllerProtocol> *)viewController
+                    direction:(CNDirection)direction
+                     animated:(BOOL)animated
+                   completion:(void (^)(void))completion
+{
+    if ([self isTransitioning]) {
+        return;
+    }
+    
+    [self prepareForTransitionToDirection:direction interactive:NO];
+    
+    [self transitionWillFinishFromViewController:self.viewController
+                                          toViewController:viewController
+                                     recentPercentComplete:0.0f
+                                                  animated:animated];
+    
+    [self.viewController presentViewController:viewController animated:animated completion:completion];
+}
+
 - (void)dismissViewControllerAnimated:(BOOL)animated
                            completion:(void (^)(void))completion
 {
@@ -68,6 +88,86 @@
     }
 }
 
+- (void)setLeftClass:(Class)leftClass
+{
+    if (self.direction == CNDirectionRight) {
+        return;
+    }
+    
+    _leftID = nil;
+    _leftClass = leftClass;
+}
+
+- (void)setTopClass:(Class)topClass
+{
+    if (self.direction == CNDirectionBottom) {
+        return;
+    }
+    
+    _topID = nil;
+    _topClass = topClass;
+}
+
+- (void)setRightClass:(Class)rightClass
+{
+    if (self.direction == CNDirectionLeft) {
+        return;
+    }
+    
+    _rightID = nil;
+    _rightClass = rightClass;
+}
+
+- (void)setBottomClass:(Class)bottomClass
+{
+    if (self.direction == CNDirectionTop) {
+        return;
+    }
+    
+    _bottomID = nil;
+    _bottomClass = bottomClass;
+}
+
+- (void)setLeftID:(NSString *)leftStoryboardID
+{
+    if (self.direction == CNDirectionRight) {
+        return;
+    }
+    
+    _leftClass = nil;
+    _leftID = leftStoryboardID;
+}
+
+- (void)setTopID:(NSString *)topStoryboardID
+{
+    if (self.direction == CNDirectionBottom) {
+        return;
+    }
+    
+    _topClass = nil;
+    _topID = topStoryboardID;
+}
+
+- (void)setRightID:(NSString *)rightStoryboardID
+{
+    if (self.direction == CNDirectionLeft) {
+        return;
+    }
+    
+    _rightClass = nil;
+    _rightID = rightStoryboardID;
+}
+
+- (void)setBottomID:(NSString *)bottomStoryboardID
+{
+    if (self.direction == CNDirectionTop) {
+        return;
+    }
+    
+    _bottomClass = nil;
+    _bottomID = bottomStoryboardID;
+}
+
 #pragma mark - CNPanGestureHandlerDelegate
 
 - (void)panGestureHandler:(CNPanGestureHandler *)sender didStartForDirection:(CNDirection)direction
@@ -87,7 +187,7 @@
         self.nextViewController = [self createNextViewControllerForDirection:direction];
         [self.nextViewController prepareForTransitionToDirection:direction interactive:YES];
         
-        [self presentViewController:self.nextViewController animated:YES completion:^{
+        [self.viewController presentViewController:self.nextViewController animated:YES completion:^{
             weakSelf.nextViewController = nil;
         }];
     }
@@ -136,7 +236,7 @@
     CNDirection direction = CNDirectionNone;
     CNDirection backDirection = CNDirectionGetOpposite(self.direction);
     
-    if (fabsf(offset.x) >= fabsf(offset.y)) {
+    if (fabs(offset.x) >= fabs(offset.y)) {
         
         if (offset.x < 0) {
             
@@ -192,6 +292,13 @@
     return view.bounds.size;
 }
 
+- (void)viewDidLoad
+{
+    if ([self.viewController supportsInteractiveTransition]) {
+        [self initializePanGestureRecognizer];
+    }
+}
+
 #pragma mark - Private
 
 - (BOOL)isTransitioning
@@ -237,7 +344,7 @@
                                        animated:(BOOL)animated
                                      completion:(void (^)(void))completion
 {
-    UIViewController *toViewController = self.presentingViewController;
+    UIViewController *toViewController = self.viewController.presentingViewController;
     
     // FIXME: polish a case when toViewController is not CNViewController
     // FIXME: fix for the case when animation is NO
@@ -261,7 +368,20 @@
     [self prepareForBackTransitionInteractive:interactive direction:CNDirectionGetOpposite(self.direction)];
 }
 
-- (UIViewController<CNViewControllerProtocol>)createNextViewControllerForDirection:(CNDirection)direction
+- (void)prepareForBackTransitionInteractive:(BOOL)interactive direction:(CNDirection)direction
+{
+    self.nextViewController = self;
+    self.interactiveTransition.interactive = interactive;
+    
+    // clears previous direction left from cancelled interaction transition
+    if (interactive) {
+        self.interactiveTransition.direction = direction;
+    } else {
+        self.interactiveTransition.direction = CNDirectionGetOpposite(direction);
+    }
+}
+
+- (UIViewController<CNViewControllerProtocol> *)createNextViewControllerForDirection:(CNDirection)direction
 {
     Class viewControllerClass = [self classForDirection:direction];
     
@@ -277,6 +397,164 @@
     }
     
     return nil;
+}
+
+- (void)prepareForTransitionToDirection:(CNDirection)direction interactive:(BOOL)interactive
+{
+    self.modalPresentationStyle = UIModalPresentationFullScreen;
+    self.direction = direction;
+    self.interactiveTransition.direction = direction;
+    self.interactiveTransition.interactive = interactive;
+}
+
+- (void)transitionWillFinishFromViewController:(UIViewController<CNViewControllerProtocol> *)fromViewController
+                              toViewController:(UIViewController<CNViewControllerProtocol> *)toViewController
+                         recentPercentComplete:(CGFloat)recentPercentComplete
+                                      animated:(BOOL)animated
+{
+    if (!animated) {
+        
+        [fromViewController viewIsAppearing:0.0f];
+        [toViewController viewIsAppearing:1.0f];
+        return;
+    }
+    
+    CNTimer *timer = [[CNTimer alloc] init];
+    
+    NSTimeInterval timeInterval = 0.04f;    // more than 24 frames per second
+    NSUInteger repeatsCount = [self.interactiveTransition finishingDuration] / timeInterval;
+    CGFloat portion = (1.0f - recentPercentComplete) / repeatsCount;
+    
+    [timer startWithTimeInterval:timeInterval repeatsCount:repeatsCount tickCallback:^(NSUInteger index) {
+        
+        CGFloat percentComplete = recentPercentComplete + portion * index;
+        
+        [fromViewController viewIsAppearing:(1 - percentComplete)];
+        [toViewController viewIsAppearing:percentComplete];
+        
+    } stopCallback:^(BOOL cancelled) {
+        
+        [fromViewController viewIsAppearing:0.0f];
+        [toViewController viewIsAppearing:1.0f];
+        
+    }];
+}
+
+- (void)initializePanGestureRecognizer
+{
+    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self.panGestureHandler action:@selector(userDidPan:)];
+    [self.view addGestureRecognizer:recognizer];
+}
+
+- (UIView *)freezeUI
+{
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[self imageWithView:window]];
+    imageView.frame = window.bounds;
+    [window addSubview:imageView];
+    return imageView;
+}
+
+- (UIViewController *)visibleViewController
+{
+    UIViewController *viewController = self.viewController;
+    
+    while (viewController.presentedViewController) {
+        viewController = viewController.presentedViewController;
+    }
+    
+    return viewController;
+}
+
+- (NSString *)storyboardIDForDirection:(CNDirection)direction
+{
+    switch (direction) {
+        case CNDirectionRight: {
+            return self.rightID;
+        }
+            
+        case CNDirectionBottom: {
+            return self.bottomID;
+        }
+            
+        case CNDirectionLeft: {
+            return self.leftID;
+        }
+            
+        case CNDirectionTop: {
+            return self.topID;
+        }
+            
+        default: {
+            NSAssert(NO, @"Wrong direction");
+            return nil;
+        }
+    }
+}
+
+- (Class)classForDirection:(CNDirection)direction
+{
+    switch (direction) {
+        case CNDirectionRight: {
+            return self.rightClass;
+        }
+            
+        case CNDirectionBottom: {
+            return self.bottomClass;
+        }
+            
+        case CNDirectionLeft: {
+            return self.leftClass;
+        }
+            
+        case CNDirectionTop: {
+            return self.topClass;
+        }
+            
+        default: {
+            NSAssert(NO, @"Wrong direction");
+            return nil;
+        }
+    }
+}
+
+- (UIImage *)imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+#pragma mark Autotransition
+
+- (BOOL)supportsAutotransitionToDirection:(CNDirection)direction
+{
+    switch (direction) {
+        case CNDirectionRight: {
+            return self.rightClass || self.rightID;
+        }
+            
+        case CNDirectionBottom: {
+            return self.bottomClass || self.bottomID;
+        }
+            
+        case CNDirectionLeft: {
+            return self.leftClass || self.leftID;
+        }
+            
+        case CNDirectionTop: {
+            return self.topClass || self.topID;
+        }
+            
+        default: {
+            return NO;
+        }
+    }
 }
 
 @end
