@@ -1,7 +1,7 @@
 //
-// CNSeguePerformer.m
+// UIViewController+CNPrivate.h
 //
-// Copyright (c) 2014 Artem Stepanenko
+// Copyright (c) 2016 Artem Stepanenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,20 +21,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CNSeguePerformer.h"
-#import "CNViewController.h"
+#import <UIKit/UIKit.h>
 
-@implementation CNSeguePerformer
+@class CNViewControllerCore;
 
-+ (void)performSeque:(UIStoryboardSegue *)segue direction:(CNDirection)direction
-{
-    CNViewController *sourceViewController = segue.sourceViewController;
-    CNViewController *destinationViewController = segue.destinationViewController;
-    
-    NSAssert([sourceViewController isKindOfClass:[CNViewController class]], @"Source view controller must be CNGenericViewController");
-    NSAssert([destinationViewController isKindOfClass:[CNViewController class]], @"Destination view controller must be CNGenericViewController");
-    
-    [sourceViewController presentViewController:destinationViewController direction:direction animated:YES completion:nil];
-}
+@interface UIViewController (CNPrivate)
+
+@property (nonatomic, readonly) CNViewControllerCore *cn_core;
+
++ (NSDictionary *)cn_createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)cn_super_dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)cn_dismissWithParams:(NSDictionary *)params;
 
 @end

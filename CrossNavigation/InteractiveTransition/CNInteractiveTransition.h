@@ -23,13 +23,14 @@
 
 #import <UIKit/UIKit.h>
 #import "cn_direction.h"
+#import "CNGenericViewController.h"
 
-@class CNViewController;
+@protocol CNViewControllerProtocol;
 
 @interface CNInteractiveTransition : UIPercentDrivenInteractiveTransition <UIViewControllerTransitioningDelegate>
 
-@property (nonatomic, weak, readonly) CNViewController *fromViewController;
-@property (nonatomic, weak, readonly) CNViewController *toViewController;
+@property (nonatomic, weak, readonly) CNGenericViewController *fromViewController;
+@property (nonatomic, weak, readonly) CNGenericViewController *toViewController;
 @property (nonatomic, strong, readonly) UIView *containerView;
 
 @property (nonatomic, assign, readonly) CGFloat finishingDuration;  // duration (in seconds) which takes simple transition (presenting/dismissing) and finishing non interactive transition

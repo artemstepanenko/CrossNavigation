@@ -1,7 +1,7 @@
 //
-// UINavigationController+CrossNavigation.m
+// CNNavigationController.h
 //
-// Copyright (c) 2015 Artem Stepanenko
+// Copyright (c) 2016 Artem Stepanenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,20 +21,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "UINavigationController+CrossNavigation.h"
-#import "CNViewController.h"
+#import <UIKit/UIKit.h>
+#import "CNViewControllerProtocol.h"
 
-@implementation UINavigationController (CrossNavigation)
+/**
+ if you inherit your navigation controllers from CNNavigationController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
+ */
 
-- (void)viewIsAppearing:(CGFloat)percentComplete
-{
-    UIViewController *lastViewController = self.viewControllers.lastObject;
-    
-    if ([lastViewController isKindOfClass:[CNViewController class]]) {
+@interface CNNavigationController : UINavigationController <CNViewControllerProtocol>
 
-        CNViewController *cnViewController = (CNViewController *)lastViewController;
-        [cnViewController viewIsAppearing:percentComplete];
-    }
-}
+@property (nonatomic, copy) IBInspectable NSString *leftID;
+@property (nonatomic, copy) IBInspectable NSString *topID;
+@property (nonatomic, copy) IBInspectable NSString *rightID;
+@property (nonatomic, copy) IBInspectable NSString *bottomID;
 
 @end

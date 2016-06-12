@@ -23,7 +23,7 @@
 
 #import <Foundation/Foundation.h>
 
-static CGRect CGRectMoveVertically(CGRect rect, CGFloat yOffset)
+__unused static CGRect CGRectMoveVertically(CGRect rect, CGFloat yOffset)
 {
     return CGRectMake(CGRectGetMinX(rect),
                       CGRectGetMinY(rect) + yOffset,
@@ -31,7 +31,7 @@ static CGRect CGRectMoveVertically(CGRect rect, CGFloat yOffset)
                       CGRectGetHeight(rect));
 }
 
-static CGRect CGRectMoveHorizontally(CGRect rect, CGFloat xOffset)
+__unused static CGRect CGRectMoveHorizontally(CGRect rect, CGFloat xOffset)
 {
     return CGRectMake(CGRectGetMinX(rect) + xOffset,
                       CGRectGetMinY(rect),
@@ -39,7 +39,7 @@ static CGRect CGRectMoveHorizontally(CGRect rect, CGFloat xOffset)
                       CGRectGetHeight(rect));
 }
 
-static CGRect CGRectTransform(CGRect originRect, CGRect finalRect, CGFloat rate)
+__unused static CGRect CGRectTransform(CGRect originRect, CGRect finalRect, CGFloat rate)
 {
     return CGRectMake(CGRectGetMinX(originRect) + rate * (CGRectGetMinX(finalRect) - CGRectGetMinX(originRect)),
                       CGRectGetMinY(originRect) + rate * (CGRectGetMinY(finalRect) - CGRectGetMinY(originRect)),
