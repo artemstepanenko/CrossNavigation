@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CNViewControllerProtocol.h"
+#import "CNGenericViewController.h"
 #import "cn_direction.h"
-
-@class UIViewController;
-@protocol CNViewControllerProtocol;
 
 @interface CNViewControllerCore : NSObject
 
@@ -23,9 +22,9 @@
 @property (nonatomic) Class rightClass;
 @property (nonatomic) Class bottomClass;
 
-- (instancetype)initWithViewController:(UIViewController<CNViewControllerProtocol> *)viewController;
+- (instancetype)initWithViewController:(CNGenericViewController *)viewController;
 
-- (void)presentViewController:(UIViewController<CNViewControllerProtocol> *)viewController
+- (void)presentViewController:(CNGenericViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated
                    completion:(void (^)(void))completion;

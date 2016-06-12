@@ -16,8 +16,8 @@
 
 @interface CNViewControllerCore () <CNPanGestureHandlerDelegate>
 
-@property (nonatomic, weak) UIViewController<CNViewControllerProtocol> *viewController;
-@property (nonatomic, weak) UIViewController<CNViewControllerProtocol> *nextViewController;
+@property (nonatomic, weak) CNGenericViewController *viewController;
+@property (nonatomic, weak) CNGenericViewController *nextViewController;
 @property (nonatomic) CNInteractiveTransition *interactiveTransition;
 @property (nonatomic, strong) CNPanGestureHandler *panGestureHandler;
 @property (nonatomic, assign) CNDirection direction;
@@ -26,7 +26,7 @@
 
 @implementation CNViewControllerCore
 
-- (instancetype)initWithViewController:(UIViewController<CNViewControllerProtocol> *)viewController
+- (instancetype)initWithViewController:(CNGenericViewController *)viewController
 {
     self = [super init];
     
@@ -46,7 +46,7 @@
     return self;
 }
 
-- (void)presentViewController:(UIViewController<CNViewControllerProtocol> *)viewController
+- (void)presentViewController:(CNGenericViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated
                    completion:(void (^)(void))completion
@@ -316,7 +316,7 @@
     // - Now let's do some magic!
     
     // a visible view controller
-    UIViewController<CNViewControllerProtocol> *visibleViewController = (UIViewController<CNViewControllerProtocol> *)[self visibleViewController];
+    CNGenericViewController *visibleViewController = (CNGenericViewController *)[self visibleViewController];
     
     // freeze UI (we need this to avoid a blinking during further operations)
     UIView *frozenView = [self freezeUI];
@@ -356,7 +356,7 @@
         }
         
         [self transitionWillFinishFromViewController:self.viewController
-                                    toViewController:(UIViewController<CNViewControllerProtocol> *)toViewController
+                                    toViewController:(CNGenericViewController *)toViewController
                                recentPercentComplete:0.0f
                                             animated:animated];
     }
@@ -382,7 +382,7 @@
     }
 }
 
-- (UIViewController<CNViewControllerProtocol> *)createNextViewControllerForDirection:(CNDirection)direction
+- (CNGenericViewController *)createNextViewControllerForDirection:(CNDirection)direction
 {
     Class viewControllerClass = [self classForDirection:direction];
     
@@ -408,8 +408,8 @@
     self.interactiveTransition.interactive = interactive;
 }
 
-- (void)transitionWillFinishFromViewController:(UIViewController<CNViewControllerProtocol> *)fromViewController
-                              toViewController:(UIViewController<CNViewControllerProtocol> *)toViewController
+- (void)transitionWillFinishFromViewController:(CNGenericViewController *)fromViewController
+                              toViewController:(CNGenericViewController *)toViewController
                          recentPercentComplete:(CGFloat)recentPercentComplete
                                       animated:(BOOL)animated
 {

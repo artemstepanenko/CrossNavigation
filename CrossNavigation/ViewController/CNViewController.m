@@ -22,14 +22,11 @@
 // THE SOFTWARE.
 
 #import "CNViewController.h"
-#import "CNTransitioningFactory.h"
 #import "CNViewControllerCore.h"
-#import "UIViewController+CNPrivate.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface CNViewController ()
 
-@property (nonatomic, strong) CNViewControllerCore *core;
+@property (nonatomic) CNViewControllerCore *core;
 
 @end
 
@@ -63,7 +60,7 @@
     [self.core viewDidLoad];
 }
 
-- (void)presentViewController:(UIViewController<CNViewControllerProtocol> *)viewController
+- (void)presentViewController:(CNGenericViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated
                    completion:(void (^)(void))completion

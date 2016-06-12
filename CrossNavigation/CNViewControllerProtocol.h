@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cn_direction.h"
+#import "CNGenericViewController.h"
 
 @class CNViewControllerCore;
 
@@ -21,7 +22,7 @@
  @param animated Determines whether view controller will be presented animated or not
  @param completion The block to execute after the presentation finishes. May be nil.
  */
-- (void)presentViewController:(UIViewController<CNViewControllerProtocol> *)viewController
+- (void)presentViewController:(CNGenericViewController *)viewController
                     direction:(CNDirection)direction
                      animated:(BOOL)animated
                    completion:(void (^)(void))completion;
@@ -104,22 +105,22 @@
 /**
  Specifies the following left view controller's storyboard identifier.
  */
-@property (nonatomic, strong) IBInspectable NSString *leftID;
+@property (nonatomic) IBInspectable NSString *leftID;
 
 /**
  Specifies the following top view controller's storyboard identifier.
  */
-@property (nonatomic, strong) IBInspectable NSString *topID;
+@property (nonatomic) IBInspectable NSString *topID;
 
 /**
  Specifies the following right view controller's storyboard identifier.
  */
-@property (nonatomic, strong) IBInspectable NSString *rightID;
+@property (nonatomic) IBInspectable NSString *rightID;
 
 /**
  Specifies the following bottom view controller's storyboard identifier.
  */
-@property (nonatomic, strong) IBInspectable NSString *bottomID;
+@property (nonatomic) IBInspectable NSString *bottomID;
 
 #pragma mark In Code
 

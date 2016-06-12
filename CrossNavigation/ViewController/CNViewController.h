@@ -32,4 +32,9 @@
 
 @interface CNViewController : UIViewController <CNViewControllerProtocol>
 
+@property (nonatomic) IBInspectable NSString *leftID;
+@property (nonatomic) IBInspectable NSString *topID;
+@property (nonatomic) IBInspectable NSString *rightID;
+@property (nonatomic) IBInspectable NSString *bottomID;
+
 @end

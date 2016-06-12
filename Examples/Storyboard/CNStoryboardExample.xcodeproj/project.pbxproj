@@ -31,11 +31,11 @@
 		AC73DA801B1893ED00573835 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA7C1B1893ED00573835 /* Main_iPad.storyboard */; };
 		AC73DA811B1893ED00573835 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA7E1B1893ED00573835 /* Main_iPhone.storyboard */; };
 		AC73DA831B1893F800573835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA821B1893F800573835 /* Images.xcassets */; };
-		AC73DA8B1B18943A00573835 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA891B18943A00573835 /* Info.plist */; };
 		AC73DA8C1B18943A00573835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA8A1B18943A00573835 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12AFA2921D0D9C2B00125515 /* CNGenericViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNGenericViewController.h; sourceTree = "<group>"; };
 		12C080681CEB8E6200E0564E /* CNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTabBarController.h; sourceTree = "<group>"; };
 		12C080691CEB8E6200E0564E /* CNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTabBarController.m; sourceTree = "<group>"; };
 		12C0806C1CEB8EB600E0564E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/TabBar_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
@@ -117,6 +117,7 @@
 				AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */,
 				AC0A0B101CED37EA008CA15C /* UIViewController+CNPrivate.h */,
 				AC0A0B111CED37EA008CA15C /* UIViewController+CNPrivate.m */,
+				12AFA2921D0D9C2B00125515 /* CNGenericViewController.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -395,7 +396,7 @@
 		AC7EA4F519D2D10600D9A550 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Artem Stepanenko";
 				TargetAttributes = {
 					AC7EA4FC19D2D10600D9A550 = {
@@ -428,7 +429,6 @@
 			files = (
 				AC73DA831B1893F800573835 /* Images.xcassets in Resources */,
 				AC73DA801B1893ED00573835 /* Main_iPad.storyboard in Resources */,
-				AC73DA8B1B18943A00573835 /* Info.plist in Resources */,
 				AC73DA811B1893ED00573835 /* Main_iPhone.storyboard in Resources */,
 				12C0806D1CEB8EB600E0564E /* TabBar_iPhone.storyboard in Resources */,
 			);
@@ -515,6 +515,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -584,6 +585,7 @@
 				INFOPLIST_FILE = CNStoryboardExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.artemstepanenko.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CNStoryboardExample;
 			};
 			name = Debug;
@@ -597,6 +599,7 @@
 				INFOPLIST_FILE = CNStoryboardExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.artemstepanenko.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CNStoryboardExample;
 			};
 			name = Release;
