@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  CNNoStoryboardsExample
+//
+//  Created by Artem Stepanenko on 13/06/16.
+//  Copyright © 2016 Artem Stepanenko. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#endif
