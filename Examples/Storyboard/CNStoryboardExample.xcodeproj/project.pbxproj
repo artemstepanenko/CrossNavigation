@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		12AFA2961D0DA26800125515 /* CNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA2951D0DA26800125515 /* CNNavigationController.m */; };
 		12C0806A1CEB8E6200E0564E /* CNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C080691CEB8E6200E0564E /* CNTabBarController.m */; };
-		12C0806D1CEB8EB600E0564E /* TabBar_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C0806B1CEB8EB600E0564E /* TabBar_iPhone.storyboard */; };
 		AC0A0B0E1CED2F73008CA15C /* CNViewControllerCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */; };
 		AC0A0B121CED37EA008CA15C /* UIViewController+CNPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A0B111CED37EA008CA15C /* UIViewController+CNPrivate.m */; };
 		AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */; };
@@ -28,8 +27,7 @@
 		AC73DA771B187E4C00573835 /* CNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA611B187E4C00573835 /* CNTimer.m */; };
 		AC73DA781B187E4C00573835 /* CNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA671B187E4C00573835 /* CNViewController.m */; };
 		AC73DA7B1B1893E000573835 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA7A1B1893E000573835 /* AppDelegate.m */; };
-		AC73DA801B1893ED00573835 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA7C1B1893ED00573835 /* Main_iPad.storyboard */; };
-		AC73DA811B1893ED00573835 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA7E1B1893ED00573835 /* Main_iPhone.storyboard */; };
+		AC73DA811B1893ED00573835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA7E1B1893ED00573835 /* Main.storyboard */; };
 		AC73DA831B1893F800573835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC73DA821B1893F800573835 /* Images.xcassets */; };
 		AC73DA8C1B18943A00573835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA8A1B18943A00573835 /* main.m */; };
 /* End PBXBuildFile section */
@@ -41,7 +39,6 @@
 		12AFA29B1D0DF66000125515 /* CNViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewControllerProtocol.h; sourceTree = "<group>"; };
 		12C080681CEB8E6200E0564E /* CNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTabBarController.h; sourceTree = "<group>"; };
 		12C080691CEB8E6200E0564E /* CNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTabBarController.m; sourceTree = "<group>"; };
-		12C0806C1CEB8EB600E0564E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/TabBar_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		AC0A0B0C1CED2F73008CA15C /* CNViewControllerCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewControllerCore.h; sourceTree = "<group>"; };
 		AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewControllerCore.m; sourceTree = "<group>"; };
 		AC0A0B101CED37EA008CA15C /* UIViewController+CNPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CNPrivate.h"; sourceTree = "<group>"; };
@@ -81,8 +78,7 @@
 		AC73DA671B187E4C00573835 /* CNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewController.m; sourceTree = "<group>"; };
 		AC73DA791B1893E000573835 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = CNStoryboardExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		AC73DA7A1B1893E000573835 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = CNStoryboardExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		AC73DA7D1B1893ED00573835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
-		AC73DA7F1B1893ED00573835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
+		AC73DA7F1B1893ED00573835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		AC73DA821B1893F800573835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CNStoryboardExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		AC73DA881B18943A00573835 /* CNStoryboardExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNStoryboardExample-Prefix.pch"; path = "CNStoryboardExample/CNStoryboardExample-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		AC73DA891B18943A00573835 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CNStoryboardExample/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -363,9 +359,7 @@
 		ACECFDB91A0985D9006B1246 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				AC73DA7C1B1893ED00573835 /* Main_iPad.storyboard */,
-				AC73DA7E1B1893ED00573835 /* Main_iPhone.storyboard */,
-				12C0806B1CEB8EB600E0564E /* TabBar_iPhone.storyboard */,
+				AC73DA7E1B1893ED00573835 /* Main.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -428,9 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC73DA831B1893F800573835 /* Images.xcassets in Resources */,
-				AC73DA801B1893ED00573835 /* Main_iPad.storyboard in Resources */,
-				AC73DA811B1893ED00573835 /* Main_iPhone.storyboard in Resources */,
-				12C0806D1CEB8EB600E0564E /* TabBar_iPhone.storyboard in Resources */,
+				AC73DA811B1893ED00573835 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,28 +460,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		12C0806B1CEB8EB600E0564E /* TabBar_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12C0806C1CEB8EB600E0564E /* Base */,
-			);
-			name = TabBar_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		AC73DA7C1B1893ED00573835 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC73DA7D1B1893ED00573835 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		AC73DA7E1B1893ED00573835 /* Main_iPhone.storyboard */ = {
+		AC73DA7E1B1893ED00573835 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AC73DA7F1B1893ED00573835 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -583,7 +559,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CNStoryboardExample/CNStoryboardExample-Prefix.pch";
 				INFOPLIST_FILE = CNStoryboardExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.artemstepanenko.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CNStoryboardExample;
@@ -597,7 +573,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CNStoryboardExample/CNStoryboardExample-Prefix.pch";
 				INFOPLIST_FILE = CNStoryboardExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.artemstepanenko.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CNStoryboardExample;

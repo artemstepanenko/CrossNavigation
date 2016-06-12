@@ -52,7 +52,7 @@ static CNDirection CNDirectionGetOpposite(CNDirection direction)
     }
 }
 
-static BOOL CNDirectionOppositeToDirection(CNDirection direction1, CNDirection direction2)
+__unused static BOOL CNDirectionOppositeToDirection(CNDirection direction1, CNDirection direction2)
 {
     CNDirection oppositeDirection = CNDirectionGetOpposite(direction2);
     
@@ -63,12 +63,12 @@ static BOOL CNDirectionOppositeToDirection(CNDirection direction1, CNDirection d
     return direction1 == oppositeDirection;
 }
 
-static BOOL CNDirectionIsHorizontal(CNDirection direction)
+__unused static BOOL CNDirectionIsHorizontal(CNDirection direction)
 {
     return (direction == CNDirectionLeft) || (direction == CNDirectionRight);
 }
 
-static BOOL CNDirectionIsVertical(CNDirection direction)
+__unused static BOOL CNDirectionIsVertical(CNDirection direction)
 {
     return (direction == CNDirectionTop) || (direction == CNDirectionBottom);
 }
