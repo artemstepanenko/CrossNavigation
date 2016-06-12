@@ -1,7 +1,7 @@
 //
-// CNSeguePerformer.m
+// CNTabBarController.h
 //
-// Copyright (c) 2014 Artem Stepanenko
+// Copyright (c) 2016 Artem Stepanenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,20 +21,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CNSeguePerformer.h"
-#import "CNViewController.h"
+#import <UIKit/UIKit.h>
+#import "CNViewControllerProtocol.h"
 
-@implementation CNSeguePerformer
+/**
+ if you inherit your tab bar controllers from CNTabBarController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
+ */
 
-+ (void)performSeque:(UIStoryboardSegue *)segue direction:(CNDirection)direction
-{
-    CNViewController *sourceViewController = segue.sourceViewController;
-    CNViewController *destinationViewController = segue.destinationViewController;
-    
-    NSAssert([sourceViewController isKindOfClass:[CNViewController class]], @"Source view controller must be CNGenericViewController");
-    NSAssert([destinationViewController isKindOfClass:[CNViewController class]], @"Destination view controller must be CNGenericViewController");
-    
-    [sourceViewController presentViewController:destinationViewController direction:direction animated:YES completion:nil];
-}
+@interface CNTabBarController : UITabBarController <CNViewControllerProtocol>
+
+@property (nonatomic, copy) IBInspectable NSString *leftID;
+@property (nonatomic, copy) IBInspectable NSString *topID;
+@property (nonatomic, copy) IBInspectable NSString *rightID;
+@property (nonatomic, copy) IBInspectable NSString *bottomID;
 
 @end

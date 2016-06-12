@@ -1,7 +1,7 @@
 //
-// CNViewController.m
+// CNTabBarController.m
 //
-// Copyright (c) 2014 Artem Stepanenko
+// Copyright (c) 2016 Artem Stepanenko
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,16 +21,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CNViewController.h"
+#import "CNTabBarController.h"
 #import "CNViewControllerCore.h"
 
-@interface CNViewController ()
+@interface CNTabBarController ()
 
 @property (nonatomic) CNViewControllerCore *cn_core;
 
 @end
 
-@implementation CNViewController
+@implementation CNTabBarController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,9 +66,9 @@
                    completion:(void (^)(void))completion
 {
     [self.cn_core presentViewController:viewController
-                              direction:direction
-                               animated:animated
-                             completion:completion];
+                           direction:direction
+                            animated:animated
+                          completion:completion];
 }
 
 - (void)dismissViewControllerAnimated:(BOOL)animated
