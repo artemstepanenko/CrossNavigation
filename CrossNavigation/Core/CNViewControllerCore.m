@@ -55,7 +55,7 @@
         return;
     }
     
-    [viewController.core prepareForTransitionToDirection:direction interactive:NO];
+    [viewController.cn_core prepareForTransitionToDirection:direction interactive:NO];
     
     [self transitionWillFinishFromViewController:self.viewController
                                           toViewController:viewController
@@ -179,14 +179,14 @@
         
         [self prepareForBackTransitionInteractive:YES];
         
-        [self.viewController super_dismissViewControllerAnimated:YES completion:^{       // FIXME: self.viewController.super
+        [self.viewController cn_super_dismissViewControllerAnimated:YES completion:^{       // FIXME: self.viewController.super
             weakSelf.nextViewController = nil;
         }];
         
     } else {
         
         self.nextViewController = [self createNextViewControllerForDirection:direction];
-        [self.nextViewController.core prepareForTransitionToDirection:direction interactive:YES];
+        [self.nextViewController.cn_core prepareForTransitionToDirection:direction interactive:YES];
         
         [self.viewController presentViewController:self.nextViewController animated:YES completion:^{
             weakSelf.nextViewController = nil;
@@ -196,35 +196,35 @@
 
 - (void)panGestureHandler:(CNPanGestureHandler *)sender didUpdateWithRatio:(CGFloat)ratio
 {
-    if (!self.nextViewController.core.interactiveTransition.containerView) {
+    if (!self.nextViewController.cn_core.interactiveTransition.containerView) {
         return;
     }
     
-    [self.nextViewController.core.interactiveTransition updateInteractiveTransition:ratio];
+    [self.nextViewController.cn_core.interactiveTransition updateInteractiveTransition:ratio];
     
     // send events
-    CGFloat percentComplete = self.nextViewController.core.interactiveTransition.recentPercentComplete;
-    [self.nextViewController.core.interactiveTransition.toViewController viewIsAppearing:percentComplete];
-    [self.nextViewController.core.interactiveTransition.fromViewController viewIsAppearing:(1.0f - percentComplete)];
+    CGFloat percentComplete = self.nextViewController.cn_core.interactiveTransition.recentPercentComplete;
+    [self.nextViewController.cn_core.interactiveTransition.toViewController viewIsAppearing:percentComplete];
+    [self.nextViewController.cn_core.interactiveTransition.fromViewController viewIsAppearing:(1.0f - percentComplete)];
 }
 
 - (void)panGestureHandlerDidFinish:(CNPanGestureHandler *)sender
 {
-    [self.nextViewController.core.interactiveTransition finishInteractiveTransition];
+    [self.nextViewController.cn_core.interactiveTransition finishInteractiveTransition];
     
-    [self.nextViewController.core transitionWillFinishFromViewController:self.nextViewController.core.interactiveTransition.fromViewController
-                                                   toViewController:self.nextViewController.core.interactiveTransition.toViewController
-                                              recentPercentComplete:self.nextViewController.core.interactiveTransition.recentPercentComplete
+    [self.nextViewController.cn_core transitionWillFinishFromViewController:self.nextViewController.cn_core.interactiveTransition.fromViewController
+                                                   toViewController:self.nextViewController.cn_core.interactiveTransition.toViewController
+                                              recentPercentComplete:self.nextViewController.cn_core.interactiveTransition.recentPercentComplete
                                                            animated:YES];
 }
 
 - (void)panGestureHandlerDidCancel:(CNPanGestureHandler *)sender
 {
-    [self.nextViewController.core.interactiveTransition cancelInteractiveTransition];
+    [self.nextViewController.cn_core.interactiveTransition cancelInteractiveTransition];
     
-    [self.nextViewController.core transitionWillFinishFromViewController:self.nextViewController.core.interactiveTransition.toViewController
-                                                   toViewController:self.nextViewController.core.interactiveTransition.fromViewController
-                                              recentPercentComplete:(1.0f - self.nextViewController.core.interactiveTransition.recentPercentComplete)
+    [self.nextViewController.cn_core transitionWillFinishFromViewController:self.nextViewController.cn_core.interactiveTransition.toViewController
+                                                   toViewController:self.nextViewController.cn_core.interactiveTransition.fromViewController
+                                              recentPercentComplete:(1.0f - self.nextViewController.cn_core.interactiveTransition.recentPercentComplete)
                                                            animated:YES];
 }
 
@@ -279,7 +279,7 @@
 
 - (CGPoint)panGestureHandler:(CNPanGestureHandler *)sender locationOfGesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    UIView *view = self.nextViewController.core.interactiveTransition.containerView;
+    UIView *view = self.nextViewController.cn_core.interactiveTransition.containerView;
     view = (view ? view : self.viewController.view);
     
     return [gestureRecognizer locationInView:view];
@@ -287,7 +287,7 @@
 
 - (CGSize)viewSizeForPanGestureHandler:(CNPanGestureHandler *)sender
 {
-    UIView *view = self.nextViewController.core.interactiveTransition.containerView;
+    UIView *view = self.nextViewController.cn_core.interactiveTransition.containerView;
     view = (view ? view : self.viewController.view);
     
     return view.bounds.size;
@@ -361,7 +361,7 @@
                                             animated:animated];
     }
     
-    [self.viewController super_dismissViewControllerAnimated:animated completion:completion];   // FIXME: viewController.super must be calling this
+    [self.viewController cn_super_dismissViewControllerAnimated:animated completion:completion];   // FIXME: viewController.super must be calling this
 }
 
 - (void)prepareForBackTransitionInteractive:(BOOL)interactive

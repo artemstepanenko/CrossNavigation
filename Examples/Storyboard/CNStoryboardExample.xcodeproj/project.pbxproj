@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12AFA2961D0DA26800125515 /* CNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA2951D0DA26800125515 /* CNNavigationController.m */; };
 		12C0806A1CEB8E6200E0564E /* CNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C080691CEB8E6200E0564E /* CNTabBarController.m */; };
 		12C0806D1CEB8EB600E0564E /* TabBar_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C0806B1CEB8EB600E0564E /* TabBar_iPhone.storyboard */; };
 		AC0A0B0E1CED2F73008CA15C /* CNViewControllerCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		12AFA2921D0D9C2B00125515 /* CNGenericViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNGenericViewController.h; sourceTree = "<group>"; };
+		12AFA2941D0DA26800125515 /* CNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationController.h; sourceTree = "<group>"; };
+		12AFA2951D0DA26800125515 /* CNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationController.m; sourceTree = "<group>"; };
 		12C080681CEB8E6200E0564E /* CNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTabBarController.h; sourceTree = "<group>"; };
 		12C080691CEB8E6200E0564E /* CNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTabBarController.m; sourceTree = "<group>"; };
 		12C0806C1CEB8EB600E0564E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/TabBar_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
@@ -101,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12AFA2931D0DA23800125515 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				12AFA2941D0DA26800125515 /* CNNavigationController.h */,
+				12AFA2951D0DA26800125515 /* CNNavigationController.m */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
 		12C080671CEB8E6200E0564E /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +147,7 @@
 				AC73DA621B187E4C00573835 /* Utils */,
 				AC0A0B0A1CED2F34008CA15C /* Core */,
 				AC73DA651B187E4C00573835 /* ViewController */,
+				12AFA2931D0DA23800125515 /* NavigationController */,
 				12C080671CEB8E6200E0564E /* TabBarController */,
 			);
 			name = CrossNavigation;
@@ -459,6 +472,7 @@
 				AC73DA701B187E4C00573835 /* CNTopTransitioning.m in Sources */,
 				AC73DA6E1B187E4C00573835 /* CNLeftTransitioning.m in Sources */,
 				AC73DA721B187E4C00573835 /* CNBottomSegue.m in Sources */,
+				12AFA2961D0DA26800125515 /* CNNavigationController.m in Sources */,
 				AC73DA731B187E4C00573835 /* CNLeftSegue.m in Sources */,
 				AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */,
 				AC73DA691B187E4C00573835 /* UINavigationController+CrossNavigation.m in Sources */,

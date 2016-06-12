@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class CNViewControllerCore;
+
 @interface UIViewController (CNPrivate)
 
-- (void)cn_dismissWithParams:(NSDictionary *)params;
+@property (nonatomic, readonly) CNViewControllerCore *cn_core;
+
 + (NSDictionary *)cn_createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)cn_super_dismissViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
+- (void)cn_dismissWithParams:(NSDictionary *)params;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface CNTabBarController ()
 
-@property (nonatomic) CNViewControllerCore *core;
+@property (nonatomic) CNViewControllerCore *cn_core;
 
 @end
 
@@ -42,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.core viewDidLoad];
+    [self.cn_core viewDidLoad];
 }
 
 - (void)presentViewController:(CNGenericViewController *)viewController
@@ -50,7 +50,7 @@
                      animated:(BOOL)animated
                    completion:(void (^)(void))completion
 {
-    [self.core presentViewController:viewController
+    [self.cn_core presentViewController:viewController
                            direction:direction
                             animated:animated
                           completion:completion];
@@ -59,20 +59,14 @@
 - (void)dismissViewControllerAnimated:(BOOL)animated
                            completion:(void (^)(void))completion
 {
-    [self.core dismissViewControllerAnimated:animated completion:completion];
+    [self.cn_core dismissViewControllerAnimated:animated completion:completion];
 }
 
 - (void)dismissViewControllerToDirection:(CNDirection)direction
                                 animated:(BOOL)animated
                               completion:(void (^)(void))completion
 {
-    [self.core dismissViewControllerToDirection:direction animated:animated completion:completion];
-}
-
-- (void)super_dismissViewControllerAnimated:(BOOL)animated
-                                 completion:(void (^)(void))completion
-{
-    [super dismissViewControllerAnimated:animated completion:completion];
+    [self.cn_core dismissViewControllerToDirection:direction animated:animated completion:completion];
 }
 
 #pragma mark - Event
@@ -96,91 +90,91 @@
 
 - (void)setLeftID:(NSString *)leftStoryboardID
 {
-    self.core.leftID = leftStoryboardID;
+    self.cn_core.leftID = leftStoryboardID;
 }
 
 - (NSString *)leftID
 {
-    return self.core.leftID;
+    return self.cn_core.leftID;
 }
 
 - (void)setTopID:(NSString *)topStoryboardID
 {
-    self.core.topID = topStoryboardID;
+    self.cn_core.topID = topStoryboardID;
 }
 
 - (NSString *)topID
 {
-    return self.core.topID;
+    return self.cn_core.topID;
 }
 
 - (void)setRightID:(NSString *)rightStoryboardID
 {
-    self.core.rightID = rightStoryboardID;
+    self.cn_core.rightID = rightStoryboardID;
 }
 
 - (NSString *)rightID
 {
-    return self.core.rightID;
+    return self.cn_core.rightID;
 }
 
 - (void)setBottomID:(NSString *)bottomStoryboardID
 {
-    self.core.bottomID = bottomStoryboardID;
+    self.cn_core.bottomID = bottomStoryboardID;
 }
 
 - (NSString *)bottomID
 {
-    return self.core.bottomID;
+    return self.cn_core.bottomID;
 }
 
 #pragma mark In Code
 
 - (void)setLeftClass:(Class)leftClass
 {
-    self.core.leftClass = leftClass;
+    self.cn_core.leftClass = leftClass;
 }
 
 - (Class)leftClass
 {
-    return self.core.leftClass;
+    return self.cn_core.leftClass;
 }
 
 - (void)setTopClass:(Class)topClass
 {
-    self.core.topClass = topClass;
+    self.cn_core.topClass = topClass;
 }
 
 - (Class)topClass
 {
-    return self.core.topClass;
+    return self.cn_core.topClass;
 }
 
 - (void)setRightClass:(Class)rightClass
 {
-    self.core.rightClass = rightClass;
+    self.cn_core.rightClass = rightClass;
 }
 
 - (Class)rightClass
 {
-    return self.core.rightClass;
+    return self.cn_core.rightClass;
 }
 
 - (void)setBottomClass:(Class)bottomClass
 {
-    self.core.bottomClass = bottomClass;
+    self.cn_core.bottomClass = bottomClass;
 }
 
 - (Class)bottomClass
 {
-    return self.core.bottomClass;
+    return self.cn_core.bottomClass;
 }
 
 #pragma mark - Private
 
 - (void)initialize
 {
-    _core = [[CNViewControllerCore alloc] initWithViewController:self];
+    _cn_core = [[CNViewControllerCore alloc] initWithViewController:self];
 }
 
 @end

@@ -153,11 +153,4 @@
  */
 @property (nonatomic, strong) Class bottomClass;
 
-#pragma mark Private
-
-@property (nonatomic, readonly) CNViewControllerCore *core;
-
-- (void)super_dismissViewControllerAnimated:(BOOL)animated
-                                 completion:(void (^)(void))completion;
-
 @end
