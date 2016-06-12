@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cn_direction.h"
 
+@class CNViewControllerCore;
+
 @protocol CNViewControllerProtocol <NSObject>
 
 /**
@@ -149,5 +151,12 @@
  Specifies the following bottom view controller's class.
  */
 @property (nonatomic, strong) Class bottomClass;
+
+#pragma mark Private
+
+@property (nonatomic, readonly) CNViewControllerCore *core;
+
+- (void)super_dismissViewControllerAnimated:(BOOL)animated
+                                 completion:(void (^)(void))completion;
 
 @end

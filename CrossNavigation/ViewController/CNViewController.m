@@ -23,7 +23,6 @@
 
 #import "CNViewController.h"
 #import "CNTransitioningFactory.h"
-#import "CNTimer.h"
 #import "CNViewControllerCore.h"
 #import "UIViewController+CNPrivate.h"
 #import <QuartzCore/QuartzCore.h>
@@ -86,6 +85,12 @@
                               completion:(void (^)(void))completion
 {
     [self.core dismissViewControllerToDirection:direction animated:animated completion:completion];
+}
+
+- (void)super_dismissViewControllerAnimated:(BOOL)animated
+                                 completion:(void (^)(void))completion
+{
+    [super dismissViewControllerAnimated:animated completion:completion];
 }
 
 #pragma mark - Event

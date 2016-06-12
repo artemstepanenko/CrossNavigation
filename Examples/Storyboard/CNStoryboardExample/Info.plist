@@ -25,7 +25,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string></string>
 	<key>UIMainStoryboardFile</key>
-	<string>TabBar_iPhone</string>
+	<string>Main_iPhone</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
