@@ -41,7 +41,7 @@
 		12C0806C1CEB8EB600E0564E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/TabBar_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		AC0A0B0C1CED2F73008CA15C /* CNViewControllerCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewControllerCore.h; sourceTree = "<group>"; };
 		AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewControllerCore.m; sourceTree = "<group>"; };
-		AC0A0B0F1CED3674008CA15C /* CNViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewControllerProtocol.h; sourceTree = "<group>"; };
+		AC0A0B0F1CED3674008CA15C /* CNViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNViewControllerProtocol.h; path = ../CNViewControllerProtocol.h; sourceTree = "<group>"; };
 		AC0A0B101CED37EA008CA15C /* UIViewController+CNPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CNPrivate.h"; sourceTree = "<group>"; };
 		AC0A0B111CED37EA008CA15C /* UIViewController+CNPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CNPrivate.m"; sourceTree = "<group>"; };
 		AC73DA341B187E4C00573835 /* UINavigationController+CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CrossNavigation.h"; sourceTree = "<group>"; };
@@ -113,6 +113,7 @@
 		AC0A0B0A1CED2F34008CA15C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AC0A0B0F1CED3674008CA15C /* CNViewControllerProtocol.h */,
 				AC0A0B0C1CED2F73008CA15C /* CNViewControllerCore.h */,
 				AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */,
 				AC0A0B101CED37EA008CA15C /* UIViewController+CNPrivate.h */,
@@ -127,7 +128,6 @@
 			children = (
 				AC73DA331B187E4C00573835 /* Categories */,
 				AC73DA361B187E4C00573835 /* CrossNavigation.h */,
-				AC0A0B0F1CED3674008CA15C /* CNViewControllerProtocol.h */,
 				AC73DA371B187E4C00573835 /* InteractiveTransition */,
 				AC73DA4C1B187E4C00573835 /* PanGestureHandler */,
 				AC73DA4F1B187E4C00573835 /* Segue */,

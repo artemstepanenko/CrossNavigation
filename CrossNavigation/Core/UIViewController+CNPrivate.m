@@ -10,7 +10,7 @@
 
 @implementation UIViewController (CNPrivate)
 
-+ (NSDictionary *)createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion
++ (NSDictionary *)cn_createParamsForDismissAnimated:(BOOL)animated completion:(void (^)(void))completion
 {
     // params
     NSMutableDictionary *params = [NSMutableDictionary new];
@@ -23,7 +23,7 @@
     return params;
 }
 
-- (void)dismissWithParams:(NSDictionary *)params
+- (void)cn_dismissWithParams:(NSDictionary *)params
 {
     [self dismissViewControllerAnimated:[params[@"animated"] boolValue] completion:params[@"completion"]];
 }

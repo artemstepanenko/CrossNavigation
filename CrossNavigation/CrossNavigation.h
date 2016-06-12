@@ -22,4 +22,5 @@
 // THE SOFTWARE.
 
 #import "CNViewController.h"
+#import "CNTabBarController.h"
 #import "UINavigationController+CrossNavigation.h"

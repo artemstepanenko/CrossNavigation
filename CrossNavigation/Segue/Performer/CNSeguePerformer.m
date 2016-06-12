@@ -31,8 +31,8 @@
     CNViewController *sourceViewController = segue.sourceViewController;
     CNViewController *destinationViewController = segue.destinationViewController;
     
-    NSAssert([sourceViewController isKindOfClass:[CNViewController class]], @"Source view controller must be CNViewController");
-    NSAssert([destinationViewController isKindOfClass:[CNViewController class]], @"Destination view controller must be CNViewController");
+    NSAssert([sourceViewController isKindOfClass:[CNViewController class]], @"Source view controller must be CNGenericViewController");
+    NSAssert([destinationViewController isKindOfClass:[CNViewController class]], @"Destination view controller must be CNGenericViewController");
     
     [sourceViewController presentViewController:destinationViewController direction:direction animated:YES completion:nil];
 }

@@ -55,7 +55,7 @@
         return;
     }
     
-    [self prepareForTransitionToDirection:direction interactive:NO];
+    [viewController.core prepareForTransitionToDirection:direction interactive:NO];
     
     [self transitionWillFinishFromViewController:self.viewController
                                           toViewController:viewController
@@ -333,10 +333,10 @@
             [frozenView removeFromSuperview];
             
             // dismiss params
-            NSDictionary *dismissParams = [UIViewController createParamsForDismissAnimated:animated completion:completion];
+            NSDictionary *dismissParams = [UIViewController cn_createParamsForDismissAnimated:animated completion:completion];
             
             // make a common dismiss
-            [visibleViewController performSelector:@selector(dismissWithParams:) withObject:dismissParams afterDelay:0.0f];
+            [visibleViewController performSelector:@selector(cn_dismissWithParams:) withObject:dismissParams afterDelay:0.0f];
         }];
     }];
 }
