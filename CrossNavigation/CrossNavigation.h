@@ -21,6 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+/**
+ Umbrella header
+ */
 #import "CNViewController.h"
+#import "CNNavigationController.h"
 #import "CNTabBarController.h"
-#import "UINavigationController+CrossNavigation.h"

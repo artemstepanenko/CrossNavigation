@@ -1,23 +1,40 @@
 //
-//  CNViewControllerProtocol.h
-//  CNStoryboardExample
+// CNViewControllerProtocol.h
 //
-//  Created by Artem Stepanenko on 17/05/16.
-//  Copyright © 2016 Artem Stepanenko. All rights reserved.
+// Copyright (c) 2016 Artem Stepanenko
 //
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
 #import "cn_direction.h"
 #import "CNGenericViewController.h"
 
-@class CNViewControllerCore;
-
+/**
+ You can find all functionality of the library inside the protocol.
+ CNViewController, CNNavigationController, and CNTabBarController implement it.
+ */
 @protocol CNViewControllerProtocol <NSObject>
 
 /**
  Presents a view controller.
  
- @param viewController The view controller to be presented. Should be an instance of CNViewController or any class inherited from CNViewController.
+ @param viewController The view controller to be presented, a subclass of CNViewController, CNNavigationController, or CNTabBarController.
  @param direction The direction of appearance the next view controller
  @param animated Determines whether view controller will be presented animated or not
  @param completion The block to execute after the presentation finishes. May be nil.
@@ -30,9 +47,7 @@
 /**
  Dismisses a view controller that was presented modally by a receiver.
  
- This is UIViewController's method which was overridden in CNViewController. It dismisses the view controller in the opposite direction to the presentation.
- 
- You may call this method in case if CNViewController object was presented by a common UIViewController object, as well.
+ This is UIViewController's method which is overridden in CoreNavigation. It dismisses the view controller in the opposite direction to the presentation.
  
  @param animated Determines whether the view controller will be dismissed animated or not
  @param completion The block to execute after the view controller is dismissed. May be nil.
@@ -86,15 +101,12 @@
  */
 - (BOOL)supportsInteractiveTransition;
 
-
-/**
- Use methods/properties from this interface to implement auto-transitions.
- It means that following view controllers are presented automatically when a user makes a proper dragging gesture.
- */
-
 #pragma mark Storyboard
 
 /**
+ Use properties from this interface to implement auto-transitions.
+ It means that following view controllers are presented automatically when a user makes a proper dragging gesture.
+ 
  Properties for storybord's identifiers of following view controllers. One - for each direction.
  If appropriate view controller is set, user can make an interactive transition by dragging.
  
@@ -105,22 +117,22 @@
 /**
  Specifies the following left view controller's storyboard identifier.
  */
-@property (nonatomic) IBInspectable NSString *leftID;
+@property (nonatomic, copy) NSString *leftID;
 
 /**
  Specifies the following top view controller's storyboard identifier.
  */
-@property (nonatomic) IBInspectable NSString *topID;
+@property (nonatomic, copy) NSString *topID;
 
 /**
  Specifies the following right view controller's storyboard identifier.
  */
-@property (nonatomic) IBInspectable NSString *rightID;
+@property (nonatomic, copy) NSString *rightID;
 
 /**
  Specifies the following bottom view controller's storyboard identifier.
  */
-@property (nonatomic) IBInspectable NSString *bottomID;
+@property (nonatomic, copy) NSString *bottomID;
 
 #pragma mark In Code
 
@@ -130,27 +142,27 @@
  
  CNViewController *cnViewController = [[cnClass new] init];
  
- @warning provided classes must be CNViewController or any other classes inherited from CNViewController
+ @warning provided classes must be inherited from CNViewController, UINavigationController, or UITabBarController
  */
 
 /**
  Specifies the following left view controller's class.
  */
-@property (nonatomic, strong) Class leftClass;
+@property (nonatomic) Class leftClass;
 
 /**
  Specifies the following top view controller's class.
  */
-@property (nonatomic, strong) Class topClass;
+@property (nonatomic) Class topClass;
 
 /**
  Specifies the following right view controller's class.
  */
-@property (nonatomic, strong) Class rightClass;
+@property (nonatomic) Class rightClass;
 
 /**
  Specifies the following bottom view controller's class.
  */
-@property (nonatomic, strong) Class bottomClass;
+@property (nonatomic) Class bottomClass;
 
 @end

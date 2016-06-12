@@ -12,7 +12,6 @@
 		12C0806D1CEB8EB600E0564E /* TabBar_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C0806B1CEB8EB600E0564E /* TabBar_iPhone.storyboard */; };
 		AC0A0B0E1CED2F73008CA15C /* CNViewControllerCore.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */; };
 		AC0A0B121CED37EA008CA15C /* UIViewController+CNPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A0B111CED37EA008CA15C /* UIViewController+CNPrivate.m */; };
-		AC73DA691B187E4C00573835 /* UINavigationController+CrossNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */; };
 		AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */; };
 		AC73DA6B1B187E4C00573835 /* CNTransitioningFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA3C1B187E4C00573835 /* CNTransitioningFactory.m */; };
 		AC73DA6C1B187E4C00573835 /* CNBottomTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73DA401B187E4C00573835 /* CNBottomTransitioning.m */; };
@@ -39,16 +38,14 @@
 		12AFA2921D0D9C2B00125515 /* CNGenericViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNGenericViewController.h; sourceTree = "<group>"; };
 		12AFA2941D0DA26800125515 /* CNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNNavigationController.h; sourceTree = "<group>"; };
 		12AFA2951D0DA26800125515 /* CNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNNavigationController.m; sourceTree = "<group>"; };
+		12AFA29B1D0DF66000125515 /* CNViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewControllerProtocol.h; sourceTree = "<group>"; };
 		12C080681CEB8E6200E0564E /* CNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNTabBarController.h; sourceTree = "<group>"; };
 		12C080691CEB8E6200E0564E /* CNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNTabBarController.m; sourceTree = "<group>"; };
 		12C0806C1CEB8EB600E0564E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CNStoryboardExample/Base.lproj/TabBar_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		AC0A0B0C1CED2F73008CA15C /* CNViewControllerCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNViewControllerCore.h; sourceTree = "<group>"; };
 		AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNViewControllerCore.m; sourceTree = "<group>"; };
-		AC0A0B0F1CED3674008CA15C /* CNViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNViewControllerProtocol.h; path = ../CNViewControllerProtocol.h; sourceTree = "<group>"; };
 		AC0A0B101CED37EA008CA15C /* UIViewController+CNPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CNPrivate.h"; sourceTree = "<group>"; };
 		AC0A0B111CED37EA008CA15C /* UIViewController+CNPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CNPrivate.m"; sourceTree = "<group>"; };
-		AC73DA341B187E4C00573835 /* UINavigationController+CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CrossNavigation.h"; sourceTree = "<group>"; };
-		AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CrossNavigation.m"; sourceTree = "<group>"; };
 		AC73DA361B187E4C00573835 /* CrossNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrossNavigation.h; sourceTree = "<group>"; };
 		AC73DA381B187E4C00573835 /* CNInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNInteractiveTransition.h; sourceTree = "<group>"; };
 		AC73DA391B187E4C00573835 /* CNInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNInteractiveTransition.m; sourceTree = "<group>"; };
@@ -125,7 +122,6 @@
 		AC0A0B0A1CED2F34008CA15C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AC0A0B0F1CED3674008CA15C /* CNViewControllerProtocol.h */,
 				AC0A0B0C1CED2F73008CA15C /* CNViewControllerCore.h */,
 				AC0A0B0D1CED2F73008CA15C /* CNViewControllerCore.m */,
 				AC0A0B101CED37EA008CA15C /* UIViewController+CNPrivate.h */,
@@ -138,8 +134,8 @@
 		AC73DA321B187E4C00573835 /* CrossNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				AC73DA331B187E4C00573835 /* Categories */,
 				AC73DA361B187E4C00573835 /* CrossNavigation.h */,
+				12AFA29B1D0DF66000125515 /* CNViewControllerProtocol.h */,
 				AC73DA371B187E4C00573835 /* InteractiveTransition */,
 				AC73DA4C1B187E4C00573835 /* PanGestureHandler */,
 				AC73DA4F1B187E4C00573835 /* Segue */,
@@ -152,15 +148,6 @@
 			);
 			name = CrossNavigation;
 			path = ../../CrossNavigation;
-			sourceTree = "<group>";
-		};
-		AC73DA331B187E4C00573835 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				AC73DA341B187E4C00573835 /* UINavigationController+CrossNavigation.h */,
-				AC73DA351B187E4C00573835 /* UINavigationController+CrossNavigation.m */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		AC73DA371B187E4C00573835 /* InteractiveTransition */ = {
@@ -475,7 +462,6 @@
 				12AFA2961D0DA26800125515 /* CNNavigationController.m in Sources */,
 				AC73DA731B187E4C00573835 /* CNLeftSegue.m in Sources */,
 				AC73DA6A1B187E4C00573835 /* CNInteractiveTransition.m in Sources */,
-				AC73DA691B187E4C00573835 /* UINavigationController+CrossNavigation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

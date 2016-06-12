@@ -26,15 +26,13 @@
 
 /**
  if you inherit your view controllers from CNViewController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
- 
- @see CNViewController_Storyboard.h
  */
 
 @interface CNViewController : UIViewController <CNViewControllerProtocol>
 
-@property (nonatomic) IBInspectable NSString *leftID;
-@property (nonatomic) IBInspectable NSString *topID;
-@property (nonatomic) IBInspectable NSString *rightID;
-@property (nonatomic) IBInspectable NSString *bottomID;
+@property (nonatomic, copy) IBInspectable NSString *leftID;
+@property (nonatomic, copy) IBInspectable NSString *topID;
+@property (nonatomic, copy) IBInspectable NSString *rightID;
+@property (nonatomic, copy) IBInspectable NSString *bottomID;
 
 @end

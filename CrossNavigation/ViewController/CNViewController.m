@@ -66,9 +66,9 @@
                    completion:(void (^)(void))completion
 {
     [self.cn_core presentViewController:viewController
-                           direction:direction
-                            animated:animated
-                          completion:completion];
+                              direction:direction
+                               animated:animated
+                             completion:completion];
 }
 
 - (void)dismissViewControllerAnimated:(BOOL)animated
