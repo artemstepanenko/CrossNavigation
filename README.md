@@ -1,6 +1,6 @@
 # CrossNavigation
 
-if you inherit your view controllers from CNViewController, you'll be able to push them to the stack not just to right side (as you do if you use UINavigationController), but to any of four: left, top, right, bottom. Supports autorotations.
+if you inherit your view controllers from `CNViewController`, `CNNavigationController`, or `CNTabBarController`, you'll be able to push them to the stack not just to right side (as you do if you use `UINavigationController`), but to any of four: left, top, right, bottom. Supports autorotations.
 
 - [Auto-transitions](#auto-transitions)
 - [Simple transitions](#simple-transitions)
@@ -23,10 +23,10 @@ This type of transitions happens when a user makes dragging gesture. If you've s
 If you want to do this from code, assign a class of the following view controller to one of the properties:
 
 ```
-@property (nonatomic, strong) Class leftClass;
-@property (nonatomic, strong) Class topClass;
-@property (nonatomic, strong) Class rightClass;
-@property (nonatomic, strong) Class bottomClass;
+@property (nonatomic) Class leftClass;
+@property (nonatomic) Class topClass;
+@property (nonatomic) Class rightClass;
+@property (nonatomic) Class bottomClass;
 ```
 
 ### Storyboard
@@ -50,7 +50,7 @@ XXViewController *nextViewController = ...;
 [self presentViewController:nextViewController direction:CNDirectionTop animated:YES];
 ```
 
-If at least two controllers are in the stack, users can drag back to return interactively to the previous screen (like UINavigationController). Or you can do the same in code (but obviously without interactivity):
+If at least two controllers are in the stack, users can drag back to return interactively to the previous screen (like `UINavigationController`). Or you can do the same in code (but obviously without interactivity):
 
 ``` objc
 [nextViewController dismissViewControllerAnimated:YES completion:^{ ... }];
@@ -77,7 +77,7 @@ present parameter is YES if a considered transition will lead to an appearance o
 
 ### Storyboard
 
-If you use a storyboard, you can easily create a segue between two CNViewController-s. When you drop a connection on a destination view controller, you'll see a popup with a list of available segues. bottom (CNBottomSegue), left (CNLeftSegue), right (CNRightSegue), and top (CNLeftSegue) come from CrossNavigation library, but all others are available too. You won't get a crash if you made a common modal transition from CNViewController. But you will, if you made one of those four transitions (bottom, left, right, or top) between view controllers which are not actually objects of CNViewController class (or of it's subclasses), it's required for both controllers.
+If you use a storyboard, you can easily create a segue between two CNViewController-s. When you drop a connection on a destination view controller, you'll see a popup with a list of available segues. bottom (`CNBottomSegue`), left (`CNLeftSegue`), right (`CNRightSegue`), and top (`CNLeftSegue`) come from CrossNavigation library, but all others are available too. You won't get a crash if you made a common modal transition from CNViewController. But you will, if you made one of those four transitions (bottom, left, right, or top) between view controllers which are not actually objects of `CNViewController`, `CNNavigationController`, or `CNTabBarController` class (or of it's subclasses), it's required for both controllers.
 
 ![](https://github.com/artemstepanenko/CrossNavigation/blob/master/README%20Graphics/demo_segue_connecting.png)
 
