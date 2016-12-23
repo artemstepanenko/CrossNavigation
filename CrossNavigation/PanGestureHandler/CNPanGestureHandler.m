@@ -146,8 +146,8 @@
 
 - (CGFloat)ratioFromLocation:(CGPoint)location direction:(CNDirection)direction
 {
-    CGFloat edge;
-    CGFloat distance;
+    CGFloat edge = 0.0f;
+    CGFloat distance = 0.0f;
     CGSize size = [self.delegate viewSizeForPanGestureHandler:self];
     
     if (CNDirectionIsHorizontal(direction)) {
